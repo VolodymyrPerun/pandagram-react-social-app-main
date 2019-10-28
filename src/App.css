@@ -49,4 +49,11 @@ ul, li, a {
     height: 30vh;
 }
 
+ul li{
+  list-style-type: lower-greek;
+}
+
+.App {
+  text-align: start;
+}
 
