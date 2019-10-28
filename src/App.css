@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     margin: 0;
     padding: 0 15px;
@@ -50,3 +51,14 @@ ul, li, a {
 }
 
 
+=======
+ul li{
+  list-style-type: lower-greek;
+}
+
+.App {
+  text-align: start;
+}
+
+
+>>>>>>> f0e6d941189712fdaaa37d3ef27549fa32dc42e2
