@@ -1,7 +1,19 @@
+body {
+    margin: 0;
+    padding: 0 15px;
+}
+
+ul, li, a {
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
 .app-wrapper {
     display: grid;
     width: 80vw;
     margin: 0 auto;
+    background-color: blanchedalmond;
     grid-template-areas:
     "header header"
     "nav content";
@@ -34,6 +46,7 @@
 
 .content img {
     width: 100%;
+    height: 30vh;
 }
 
 
