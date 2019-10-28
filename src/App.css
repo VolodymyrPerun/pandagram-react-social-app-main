@@ -1,9 +1,5 @@
-ul li{
-  list-style-type: lower-greek;
-}
-
-.App {
-  text-align: start;
+.app-wrapper {
+    display: grid;
 }
 
 

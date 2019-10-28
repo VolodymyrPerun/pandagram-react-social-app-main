@@ -2,35 +2,21 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 
+
 const App = () => {
-  return (
-    <div>
-      <Header />
-      <Technologies />
-    </div>
-  );
+    return (
+        <div className='app-wrapper'>
+            <header>
+                <img
+                    src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlVxjyUpcPIBiuJ5QsYWkzajYIqDOX53UqJr-IYsCR-qwKv85fVA&s'/>
+            </header>
+            <nav>
+                <div>Messages</div>
+                <div>Messages</div>
+            </nav>
+            <div>Main content</div>
+        </div>);
 };
 
-const Header = () => {
-  return (
-<div>
-  <a href="#s">Home</a>
-  <a href="#s">News Feed</a>
-  <a href="#s">Messages</a>
-</div>
-  );
-};
-
-const Technologies = () => {
-  return (
-<div>
-      <ul>
-        <li>css</li>
-        <li>html</li>
-        <li>js</li>
-      </ul>
-    </div>
-  );
-};
 
 export default App;
