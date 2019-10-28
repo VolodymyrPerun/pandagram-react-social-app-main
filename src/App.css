@@ -1,5 +1,39 @@
 .app-wrapper {
     display: grid;
+    width: 80vw;
+    margin: 0 auto;
+    grid-template-areas:
+    "header header"
+    "nav content";
+
+    grid-auto-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+    grid-gap: 10px;
+
+    /*text-align: center;*/
+}
+
+.header {
+     grid-area: header;
+    background-color: dodgerblue;
+ }
+
+.header img {
+    width: 20px;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: dodgerblue;
+}
+
+.content {
+    grid-area: content;
+    background-color: blanchedalmond;
+}
+
+.content img {
+    width: 100%;
 }
 
 
