@@ -1,0 +1,9 @@
+.item {
+    color: darkslateblue
+}
+
+.item img{
+    width: 7%;
+    height: auto;
+    border-radius: 50%;
+}
