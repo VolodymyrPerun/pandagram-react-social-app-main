@@ -1,14 +1,15 @@
 import React from 'react';
+import style from './Navbar.module.css'; 
 
 const Navbar = () => {
     return (
-        <nav className='nav'>
+        <nav className={style.nav}>
             <ul className="sidebar-item">
-                <li className="sidebar-item-list"><a href='/Profile'>Profile</a></li>
-                <li className="sidebar-item-list"><a href='/Messages'>Messages</a></li>
-                <li className="sidebar-item-list"><a href='/News'>News</a></li>
-                <li className="sidebar-item-list"><a href='/Music'>Music</a></li>
-                <li className="sidebar-item-list"><a href='/Settings'>Settings</a></li>
+                <li><a className={style.item} href='/Profile'>Profile</a></li>
+                <li><a className={style.item} href='/Messages'>Messages</a></li>
+                <li><a className={style.item} href='/News'>News</a></li>
+                <li><a className={style.item} href='/Music'>Music</a></li>
+                <li><a className={style.item} href='/Settings'>Settings</a></li>
             </ul>
         </nav>
     )

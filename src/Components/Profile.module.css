@@ -1,0 +1,13 @@
+.content {
+    grid-area: content;
+    background-color: blanchedalmond;
+}
+
+.content img {
+    width: 100%;
+    height: 30vh;
+}
+
+.item {
+    color: darkslateblue
+}
