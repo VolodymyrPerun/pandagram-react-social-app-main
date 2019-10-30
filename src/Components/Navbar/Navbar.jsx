@@ -6,11 +6,11 @@ const Navbar = () => {
     return (
         <nav className={style.nav}>
             <ul className="sidebar-item">
-                <li><NavLink className={`${style.item} ${style.active}`} to='/profile'>Profile</NavLink></li>
-                <li><NavLink className={style.item} to='/dialogs'>Messages</NavLink></li>
-                <li><NavLink className={style.item} to='/news'>News</NavLink></li>
-                <li><NavLink className={style.item} to='/music'>Music</NavLink></li>
-                <li><NavLink className={style.item} to='/settings'>Settings</NavLink></li>
+                <li><NavLink className={style.item} activeClassName={style.active} to='/profile'>Profile</NavLink></li>
+                <li><NavLink className={style.item} activeClassName={style.active} to='/dialogs'>Messages</NavLink></li>
+                <li><NavLink className={style.item} activeClassName={style.active} to='/news'>News</NavLink></li>
+                <li><NavLink className={style.item} activeClassName={style.active} to='/music'>Music</NavLink></li>
+                <li><NavLink className={style.item} activeClassName={style.active} to='/settings'>Settings</NavLink></li>
             </ul>
         </nav>
     )
