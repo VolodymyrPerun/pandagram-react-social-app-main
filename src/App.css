@@ -25,5 +25,12 @@ ul, li, a {
     /*text-align: center;*/
 }
 
+.app-wrapper-content {
+    grid-area: content;
+    background-color: blanchedalmond;
+}
 
-
+.app-wrapper-content img{
+    width: 98.8%;
+    height: 50vh;
+}
