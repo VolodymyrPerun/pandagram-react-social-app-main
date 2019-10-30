@@ -5,11 +5,11 @@ const Navbar = () => {
     return (
         <nav className={style.nav}>
             <ul className="sidebar-item">
-                <li><a className={`${style.item} ${style.active}`} href='/Profile'>Profile</a></li>
-                <li><a className={style.item} href='/Messages'>Messages</a></li>
-                <li><a className={style.item} href='/News'>News</a></li>
-                <li><a className={style.item} href='/Music'>Music</a></li>
-                <li><a className={style.item} href='/Settings'>Settings</a></li>
+                <li><a className={`${style.item} ${style.active}`} href='/profile'>Profile</a></li>
+                <li><a className={style.item} href='/messages'>Messages</a></li>
+                <li><a className={style.item} href='/news'>News</a></li>
+                <li><a className={style.item} href='/music'>Music</a></li>
+                <li><a className={style.item} href='/settings'>Settings</a></li>
             </ul>
         </nav>
     )
