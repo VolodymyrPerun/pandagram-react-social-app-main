@@ -10,15 +10,19 @@
 .header img {
     grid-column: 1 / 2;
     width: 92px;
+    padding-right: 10px;
 }
 
 .logoText {
     grid-column: 2 / 3;
-    margin-top: 15px;
+    margin-top: -11.5px;
 }
 
-.logoText span {
-
+.logoText p {
+    font-family: Broadway, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
     width: 100%;
     color: whitesmoke;
     border-radius: 10px;
