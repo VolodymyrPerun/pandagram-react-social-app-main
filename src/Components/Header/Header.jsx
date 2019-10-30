@@ -7,7 +7,7 @@ const Header = () => {
             <img
                 src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUfegSHiBQ7_dbyKiZInKf8azfiBIFNoggAn9nxArVz9HBEEvMEw&s'/>
                 <div className={style.logoText}>
-                    <span>Pandagram</span>
+                    <p>P<span>a</span>nd<span>a</span>gr<span>a</span>m</p>
                 </div>
         </header>
     )

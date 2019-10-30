@@ -1,22 +1,23 @@
 import React from 'react';
 import style from './Dialogs.module.css';
+import {NavLink} from "react-router-dom";
 
 const Dialogs = (props) => {
     return (
         <div className={style.dialogs}>
             <img src="https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="image"/>
                 <div className={style.dialogsItems}>
-                <div className={`${style.dialog} ${style.active}`}>
-                    Andriy
+                <div className={style.dialog}>
+                    <NavLink activeClassName={style.active} to='/dialogs/1'>Andriy</NavLink>
                 </div>
                 <div className={style.dialog}>
-                    Vasil
+                    <NavLink activeClassName={style.active} to='/dialogs/2'>Vasil</NavLink>
                 </div>
                 <div className={style.dialog}>
-                    Volodymyr
+                    <NavLink activeClassName={style.active} to='/dialogs/3'>Volodymyr</NavLink>
                 </div>
                 <div className={style.dialog}>
-                    Victor
+                    <NavLink activeClassName={style.active} to='/dialogs/4'>Victor</NavLink>
                 </div>
             </div>
             <div className={style.messages}>
