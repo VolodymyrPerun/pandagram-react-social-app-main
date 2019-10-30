@@ -1,7 +1,15 @@
 .nav {
     grid-area: nav;
-    background-color: dodgerblue;
     padding: 1vw;
+    background: url("https://images.pexels.com/photos/1690351/pexels-photo-1690351.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500") no-repeat center top/ cover;
+}
+
+.sidebar {
+    border-radius: 10px;
+    text-align: start;
+    padding: 15px;
+    background: black;
+    opacity: 0.8;
 }
 
 .item {

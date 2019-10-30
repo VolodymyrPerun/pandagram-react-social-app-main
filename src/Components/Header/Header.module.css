@@ -1,8 +1,29 @@
 .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
     grid-area: header;
-    background-color: dodgerblue;
+    /*background-color: dodgerblue;*/
+    background: url("https://images.pexels.com/photos/1690351/pexels-photo-1690351.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500") no-repeat center top/ cover;
+    z-index: 1;
 }
 
 .header img {
-    width: 20px;
+    grid-column: 1 / 2;
+    width: 92px;
+}
+
+.logoText {
+    grid-column: 2 / 3;
+    margin-top: 15px;
+}
+
+.logoText span {
+
+    width: 100%;
+    color: whitesmoke;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    background: black;
+    opacity: 0.8;
 }

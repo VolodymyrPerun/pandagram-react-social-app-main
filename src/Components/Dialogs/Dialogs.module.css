@@ -1,1 +1,27 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
 
+.dialogs img{
+    height: 50vh;
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+.dialogsItems {
+    padding: 10px;
+    grid-row: 2;
+}
+.active {
+    color: royalblue;
+}
+
+.messages {
+    padding: 10px;
+    grid-row: 2;
+}
+
+.message {
+
+}

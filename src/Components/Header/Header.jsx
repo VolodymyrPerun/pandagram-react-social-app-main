@@ -5,7 +5,10 @@ const Header = () => {
     return (
         <header className={style.header}>
             <img
-                src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0Eye0vqol6GeqQQ_tVUzwsJfFUVZdfi4sngLUPmCgxImBcL0J2g&s'/>
+                src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUfegSHiBQ7_dbyKiZInKf8azfiBIFNoggAn9nxArVz9HBEEvMEw&s'/>
+                <div className={style.logoText}>
+                    <span>Pandagram</span>
+                </div>
         </header>
     )
 };
