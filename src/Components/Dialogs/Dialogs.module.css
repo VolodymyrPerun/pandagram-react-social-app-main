@@ -3,7 +3,7 @@
     grid-template-columns: 2fr 10fr;
 }
 
-.dialogs img{
+.dialogs img {
     width: 98.8%;
     max-height: 50vh;
     grid-column: 1 / 3;
@@ -14,6 +14,7 @@
     padding: 10px;
     grid-row: 2;
 }
+
 .active {
     color: royalblue;
 }
