@@ -4,7 +4,7 @@ import style from './Message.module.css';
 
 const MessagesItem = (props) => {
     return (
-        <div className={style.message}>
+        <div className={style.messages}>
             <div>{props.message}</div>
         </div>
     )
@@ -16,7 +16,7 @@ const Message = (props) => {
         {id: 1, message: 'Hi, in node we trust!'},
         {id: 2, message: 'Yo! Front forever!'},
         {id: 3, message: "What's up! React is top!"},
-        {id: 4, message: 'Socket.io? Middleware? Token? ... Ease!!!)'}
+        {id: 4, message: 'Socket.io? Middleware? Token? ... Ease!!!)'},
     ]
 
     return messagesData.map(message =>
