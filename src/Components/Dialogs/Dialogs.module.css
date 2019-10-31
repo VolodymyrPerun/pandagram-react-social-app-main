@@ -10,17 +10,5 @@
     grid-row: 1;
 }
 
-.dialogsItems {
-    padding: 10px;
-    grid-row: 2;
-}
 
-.active {
-    color: royalblue;
-}
-
-.messages {
-    padding: 10px;
-    grid-row: 2;
-}
 
