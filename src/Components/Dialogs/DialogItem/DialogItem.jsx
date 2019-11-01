@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './DialogItem.module.css';
 import {NavLink} from "react-router-dom";
+import MessagesItem from "../Message/Message";
 
 const DialogsItem = (props) => {
     let path = '/dialogs/' + props.id;
@@ -11,17 +12,4 @@ const DialogsItem = (props) => {
     )
 };
 
-const DialogItem = props => {
-
-   
- 
-    return   props.dialogsData.map(dialog =>
-        
-       <DialogsItem id={dialog.id} name={dialog.name}/>
-    )
-        
- 
-
-};
-
-export default DialogItem;
+export default DialogsItem;

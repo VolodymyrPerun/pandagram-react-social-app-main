@@ -5,11 +5,10 @@ import ProfileInfo from "../Profile/ProfileInfo/ProfileInfo";
 
 const Profile = (props) => {
 
-
     return (
         <div className='app-wrapper-content'>
             <ProfileInfo/>
-            <MyPosts postsData={props.postsData}/>
+            <MyPosts posts={props.state.posts}/>
         </div>
     )
 };

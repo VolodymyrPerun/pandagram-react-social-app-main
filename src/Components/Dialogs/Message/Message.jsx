@@ -10,12 +10,5 @@ const MessagesItem = (props) => {
     )
 };
 
-const Message = props => {
 
-    return props.messagesData.map(message =>
-        <MessagesItem id={message.id} message={message.message}/>
-    )
-
-};
-
-export default Message;
+export default MessagesItem;
