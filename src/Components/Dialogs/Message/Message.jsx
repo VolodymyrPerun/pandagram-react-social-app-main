@@ -10,16 +10,10 @@ const MessagesItem = (props) => {
     )
 };
 
-const Message = (props) => {
+const Message = props => {
 
-    let messagesData = [
-        {id: 1, message: 'Hi, in node we trust!'},
-        {id: 2, message: 'Yo! Front forever!'},
-        {id: 3, message: "What's up! React is top!"},
-        {id: 4, message: 'Socket.io? Middleware? Token? ... Ease!!!)'},
-    ]
 
-    return messagesData.map(message =>
+    return props.messagesData.map(message =>
         <MessagesItem id={message.id} message={message.message}/>
     )
 

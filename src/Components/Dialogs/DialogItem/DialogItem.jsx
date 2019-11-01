@@ -1,7 +1,6 @@
 import React from 'react';
 import style from './DialogItem.module.css';
 import {NavLink} from "react-router-dom";
-import DialogsDataReceived from "../../../index";
 
 const DialogsItem = (props) => {
     let path = '/dialogs/' + props.id;
@@ -12,12 +11,16 @@ const DialogsItem = (props) => {
     )
 };
 
-const DialogItem = (props) => {
+const DialogItem = props => {
 
-    props.map(dialog =>
-        <DialogsItem id={dialog.id} name={dialog.name}/>
-
-    return
+   
+ 
+    return   props.dialogsData.map(dialog =>
+        
+       <DialogsItem id={dialog.id} name={dialog.name}/>
+    )
+        
+ 
 
 };
 
