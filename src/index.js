@@ -10,3 +10,17 @@ ReactDOM.render(<App/>, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+const DialogsDataReceived = () =>{
+
+   return ([
+       {id: 1, name: 'Andriy'},
+       {id: 2, name: 'Vasil'},
+       {id: 3, name: 'Volodymyr'},
+       {id: 4, name: 'Victor'}
+   ])
+}
+
+
+
+export default DialogsDataReceived;
