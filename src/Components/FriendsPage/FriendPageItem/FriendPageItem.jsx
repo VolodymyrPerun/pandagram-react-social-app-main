@@ -10,10 +10,10 @@ const FriendsData = (props) => {
                 alt="avatar"/>
             <div className={style.info}>
                 <div>{'Name:  ' + props.name}</div>
-                <div>{'Surname:  ' + props.name}</div>
-                <div>{'Age:  ' + props.name}</div>
-                <div>{'Sex:  ' + props.name}</div>
-                <div>{'Address:  ' + props.name}</div>
+                <div>{'Surname:  ' + props.surname}</div>
+                <div>{'Age:  ' + props.age}</div>
+                <div>{'Sex:  ' + props.sex}</div>
+                <div>{'Address:  ' + props.address}</div>
 
             </div>
         </div>
@@ -25,8 +25,9 @@ const FriendPageItem = (props) => {
 
 
     props = state.sidebar.friends
-    let friendName = props.map((name, id) =>
-        <FriendsData id={id.id} name={name.name}/>)
+    let friendName = props.map((name, id, age, address, surname, sex) =>
+        <FriendsData id={id.id} name={name.name} surname={name.surname}
+                     age={name.age} address={name.address} sex={name.sex}/>)
 
     return (
         <div>

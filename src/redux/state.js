@@ -22,12 +22,12 @@ let state = {
     },
     sidebar: {
         friends: [
-            {id: '1', name: 'Andriy'},
-            {id: '2', name: 'Vasil'},
-            {id: '3', name: 'Victor'},
-            {id: '4', name: 'Igor'},
-            {id: '5', name: 'Nazar'},
-            {id: '6', name: 'Irina'}
+            {id: '1', name: 'Andriy', surname: 'Limych', age: '25', sex: 'man', address: 'Novoyavorivsk'},
+            {id: '2', name: 'Vasil', surname: 'Limych', age: '20', sex: 'man', address: 'Buchaly'},
+            {id: '3', name: 'Victor', surname: 'Fazer', age: '22', sex: 'man', address: 'Mykolaiv'},
+            {id: '4', name: 'Igor', surname: 'Kynitskyi', age: '31', sex: 'man', address: 'Lviv'},
+            {id: '5', name: 'Nazar', surname: 'Boxxyy', age: '21', sex: 'man', address: 'Lviv'},
+            {id: '6', name: 'Irina', surname: 'Perun', age: '29', sex: 'woman', address: 'Komarno'}
         ]
     }
 };

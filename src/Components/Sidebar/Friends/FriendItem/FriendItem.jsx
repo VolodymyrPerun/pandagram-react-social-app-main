@@ -16,8 +16,8 @@ const FriendsData = (props) => {
 const FriendItem = (props) => {
 
     let invalidEntries = 0;
-    function filterByID(item) {
-        if (item.id !== 0 && item.id <= 3) {
+    function filterByID(item,index) {
+        if (index !== -1 && index <= 2) {
             return true;
         }
         invalidEntries++;

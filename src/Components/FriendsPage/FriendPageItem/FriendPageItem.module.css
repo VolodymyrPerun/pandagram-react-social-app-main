@@ -8,16 +8,17 @@
     padding: 10px;
     border: 4px solid chocolate;
     border-radius: 15px;
-    margin: 10px 10px 10px 0    ;
+    margin: 10px 10px 10px 0;
 }
 
 .info {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-self: center;
     padding: 15px;
     border-radius: 15px;
     background: black;
-    justify-content: flex-start;
     color: tomato;
     font: 25px "Matura MT Script Capitals", sans-serif;
     opacity: 0.8;
