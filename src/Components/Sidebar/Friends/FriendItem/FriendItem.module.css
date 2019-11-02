@@ -1,0 +1,15 @@
+.friend {
+    text-align: center;
+    color: wheat;
+    font: 15px "Matura MT Script Capitals", sans-serif;
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    padding-bottom: 10px;
+}
+
+.friend img{
+    width: 35px;
+    border: 2px solid crimson;
+    border-radius: 50%;
+}

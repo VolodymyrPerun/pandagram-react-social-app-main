@@ -11,7 +11,7 @@ const Dialogs = (props) => {
 
 
     let Message = props.state.messagesData.map(message =>
-            <MessagesItem id={message.id} message={message.message}/>)
+        <MessagesItem id={message.id} message={message.message}/>)
 
     return (
         <div className={style.dialogs}>

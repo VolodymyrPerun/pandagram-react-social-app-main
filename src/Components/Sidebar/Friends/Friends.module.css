@@ -1,0 +1,13 @@
+.wrapper {
+    border-radius: 10px;
+    text-align: center;
+    padding: 0;
+    background: black;
+    opacity: 0.8;
+}
+
+.wrapper h3 {
+    color: wheat;
+    font-family: "MV Boli",sans-serif;
+    padding-top: 5px;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Header from "./Components/Header/Header";
-import Navbar from "./Components/Navbar/Navbar";
+import Navbar from "./Components/Sidebar/Navbar/Navbar";
 import Profile from "./Components/Profile/Profile";
 import Dialogs from "./Components/Dialogs/Dialogs";
 import Settings from "./Components/Settings/Settings";
@@ -25,6 +25,7 @@ const App = (props) => {
                     <Route path='/music' render = {() => <Music/>} />
                     <Route path='/settings' render = {() => <Settings/>} />
                 </div>
+
             </div>
         </BrowserRouter>);
 };
