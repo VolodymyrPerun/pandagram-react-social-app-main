@@ -1,7 +1,7 @@
 .dialogs {
-    display: grid;
-    grid-template-columns: 2fr 10fr;
-}
+     display: grid;
+     grid-template-columns: 2fr 10fr;
+ }
 
 .dialogs img {
     width: 98.8%;

@@ -1,0 +1,8 @@
+.sidebar {
+    grid-area: nav;
+    padding: 1vw;
+    background: url("https://images.pexels.com/photos/2827741/pexels-photo-2827741.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500") no-repeat center top/ cover;
+}
+
+
+

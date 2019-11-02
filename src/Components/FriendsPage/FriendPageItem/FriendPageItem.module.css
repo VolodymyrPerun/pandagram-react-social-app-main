@@ -1,0 +1,30 @@
+.friendItem {
+    background: url("https://images.pexels.com/photos/1227511/pexels-photo-1227511.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500") no-repeat center/ cover;
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+    padding: 10px;
+    border: 4px solid chocolate;
+    border-radius: 15px;
+    margin: 10px 10px 10px 0    ;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 15px;
+    background: black;
+    justify-content: flex-start;
+    color: tomato;
+    font: 25px "Matura MT Script Capitals", sans-serif;
+    opacity: 0.8;
+}
+
+.friendItem img {
+    width: 30%;
+    border: 2px solid crimson;
+    border-radius: 50%;
+}

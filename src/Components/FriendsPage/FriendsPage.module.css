@@ -1,0 +1,22 @@
+.friendsPage {
+    text-align: center;
+}
+
+.infoCount {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 15px;
+    background: black;
+    justify-content: flex-start;
+    color: tomato;
+    font: 25px "Matura MT Script Capitals", sans-serif;
+    opacity: 0.8;
+}
+
+.friendsPage img {
+    width: 98.8%;
+    max-height: 50vh;
+    grid-column: 1 / 3;
+    grid-row: 1;
+}

@@ -14,14 +14,12 @@ const Navbar = () => {
                     </li>
                     <li><NavLink className={style.item} activeClassName={style.active} to='/news'>News</NavLink></li>
                     <li><NavLink className={style.item} activeClassName={style.active} to='/music'>Music</NavLink></li>
+                    <li><NavLink className={style.item} activeClassName={style.active} to='/friendsPage'>Friends</NavLink></li>
                     <li><NavLink className={`${style.item} ${style.settings}`} activeClassName={style.active}
                                  to='/settings'>Settings</NavLink></li>
+
                 </ul>
             </nav>
-
-            <div className="friends">
-                <Friends />
-            </div>
         </div>
     )
 };

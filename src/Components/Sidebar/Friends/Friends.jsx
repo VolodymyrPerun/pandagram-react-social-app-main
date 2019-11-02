@@ -7,8 +7,8 @@ const Friends = (props) => {
 
     return (
         <div className={style.wrapper}>
-            <h3>Friends:</h3>
-            <FriendItem/>
+                <h3>Friends:</h3>
+                <FriendItem/>
         </div>
     )
 };

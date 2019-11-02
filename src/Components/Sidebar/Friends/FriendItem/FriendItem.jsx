@@ -15,7 +15,16 @@ const FriendsData = (props) => {
 
 const FriendItem = (props) => {
 
-    props = state.sidebar.friends;
+    let invalidEntries = 0;
+    function filterByID(item) {
+        if (item.id !== 0 && item.id <= 3) {
+            return true;
+        }
+        invalidEntries++;
+        return false;
+    }
+
+    props = (state.sidebar.friends).filter(filterByID);
     let friendName = props.map((name, id) =>
         <FriendsData id={id.id} name={name.name}/>)
 
