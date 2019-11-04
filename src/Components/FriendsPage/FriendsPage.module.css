@@ -5,7 +5,8 @@
 .infoCount {
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    padding: 15px 0;
+    width: 99%;
     border-radius: 15px;
     background: black;
     justify-content: flex-start;
