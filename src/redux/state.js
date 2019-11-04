@@ -36,7 +36,7 @@ let state = {
 
 export let addPost = (postMessage) => {
     let newPost = {
-        id: 5,
+        id: 4,
         message: postMessage,
         likesCount: 0
     };
