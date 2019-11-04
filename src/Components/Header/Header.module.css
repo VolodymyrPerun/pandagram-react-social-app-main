@@ -3,11 +3,15 @@
     grid-template-columns: 1fr 1fr 2fr;
     grid-area: header;
     /*background-color: dodgerblue;*/
-    background: url("https://images.pexels.com/photos/2827741/pexels-photo-2827741.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500") no-repeat center top/ cover;
+    background: #c21500;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffc500, #c21500);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffc500, #c21500); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
     z-index: 1;
 }
 
-.header img {
+.logo {
     grid-column: 1 / 2;
     width: 92px;
     padding-right: 10px;
@@ -32,6 +36,6 @@
     opacity: 0.8;
 }
 
-.logoText p span{
+.logoText p span {
     color: goldenrod
 }
