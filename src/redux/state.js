@@ -16,6 +16,7 @@ let state = {
             {"id": 3, "message": "What's up! React is top!"},
             {"id": 4, "message": 'Socket.io? Middleware? Token? ... Ease!!!)'}
         ],
+        newMessageText: 'What\'s up!!!',
         dialogsData: [
             {"id": 1, "name": 'Andriy'},
             {"id": 2, "name": 'Vasil'},
@@ -35,7 +36,9 @@ let state = {
     }
 };
 
+
 export let addPost = () => {
+    
     let newPost = {
         id: 4,
         message: state.profilePage.newPostText,
@@ -47,7 +50,27 @@ export let addPost = () => {
 }
 
 export let updateNewPostText = (newText) => {
+    debugger;
     state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+
+
+
+export let addMessage = () => {
+  
+    let newMessage = {
+        id: 5,
+        message: state.messagesPage.newMessageText,
+    };
+    state.messagesPage.messagesData.push(newMessage);
+    state.messagesPage.newMessageText='';
+    rerenderEntireTree(state);
+}
+
+export let updateNewMessageText = (newText1) => {
+    debugger;
+    state.messagesPage.newMessageText = newText1;
     rerenderEntireTree(state);
 }
 
