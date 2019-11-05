@@ -14,9 +14,10 @@ export let rerenderEntireTree = (state) => {
     <App
      state={state}
      addPost={addPost}
-      updateNewPostText={updateNewPostText}
+     addMessage={addMessage} 
+      updateNewPostText={updateNewPostText} 
        updateNewMessageText={updateNewMessageText}
-       addMessage={addMessage} />
+        />
     </BrowserRouter>, document.getElementById('root'));
 }
 

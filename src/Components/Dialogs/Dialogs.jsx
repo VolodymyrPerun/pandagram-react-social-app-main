@@ -5,17 +5,7 @@ import MessagesItem from "./Message/Message";
 
 
 const Dialogs = (props) => {
-    let newMessageElement = React.createRef();
-
-    let addMessage = () => {
-        props.addMessage();
-    }
-
-    let onMessageChange = () => {
-        let MessageText = newMessageElement.current.value;
-         props.updateNewMessageText(MessageText);
     
-    }
 
     let DialogItem =  props.state.dialogsData.map(dialog =>
             <DialogsItem id={dialog.id} name={dialog.name}/>)
@@ -24,6 +14,17 @@ const Dialogs = (props) => {
     let Message = props.state.messagesData.map(message =>
         <MessagesItem id={message.id} message={message.message}/>)
 
+        let newMessageElement = React.createRef();
+
+    let addMessage = () => {
+        props.addMessage();
+    }
+
+    let onMessageChange = () => {
+        let Text = newMessageElement.current.value;
+         props.updateNewMessageText(Text);
+    
+    }
         
 
     return (
