@@ -21,8 +21,8 @@ const Dialogs = (props) => {
     }
 
     let onMessageChange = () => {
-        let Text = newMessageElement.current.value;
-         props.updateNewMessageText(Text);
+        let text = newMessageElement.current.value;
+         props.updateNewMessageText(text);
     
     }
         
@@ -37,7 +37,7 @@ const Dialogs = (props) => {
             </div>
             <div>
             <div>
-                    <textarea onChange={onMessageChange} value={props.newMessageText} ref={newMessageElement} placeholder='Enter your message...'/>
+                    <textarea onChange={onMessageChange} value={props.state.newMessageText} ref={newMessageElement} placeholder='Enter your message...'/>
                 </div>
                 <div>
                     <button onClick={addMessage} >Add Message</button>

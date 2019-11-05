@@ -11,17 +11,17 @@ let state = {
     },
     messagesPage: {
         messagesData: [
-            {"id": 1, "message": 'Hi, in node we trust!'},
-            {"id": 2, "message": 'Yo! Front forever!'},
-            {"id": 3, "message": "What's up! React is top!"},
-            {"id": 4, "message": 'Socket.io? Middleware? Token? ... Ease!!!)'}
+            {id: 1, message: 'Hi, in node we trust!'},
+            {id: 2, message: 'Yo! Front forever!'},
+            {id: 3, message: "What's up! React is top!"},
+            {id: 4, message: 'Socket.io? Middleware? Token? ... Ease!!!)'}
         ],
         newMessageText: 'What\'s up!!!',
         dialogsData: [
-            {"id": 1, "name": 'Andriy'},
-            {"id": 2, "name": 'Vasil'},
-            {"id": 3, "name": 'Volodymyr'},
-            {"id": 4, "name": 'Victor'}
+            {id: 1, name: 'Andriy'},
+            {id: 2, name: 'Vasil'},
+            {id: 3, name: 'Volodymyr'},
+            {id: 4, name: 'Victor'}
         ]
     },
     sidebar: {
@@ -50,7 +50,7 @@ export let addPost = () => {
 }
 
 export let updateNewPostText = (newText) => {
-    debugger;
+  
     state.profilePage.newPostText = newText;
     rerenderEntireTree(state);
 }
@@ -68,9 +68,9 @@ export let addMessage = () => {
     rerenderEntireTree(state);
 }
 
-export let updateNewMessageText = (newText1) => {
-    debugger;
-    state.messagesPage.newMessageText = newText1;
+export let updateNewMessageText = (newText) => {
+  
+    state.messagesPage.newMessageText = newText;
     rerenderEntireTree(state);
 }
 
