@@ -78,7 +78,7 @@ export const updateNewMessageText = (newText) => {
 
 
 export const subscribe = (observer) => {
-rerenderEntireTree = observer;
+rerenderEntireTree = observer;//pattern observer
 }
 
 

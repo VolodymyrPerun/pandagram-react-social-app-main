@@ -10,7 +10,7 @@ import {BrowserRouter} from "react-router-dom";
 
 
 
- let rerenderEntireTree = () => {
+ let rerenderEntireTree = (state) => {
     
     ReactDOM.render(
     <BrowserRouter>
