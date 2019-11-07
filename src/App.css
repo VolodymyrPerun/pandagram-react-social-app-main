@@ -32,3 +32,11 @@ ul, li, a {
     width: 98.8%;
     max-height: 50vh;
 }
+
+@media only screen and (max-width:992px) {
+    .app-wrapper, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
