@@ -6,7 +6,7 @@ let store = {
                 {id: 2, message: "It's my first post", likesCount: '45'},
                 {id: 3, message: "What's up!!! Dude!!!", likesCount: '5'}
             ],
-            newPostText : 'Hello!!!'
+            newPostText: 'Hello!!!'
         },
         messagesPage: {
             messagesData: [
@@ -39,43 +39,43 @@ let store = {
     },
     _callSubscriber() {
         console.log('rendering...')
-   },
-   addPost() {
-    
-    let newPost = {
-        id: 4,
-        message: this._state.profilePage.newPostText,
-        likesCount: 0
-    };
-    this._state.profilePage.posts.push(newPost);
-    this._state.profilePage.newPostText='';
-    this._callSubscriber(this._state);
     },
-    updateNewPostText(newText) { 
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-    },
-    addMessage() {
-  
-        let newMessage = {
-            id: 5,
-            message: this._state.messagesPage.newMessageText,
-        };
-        this._state.messagesPage.messagesData.push(newMessage);
-        this._state.messagesPage.newMessageText='';
-       this._callSubscriber(this._state);
-    },
-    updateNewMessageText(newText) {
-  
-        this._state.messagesPage.newMessageText = newText;
-        this._callSubscriber(this._state);
-    },
+
     subscribe(observer) {
         this._callSubscriber = observer;//pattern observer
-        }
-}
- 
+    },
 
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 4,
+                message: this._state.profilePage.newPostText,
+                likesCount: 0
+            };
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.newPostText = '';
+            this._callSubscriber(this._state);
+
+        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber(this._state);
+
+        } else if (action.type === 'ADD-MESSAGE') {
+            let newMessage = {
+                id: 5,
+                message: this._state.messagesPage.newMessageText,
+            };
+            this._state.messagesPage.messagesData.push(newMessage);
+            this._state.messagesPage.newMessageText = '';
+            this._callSubscriber(this._state);
+
+        } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
+            this._state.messagesPage.newMessageText = action.newText;
+            this._callSubscriber(this._state);
+        }
+
+    }
+}
 
 
 export default store;
