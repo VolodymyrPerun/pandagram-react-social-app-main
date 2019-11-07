@@ -14,9 +14,7 @@ ul, li, a {
     width: 80vw;
     margin: 0 auto;
     background-color: blanchedalmond;
-    grid-template-areas:
-    "header header"
-    "nav content";
+    grid-template-areas: "header header" "nav content";
 
     grid-auto-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
@@ -28,12 +26,12 @@ ul, li, a {
     background-color: blanchedalmond;
 }
 
-.app-wrapper-content img{
+.app-wrapper-content img {
     width: 98.8%;
     max-height: 50vh;
 }
 
-@media only screen and (max-width:992px) {
+@media only screen and (max-width: 992px) {
     .app-wrapper, body {
         width: 100%;
         margin: 0;
