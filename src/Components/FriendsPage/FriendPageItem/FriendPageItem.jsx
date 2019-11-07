@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './FriendPageItem.module.css';
-import state from "../../../redux/state";
+import store from "../../../redux/state";
 
 const FriendsData = (props) => {
     return (
@@ -24,7 +24,7 @@ const FriendsData = (props) => {
 const FriendPageItem = (props) => {
 
 
-    props = state.sidebar.friends
+    props = store.getState().sidebar.friends
     let friendName = props.map((name, id, age, address, surname, sex) =>
         <FriendsData id={id.id} name={name.name} surname={name.surname}
                      age={name.age} address={name.address} sex={name.sex}/>)

@@ -1,8 +1,8 @@
-import state from "../../../redux/state";
+import store from "../../../redux/state";
 
 
 const FriendsCount = (props) => {
-    props = state.sidebar.friends
+    props = store.getState().sidebar.friends
     let sum = 0;
     props.forEach(function (user) {
         sum += (user.id).length
