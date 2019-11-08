@@ -7,7 +7,6 @@ import Dialogs from "./Components/Dialogs/Dialogs";
 import Settings from "./Components/Settings/Settings";
 import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
-import Friends from "./Components/Sidebar/Friends/Friends";
 import {BrowserRouter, Route} from "react-router-dom";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import FriendsPage from "./Components/FriendsPage/FriendsPage";
