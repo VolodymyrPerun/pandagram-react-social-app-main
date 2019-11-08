@@ -1,7 +1,7 @@
 .friend {
     text-align: center;
     color: wheat;
-    font: 70% "Matura MT Script Capitals", sans-serif;
+    font: 65% "Matura MT Script Capitals", sans-serif;
     display: flex;
     justify-content: space-around;
     justify-items: center;
@@ -9,7 +9,7 @@
 }
 
 .friend img{
-    width: 70%;
+    max-width: 70%;
     border: 2px solid crimson;
     border-radius: 50%;
 }

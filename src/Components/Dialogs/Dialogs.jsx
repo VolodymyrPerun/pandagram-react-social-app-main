@@ -31,7 +31,7 @@ const Dialogs = (props) => {
     return (
         <div className={style.dialogs}>
             <img
-                src="https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                src="https://images.pexels.com/photos/263532/pexels-photo-263532.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                 alt="image"/>
             <div>
                  {DialogItem}

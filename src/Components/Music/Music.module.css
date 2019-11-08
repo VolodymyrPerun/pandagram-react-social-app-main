@@ -1,1 +1,13 @@
+.music {
+    display: grid;
+}
 
+.music img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 98.8%;
+    max-height: 50vh;
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
