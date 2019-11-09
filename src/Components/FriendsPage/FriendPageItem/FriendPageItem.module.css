@@ -25,7 +25,22 @@
 }
 
 .friendItem img {
-    width: 30%;
+    height: auto;
+    max-width: 30%;
     border: 2px solid crimson;
     border-radius: 50%;
+}
+
+@media only screen and (max-width: 798px) {
+    .friendItem {
+        flex-direction: column;
+    }
+
+    .friendItem img {
+        margin: 10px auto;
+        height: auto;
+        max-width: 45vw;
+        border: 2px solid crimson;
+        border-radius: 50%;
+    }
 }
