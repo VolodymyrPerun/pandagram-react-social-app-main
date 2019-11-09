@@ -1,11 +1,11 @@
 import React from 'react';
-import style from './Navbar.module.css';
+import style from './Navbar.module.scss';
 import {NavLink} from 'react-router-dom';
 import Friends from "../Friends/Friends";
 
 const Navbar = () => {
     return (
-        <div className={style.sidebar}>
+        <div>
             <nav className={style.nav}>
                 <ul className={style.nav}>
                     <li><NavLink className={style.item} activeClassName={style.active} to='/profile'>Profile</NavLink>

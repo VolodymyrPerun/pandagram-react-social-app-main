@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './FriendPageItem.module.css';
+import style from './FriendPageItem.module.scss';
 import store from "../../../redux/state";
 
 const FriendsData = (props) => {

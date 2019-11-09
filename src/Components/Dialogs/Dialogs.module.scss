@@ -1,13 +1,13 @@
 .dialogs {
-     display: grid;
-     grid-template-columns: 2fr 10fr;
- }
+  display: grid;
+  grid-template-columns: 2fr 10fr;
 
-.dialogs img {
+  img {
     width: 98.8%;
     max-height: 50vh;
     grid-column: 1 / 3;
     grid-row: 1;
+  }
 }
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './Friends.module.css';
+import style from './Friends.module.scss';
 import FriendItem from "./FriendItem/FriendItem";
 
 

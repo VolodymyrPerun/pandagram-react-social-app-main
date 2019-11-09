@@ -1,8 +1,7 @@
 .music {
-    display: grid;
-}
+  display: grid;
 
-.music img {
+  img {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -10,4 +9,6 @@
     max-height: 50vh;
     grid-column: 1 / 3;
     grid-row: 1;
+  }
 }
+

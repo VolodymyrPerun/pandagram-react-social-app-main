@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './Sidebar.module.css';
+import style from './Sidebar.module.scss';
 import Friends from './Friends/Friends'
 import Navbar from "./Navbar/Navbar";
 

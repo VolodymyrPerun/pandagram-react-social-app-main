@@ -1,13 +1,15 @@
 body {
     margin: 0;
     padding: 0 15px;
+
+    ul, li, a {
+        list-style: none;
+        text-decoration: none;
+        color: black;
+    }
 }
 
-ul, li, a {
-    list-style: none;
-    text-decoration: none;
-    color: black;
-}
+
 
 .app-wrapper {
     display: grid;

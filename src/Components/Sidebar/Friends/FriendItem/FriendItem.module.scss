@@ -6,20 +6,20 @@
     justify-content: space-around;
     justify-items: center;
     padding-bottom: 10px;
-}
 
-.friend img{
-    max-width: 70%;
-    border: 2px solid crimson;
-    border-radius: 50%;
+    img{
+        max-width: 70%;
+        border: 2px solid crimson;
+        border-radius: 50%;
+    }
 }
 
 @media only screen and (max-width: 798px) {
     .friend {
         font-size: 35%;
-    }
 
-    .friend img{
-        max-width: 60%;
+        img{
+            max-width: 60%;
+        }
     }
 }
