@@ -8,6 +8,13 @@
 
 .wrapper h3 {
     color: wheat;
-    font-family: "MV Boli", sans-serif;
+    font: 100% "MV Boli", sans-serif;
+    font-weight: bold;
     padding-top: 5px;
+}
+
+@media only screen and (max-width: 798px) {
+    .wrapper h3 {
+        font-size: 65%;
+    }
 }

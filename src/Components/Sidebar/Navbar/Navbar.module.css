@@ -24,4 +24,18 @@
     color: goldenrod
 }
 
+@media only screen and (max-width: 798px) {
+    .nav {
+        padding: 2px 7px;
+    }
+
+    .nav li:nth-child(6) {
+        margin-top: 20px;
+    }
+
+    .item {
+        font: 20px Gabriola, sans-serif;
+        line-height: 1.2;
+    }
+}
 
