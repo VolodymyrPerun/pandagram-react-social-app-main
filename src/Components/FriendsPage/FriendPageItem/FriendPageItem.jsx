@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './FriendPageItem.module.scss';
-import store from "../../../redux/state";
+import store from "../../../redux/store";
 
 const FriendsData = (props) => {
     return (

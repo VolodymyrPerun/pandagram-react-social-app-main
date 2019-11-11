@@ -1,4 +1,4 @@
-import store from "../../../redux/state";
+import store from "../../../redux/store";
 
 
 const FriendsCount = (props) => {
