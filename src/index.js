@@ -17,9 +17,12 @@ import {BrowserRouter} from "react-router-dom";
     </BrowserRouter>, document.getElementById('root'));
 }
 
-callSubscriber(store.getState());
+callSubscriber(store.getState())
 
-store.subscribe(callSubscriber);
+store.subscribe( () => {
+    let state = store.getState();
+    callSubscriber(state);
+});
 
 
 
