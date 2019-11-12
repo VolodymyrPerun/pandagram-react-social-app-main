@@ -8,7 +8,7 @@ let reducers = combineReducers({
     profilePage: reducerProfile,
     messagesPage: reducerDialogs,
     sidebar: reducerSidebar
-})
-let store = createStore()
+});
+let store = createStore(reducers);
 
 export default store;

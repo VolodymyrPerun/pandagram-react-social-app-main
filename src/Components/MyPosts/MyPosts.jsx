@@ -5,19 +5,19 @@ import {addPostActionCreator, updateNewPostActionCreator} from '../../redux/prof
 
 
 const MyPosts = (props) => {
-    let postElements = props.posts.map(post => 
-    <Post id={post.id} message={post.message} likesCount={post.likesCount}/>);
+    let postElements = props.posts.map(post =>
+        <Post id={post.id} message={post.message} likesCount={post.likesCount}/>);
 
     let newPostElement = React.createRef();
 
     let addPost = () => {
         props.dispatch(addPostActionCreator());
-    }
+    };
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-         props.dispatch(updateNewPostActionCreator(text));
-    }
+        props.dispatch(updateNewPostActionCreator(text));
+    };
 
 
     return (
@@ -25,10 +25,11 @@ const MyPosts = (props) => {
             <h3>My posts</h3>
             <div className={style.item}>
                 <div>
-                    <textarea onChange={onPostChange} value={props.newPostText} ref={newPostElement} placeholder='Enter your message...'/>
+                    <textarea onChange={onPostChange} value={props.newPostText} ref={newPostElement}
+                              placeholder='Enter your message...'/>
                 </div>
                 <div>
-                    <button onClick={addPost} >Add Post</button>
+                    <button onClick={addPost}>Add Post</button>
                 </div>
             </div>
             <div className={style.posts}>

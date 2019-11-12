@@ -3,7 +3,7 @@ import style from './Sidebar.module.scss';
 import Friends from './Friends/Friends'
 import Navbar from "./Navbar/Navbar";
 
-const Sidebar = () => {
+const Sidebar = (props) => {
     return (
         <div className={style.sidebar}>
             <Navbar/>

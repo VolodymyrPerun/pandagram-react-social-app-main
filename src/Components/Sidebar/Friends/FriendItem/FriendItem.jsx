@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './FriendItem.module.scss';
-import store from "../../../../redux/store";
+import {addFriendActionCreator} from "../../../../redux/sidebar-reducer";
+import store from "../../../../redux/redux-store";
 
 const FriendsData = (props) => {
     return (
@@ -14,9 +15,10 @@ const FriendsData = (props) => {
 };
 
 const FriendItem = (props) => {
-
+    debugger;
     let invalidEntries = 0;
-    function filterByID(item,index) {
+
+    function filterByID(item, index) {
         if (index !== -1 && index <= 2) {
             return true;
         }
@@ -26,7 +28,7 @@ const FriendItem = (props) => {
 
     props = (store.getState().sidebar.friends).filter(filterByID);
     let friendName = props.map((name, id) =>
-        <FriendsData id={id.id} name={name.name}/>)
+        <FriendsData id={id.id} name={name.name}/>);
 
     return (
         <div className={style.friend}>

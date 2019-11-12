@@ -1,7 +1,7 @@
-const ADD_MESSAGE = 'ADD-MESSAGE'
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT'
+const ADD_MESSAGE = 'ADD-MESSAGE';
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
-let initialState ={
+let initialState = {
     messagesData: [
         {id: 1, message: 'Hi, in node we trust!'},
         {id: 2, message: 'Yo! Front forever!'},
@@ -15,12 +15,12 @@ let initialState ={
         {id: 3, name: 'Volodymyr'},
         {id: 4, name: 'Victor'}
     ]
-}
+};
 
 
- const reducerDialogs = (state = initialState, action) => {
-     switch (action.type) {
-         case 'ADD_MESSAGE':
+const reducerDialogs = (state = initialState, action) => {
+    switch (action.type) {
+        case 'ADD_MESSAGE':
             let newMessage = {
                 id: 5,
                 message: state.newMessageText,
@@ -28,15 +28,15 @@ let initialState ={
             state.messagesData.push(newMessage);
             state.newMessageText = '';
             return state;
-         case 'UPDATE_NEW_MESSAGE_TEXT':
-                state.newMessageText = action.newText;
-                return state;
-     
-         default:
-                return state;
-     } 
-}
+        case 'UPDATE_NEW_MESSAGE_TEXT':
+            state.newMessageText = action.newText;
+            return state;
 
-export const addMessageActionCreator = () => ({type: 'ADD_MESSAGE'})
-export const updateNewMessageActionCreator = (text) => ({type: 'UPDATE_NEW_MESSAGE_TEXT', newText: text})
+        default:
+            return state;
+    }
+};
+
+export const addMessageActionCreator = () => ({type: 'ADD_MESSAGE'});
+export const updateNewMessageActionCreator = (text) => ({type: 'UPDATE_NEW_MESSAGE_TEXT', newText: text});
 export default reducerDialogs;
