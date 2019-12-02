@@ -1,9 +1,8 @@
 import React from 'react';
-import style from './Navbar.module.scss';
+import style from './NavBar.module.scss';
 import {NavLink} from 'react-router-dom';
-import Friends from "../Friends/Friends";
 
-const Navbar = () => {
+const NavBar = () => {
     return (
         <div>
             <nav className={style.nav}>
@@ -24,4 +23,4 @@ const Navbar = () => {
     )
 };
 
-export default Navbar;
+export default NavBar;
