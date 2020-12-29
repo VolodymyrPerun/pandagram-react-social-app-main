@@ -1,11 +1,11 @@
 import React from 'react';
 import style from './FriendPageItem.module.scss';
-import store from "../../../redux/redux-store";
 
 const FriendsData = (props) => {
+
     return (
         <div className={style.friendItem}>
-            <img  src={props.avatar} />
+            <img src={props.avatar} alt='img'/>
             <div className={style.info}>
                 <div>{'Name:  ' + props.name}</div>
                 <div>{'Surname:  ' + props.surname}</div>
@@ -17,13 +17,11 @@ const FriendsData = (props) => {
     )
 };
 
-
 const FriendPageItem = (props) => {
 
-
-    props = store.getState().sidebar.friends;
-    let friendName = props.map((el) =>
-        <FriendsData id={el.id}  avatar={el.avatar} name={el.name} surname={el.surname}
+    console.log(props);
+    let friendName = props.friends.map((el) =>
+        <FriendsData id={el.id} avatar={el.avatar} name={el.name} surname={el.surname}
                      age={el.age} address={el.address} sex={el.sex}/>);
 
     return (

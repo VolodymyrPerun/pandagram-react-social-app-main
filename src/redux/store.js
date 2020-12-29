@@ -1,5 +1,5 @@
-import reducerProfile from './profile-reducer'
-import reducerDialogs from './dialogs-reducer'
+import reducerProfile from './profile-reducer';
+import reducerDialogs from './dialogs-reducer';
 
 
 let store = {
@@ -61,7 +61,8 @@ let store = {
                     avatar: 'https://cdn1.iconfinder.com/data/icons/ninja-things-1/720/ninja-background-512.png',
                     name: 'Igor',
                     surname: 'Kynitskyi',
-                    age: '31',
+                    // age: `${Date.now().toString() - 1988}`,
+                    age: '22',
                     sex: 'man',
                     address: 'Lviv'
                 },
@@ -70,7 +71,7 @@ let store = {
                     avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1sg0fDxi7hWNevmAoJaYwYtporvxrqM8cG_btxW1ToTOAZM92&s',
                     name: 'Nazar',
                     surname: 'Boxxyy',
-                    age: '21',
+                    age: '22',
                     sex: 'man',
                     address: 'Lviv'
                 },
@@ -125,11 +126,9 @@ let store = {
     },
 
     dispatch(action) {
-
         this._state.profilePage = reducerProfile(this._state.profilePage, action);
         this._state.messagesPage = reducerDialogs(this._state.messagesPage, action);
         this._callSubscriber(this._state);
-
     }
 };
 

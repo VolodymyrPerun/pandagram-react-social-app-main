@@ -1,5 +1,8 @@
 const ADD_FRIEND = 'ADD-FRIEND';
 
+let current_date = new Date();
+let cmm = current_date.getFullYear();
+
 let initialState = {
     friends: [
         {
@@ -82,7 +85,34 @@ let initialState = {
             age: '32',
             sex: 'man',
             address: 'Komarno'
-        }
+        },
+        {
+            id: '10',
+            avatar: 'https://cdn2.iconfinder.com/data/icons/super-hero/154/ironman-head-comics-avatar-iron-man-512.png',
+            name: 'Iron',
+            surname: 'Man',
+            age: cmm - 1986,
+            sex: 'man',
+            address: 'Hell Kitchen'
+        },
+        {
+            id: '16669',
+            avatar: 'https://cdn2.iconfinder.com/data/icons/super-hero/154/ironman-head-comics-avatar-iron-man-512.png',
+            name: 'Iron',
+            surname: 'Man',
+            age: cmm - 1986,
+            sex: 'man',
+            address: 'Hell Kitchen'
+        },
+        {
+            id: '16669',
+            avatar: 'https://cdn2.iconfinder.com/data/icons/super-hero/154/ironman-head-comics-avatar-iron-man-512.png',
+            name: 'Iron',
+            surname: 'Man',
+            age: cmm - 1986,
+            sex: 'man',
+            address: 'Hell Kitchen'
+        },
     ],
 };
 
@@ -92,7 +122,6 @@ const reducerSidebar = (state = initialState, action) => {
     } else {
         return state;
     }
-
 };
 
 export const addFriendActionCreator = () => ({type: 'ADD_FRIEND'});

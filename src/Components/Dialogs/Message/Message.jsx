@@ -10,5 +10,4 @@ const MessagesItem = (props) => {
     )
 };
 
-
 export default MessagesItem;

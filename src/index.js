@@ -8,7 +8,6 @@ import App from './App';
 import {BrowserRouter} from "react-router-dom";
 
 
-
  let callSubscriber = (state) => {
     
     ReactDOM.render(
@@ -17,7 +16,7 @@ import {BrowserRouter} from "react-router-dom";
     </BrowserRouter>, document.getElementById('root'));
 }
 
-callSubscriber(store.getState())
+callSubscriber(store.getState());
 
 store.subscribe( () => {
     let state = store.getState();

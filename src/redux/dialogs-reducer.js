@@ -20,7 +20,7 @@ let initialState = {
 
 const reducerDialogs = (state = initialState, action) => {
     switch (action.type) {
-        case 'ADD_MESSAGE':
+        case ADD_MESSAGE:
             let newMessage = {
                 id: 5,
                 message: state.newMessageText,
@@ -28,7 +28,7 @@ const reducerDialogs = (state = initialState, action) => {
             state.messagesData.push(newMessage);
             state.newMessageText = '';
             return state;
-        case 'UPDATE_NEW_MESSAGE_TEXT':
+        case UPDATE_NEW_MESSAGE_TEXT:
             state.newMessageText = action.newText;
             return state;
 
@@ -37,6 +37,6 @@ const reducerDialogs = (state = initialState, action) => {
     }
 };
 
-export const addMessageActionCreator = () => ({type: 'ADD_MESSAGE'});
-export const updateNewMessageActionCreator = (text) => ({type: 'UPDATE_NEW_MESSAGE_TEXT', newText: text});
+export const addMessageActionCreator = () => ({type: ADD_MESSAGE});
+export const updateNewMessageActionCreator = (text) => ({type: UPDATE_NEW_MESSAGE_TEXT, newText: text});
 export default reducerDialogs;

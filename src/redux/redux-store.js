@@ -1,7 +1,7 @@
-import {createStore, combineReducers} from 'redux'
-import reducerProfile from './profile-reducer'
-import reducerDialogs from './dialogs-reducer'
-import reducerSidebar from './sidebar-reducer'
+import {createStore, combineReducers} from 'redux';
+import reducerProfile from './profile-reducer';
+import reducerDialogs from './dialogs-reducer';
+import reducerSidebar from './sidebar-reducer';
 
 
 let reducers = combineReducers({
@@ -9,6 +9,7 @@ let reducers = combineReducers({
     messagesPage: reducerDialogs,
     sidebar: reducerSidebar
 });
-let store = createStore(reducers);
+
+ let store = createStore(reducers);
 
 export default store;

@@ -24,8 +24,10 @@
   }
 
   img {
-    height: auto;
-    max-width: 30%;
+    height: 200px;
+    width: 200px;
+    max-height: 200px;
+    max-width: 200px;
     border: 2px solid crimson;
     border-radius: 50%;
   }
@@ -37,8 +39,8 @@
 
     img {
       margin: 10px auto;
-      height: auto;
-      max-width: 45vw;
+      height: 240px;
+      width: 240px;
       border: 2px solid crimson;
       border-radius: 50%;
     }

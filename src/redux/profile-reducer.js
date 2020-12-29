@@ -3,16 +3,16 @@ const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
 let initialState = {
     posts: [
-        {id: 1, message: 'Hi, how are you?', likesCount: '3'},
-        {id: 2, message: "It's my first post", likesCount: '45'},
-        {id: 3, message: "What's up!!! Dude!!!", likesCount: '5'}
+        {id: 1, message: 'Hi, how are you?', likesCount: 3},
+        {id: 2, message: "It's my first post", likesCount: 45},
+        {id: 3, message: "What's up!!! Dude!!!", likesCount: 5}
     ],
     newPostText: 'Hello!!!'
 };
 
 const reducerProfile = (state = initialState, action) => {
     switch (action.type) {
-        case 'ADD_POST':
+        case ADD_POST:
             let newPost = {
                 id: 4,
                 message: state.newPostText,
@@ -22,7 +22,7 @@ const reducerProfile = (state = initialState, action) => {
             state.newPostText = '';
             return state;
 
-        case 'UPDATE_NEW_POST_TEXT':
+        case UPDATE_NEW_POST_TEXT:
             state.newPostText = action.newText;
             return state;
 
@@ -31,6 +31,6 @@ const reducerProfile = (state = initialState, action) => {
     }
 };
 
-export const addPostActionCreator = () => ({type: 'ADD_POST'});
-export const updateNewPostActionCreator = (text) => ({type: 'UPDATE_NEW_POST_TEXT', newText: text});
+export const addPostActionCreator = () => ({type: ADD_POST});
+export const updateNewPostActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
 export default reducerProfile;
