@@ -1,6 +1,5 @@
 import React from 'react';
 import style from './FriendItem.module.scss';
-import store from "../../../../redux/redux-store";
 
 
 const FriendsData = (props) => {
@@ -16,6 +15,9 @@ const FriendsData = (props) => {
 
 const FriendItem = (props) => {
 
+    let state = props.sidebar;
+
+    // eslint-disable-next-line no-unused-vars
     let invalidEntries = 0;
 
     function filterByID(item, index) {
@@ -26,7 +28,7 @@ const FriendItem = (props) => {
         return false;
     }
 
-    props = (store.getState().sidebar.friends).filter(filterByID);
+    props = (state.friends).filter(filterByID);
     let friendName = props.map((name, id) =>
         <FriendsData id={id.id} name={name.name}/>);
 

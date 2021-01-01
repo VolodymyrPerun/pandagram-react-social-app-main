@@ -1,4 +1,7 @@
 const FriendsCount = (props) => {
+
+    props = props.sidebar;
+
     let sum = 0;
 
     props.friends.forEach(function (user) {

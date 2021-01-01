@@ -6,13 +6,12 @@ import MessagesItem from "./Message/Message";
 
 const Dialogs = (props) => {
 
-    console.log(props.dialogsData);
+    let state = props.messagesPage;
 
-
-    let DialogItem = props.dialogsData.map(dialog =>
+    let DialogItem = state.dialogsData.map(dialog =>
         <DialogsItem id={dialog.id} name={dialog.name}/>);
 
-    let Message = props.messagesData.map(message =>
+    let Message = state.messagesData.map(message =>
         <MessagesItem id={message.id} message={message.message}/>);
 
     let newMessageElement = React.createRef();
@@ -26,7 +25,6 @@ const Dialogs = (props) => {
         props.onMessageChange(text);
     };
 
-
     return (
         <div className={style.dialogs}>
             <img
@@ -37,7 +35,7 @@ const Dialogs = (props) => {
             </div>
             <div>
                 <div>
-                    <textarea onChange={onMessageChange} value={props.newMessageText} ref={newMessageElement}
+                    <textarea onChange={onMessageChange} value={state.newMessageText} ref={newMessageElement}
                               placeholder='Enter your message...'/>
                 </div>
                 <div>

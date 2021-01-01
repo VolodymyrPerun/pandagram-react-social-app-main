@@ -1,14 +1,14 @@
 import React from 'react';
 import style from './Friends.module.scss';
-import FriendItem from "./FriendItem/FriendItem";
+import FriendItemContainer from "./FriendItem/FriendItemContainer";
 
 
-const Friends = (props) => {
+const Friends = () => {
 
     return (
         <div className={style.wrapper}>
-                <h3>Friends:</h3>
-                <FriendItem/>
+            <h3>Friends:</h3>
+            <FriendItemContainer/>
         </div>
     )
 };

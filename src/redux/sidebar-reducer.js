@@ -117,12 +117,12 @@ let initialState = {
 };
 
 const reducerSidebar = (state = initialState, action) => {
-    if (action.type === 'ADD_FRIEND') {
+    if (action.type === ADD_FRIEND) {
         return state;
     } else {
         return state;
     }
 };
 
-export const addFriendActionCreator = () => ({type: 'ADD_FRIEND'});
+// export const addFriendActionCreator = () => ({type: ADD_FRIEND});
 export default reducerSidebar;
