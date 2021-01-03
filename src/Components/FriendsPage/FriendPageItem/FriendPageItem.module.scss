@@ -31,6 +31,22 @@
     border: 2px solid crimson;
     border-radius: 50%;
   }
+
+  .status {
+    color: #FFEFBA;
+    padding: 3px;
+    background-color: tomato;
+    border-radius: 5px;
+  }
+
+  .followed {
+      font: 12px -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+      font-weight: bold;
+      border-radius: 5px;
+     color: yellowgreen;
+      background-color: darkred;
+      padding: 3px;
+  }
 }
 
 @media only screen and (max-width: 798px) {
