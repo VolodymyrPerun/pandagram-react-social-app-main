@@ -1,14 +1,22 @@
 import {connect} from 'react-redux';
 import FriendPageItem from "./FriendPageItem";
+import {followActionCreator, unfollowActionCreator, setFriendsActionCreator} from "../../../redux/friends-reducer";
 
 
-let mapStateToProps = (state) => {
-
+let mapStateToProps = state => {
     return {
-        sidebar: state.sidebar
+        friendsPage: state.friendsPage
     }
 };
 
-const FriendPageItemContainer = connect(mapStateToProps)(FriendPageItem);
+let mapDispatchToProps = dispatch => {
+    return {
+        follow: userId => dispatch(followActionCreator(userId)),
+        unfollow: userId => dispatch(unfollowActionCreator(userId)),
+        setFriends: friend => dispatch(setFriendsActionCreator(friend))
+    }
+}
+
+const FriendPageItemContainer = connect(mapStateToProps, mapDispatchToProps)(FriendPageItem);
 
 export default FriendPageItemContainer;
