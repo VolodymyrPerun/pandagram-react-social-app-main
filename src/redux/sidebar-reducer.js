@@ -1,4 +1,4 @@
-const ADD_FRIEND = 'ADD-FRIEND';
+let SET_FRIENDS = 'SET_FRIENDS';
 
 let current_date = new Date();
 let cmm = current_date.getFullYear();
@@ -126,15 +126,15 @@ let initialState = {
 };
 
 const reducerSidebar = (state = initialState, action) => {
-    if (action.type === ADD_FRIEND) {
+    if (action.type === SET_FRIENDS) {
         return {
             ...state,
-            friends: [...state.friends]
+            friends: [...state.friends, ...action.friends]
         };
     } else {
         return state;
     }
 };
 
-export const addFriendActionCreator = () => ({type: ADD_FRIEND});
+export const setFriendsActionCreator = (friends) => ({type: SET_FRIENDS, friends});
 export default reducerSidebar;
