@@ -6,11 +6,11 @@ const Post = (props) => {
         <div>
             <div className={style.item}>
                 <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRgF7L_dl09HCJP27UJ_o6e67UFFqZP3jUEq6JCNwOZfCX-etnZA&s"
+                    src="https://cdn4.iconfinder.com/data/icons/business-and-office-circle-flat-vol-4/100/chat__comment__message__user__avatar-512.png"
                     alt="avatar"/>
-                {props.message}
+                <p>{props.message}</p>
                 <div>
-                    <span>like: {props.likesCount}</span>
+                    <p className={style.like}>likes: <span> {props.likesCount}</span></p>
                 </div>
             </div>
         </div>

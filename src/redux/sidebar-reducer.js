@@ -96,7 +96,7 @@ let initialState = {
             address: 'Hell Kitchen'
         },
         {
-            id: '16669',
+            id: '11',
             avatar: 'https://cdn2.iconfinder.com/data/icons/super-hero/154/ironman-head-comics-avatar-iron-man-512.png',
             name: 'Iron',
             surname: 'Man',
@@ -105,7 +105,7 @@ let initialState = {
             address: 'Hell Kitchen'
         },
         {
-            id: '16669',
+            id: '12',
             avatar: 'https://cdn2.iconfinder.com/data/icons/super-hero/154/ironman-head-comics-avatar-iron-man-512.png',
             name: 'Iron',
             surname: 'Man',
@@ -113,16 +113,28 @@ let initialState = {
             sex: 'man',
             address: 'Hell Kitchen'
         },
+        {
+            id: '13',
+            avatar: 'https://cdn1.iconfinder.com/data/icons/ninja-things-1/720/ninja-background-512.png',
+            name: 'Igor',
+            surname: 'Kynitskyi',
+            age: '31',
+            sex: 'man',
+            address: 'Lviv'
+        },
     ],
 };
 
 const reducerSidebar = (state = initialState, action) => {
     if (action.type === ADD_FRIEND) {
-        return state;
+        return {
+            ...state,
+            friends: [...state.friends]
+        };
     } else {
         return state;
     }
 };
 
-// export const addFriendActionCreator = () => ({type: ADD_FRIEND});
+export const addFriendActionCreator = () => ({type: ADD_FRIEND});
 export default reducerSidebar;

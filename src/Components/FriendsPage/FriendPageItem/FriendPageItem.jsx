@@ -22,7 +22,7 @@ const FriendPageItem = (props) => {
     props = props.sidebar;
 
     let friendName = props.friends.map((el) =>
-        <FriendsData id={el.id} avatar={el.avatar} name={el.name} surname={el.surname}
+        <FriendsData key={el.id} id={el.id} avatar={el.avatar} name={el.name} surname={el.surname}
                      age={el.age} address={el.address} sex={el.sex}/>);
 
     return (

@@ -30,7 +30,7 @@ const FriendItem = (props) => {
 
     props = (state.friends).filter(filterByID);
     let friendName = props.map((name, id) =>
-        <FriendsData id={id.id} name={name.name}/>);
+        <FriendsData key={id} id={id.id} name={name.name}/>);
 
     return (
         <div className={style.friend}>

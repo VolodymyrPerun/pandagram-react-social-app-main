@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0 15px;
+    background-color: snow;
 
     ul, li, a {
         list-style: none;
@@ -8,8 +9,6 @@ body {
         color: black;
     }
 }
-
-
 
 .app-wrapper {
     display: grid;
