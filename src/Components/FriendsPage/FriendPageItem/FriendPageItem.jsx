@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './FriendPageItem.module.scss';
-import * as axios from 'axios';
+// import * as axios from 'axios';
 import avatar from '../../../assets/images/avatar_black.jpg';
 
 
