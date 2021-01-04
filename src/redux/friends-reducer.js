@@ -21,7 +21,7 @@ let initialState = {
         {
             id: '2',
             avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa1asMeOM9Iu5WLkWA2zBSt880Byy0pNsBep-mzrmuMdn3ciYJ&s',
-            status: 'Don1t talk to much!',
+            status: 'Don`t talk to much!',
             name: 'Vasil',
             surname: 'Limych',
             age: '20',
