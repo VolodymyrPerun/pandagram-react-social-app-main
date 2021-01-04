@@ -2,9 +2,10 @@ import React from 'react';
 import style from './Dialogs.module.scss';
 import DialogsItem from "./DialogItem/DialogItem";
 import MessagesItem from "./Message/Message";
+import dialogsPhoto from "../../assets/images/dialogsPhoto.png"
 
 
-const Dialogs = (props) => {
+const Dialogs = props => {
 
     let state = props.messagesPage;
 
@@ -28,7 +29,7 @@ const Dialogs = (props) => {
     return (
         <div className={style.dialogs}>
             <img
-                src="https://images.pexels.com/photos/263532/pexels-photo-263532.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                src={dialogsPhoto}
                 alt="img"/>
             <div>
                 {DialogItem}

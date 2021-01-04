@@ -2,18 +2,18 @@ import React from 'react';
 import style from './FriendItem.module.scss';
 
 
-const FriendsData = (props) => {
+const FriendsData = props => {
     return (
         <div>
             <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZO6BA3-NDBA6PD0KwkmHUrrQiSqip4PZSBbVE4GGmhxIPfVM&s"
+                src={props.avatar}
                 alt="avatar"/>
             <div>{props.name}</div>
         </div>
     )
 };
 
-const FriendItem = (props) => {
+const FriendItem = props => {
 
     let state = props.sidebar;
 
@@ -29,8 +29,8 @@ const FriendItem = (props) => {
     }
 
     props = (state.friends).filter(filterByID);
-    let friendName = props.map((name, id) =>
-        <FriendsData key={id} id={id.id} name={name.name}/>);
+    let friendName = props.map((f) =>
+        <FriendsData key={f.id} id={f.id} avatar={f.avatar} name={f.name}/>);
 
     return (
         <div className={style.friend}>

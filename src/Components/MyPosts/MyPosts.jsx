@@ -4,7 +4,7 @@ import Post from './Post/Post';
 import TextareaAutosize from 'react-textarea-autosize';
 
 
-const MyPosts = (props) => {
+const MyPosts = props => {
 
     let state = props.profilePage;
 
@@ -23,7 +23,6 @@ const MyPosts = (props) => {
     };
 
     return (
-
         <div className={style.postsBlock}>
             <h3>M<span>y </span>p<span>o</span>s<span>t</span>s</h3>
             <div className={style.item}>

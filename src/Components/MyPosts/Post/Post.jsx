@@ -1,12 +1,13 @@
 import React from 'react';
 import style from './Post.module.scss';
+import chatCommentMessageUserAvatar from '../../../assets/images/chat__comment__message__user__avatar.png'
 
-const Post = (props) => {
+const Post = props => {
     return (
         <div>
             <div className={style.item}>
                 <img
-                    src="https://cdn4.iconfinder.com/data/icons/business-and-office-circle-flat-vol-4/100/chat__comment__message__user__avatar-512.png"
+                    src={chatCommentMessageUserAvatar}
                     alt="avatar"/>
                 <p>{props.message}</p>
                 <div>
