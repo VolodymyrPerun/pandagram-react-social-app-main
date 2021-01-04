@@ -8,6 +8,7 @@
     "@typescript-eslint/eslint-plugin": "1.6.0",
     "@typescript-eslint/parser": "1.6.0",
     "autoprefixer": "^9.8.6",
+    "axios": "^0.21.1",
     "babel-eslint": "10.0.1",
     "babel-jest": "^24.8.0",
     "babel-loader": "8.0.5",
@@ -86,6 +87,7 @@
   "devDependencies": {
     "node-sass": "^4.14.1",
     "sass-loader": "^7.1.0",
+    "@types/axios": "^0.14.0",
     "@types/react-redux": "^7.1.14",
     "@types/redux": "^3.6.0",
     "@types/react-router-dom": "^5.1.7",

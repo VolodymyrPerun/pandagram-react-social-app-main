@@ -5,7 +5,7 @@ import {followActionCreator, unfollowActionCreator, setFriendsActionCreator} fro
 
 let mapStateToProps = state => {
     return {
-        friendsPage: state.friendsPage
+        friends: state.friendsPage.friends
     }
 };
 
@@ -13,10 +13,8 @@ let mapDispatchToProps = dispatch => {
     return {
         follow: userId => dispatch(followActionCreator(userId)),
         unfollow: userId => dispatch(unfollowActionCreator(userId)),
-        setFriends: friend => dispatch(setFriendsActionCreator(friend))
+        setFriends: friends => dispatch(setFriendsActionCreator(friends))
     }
-}
+};
 
-const FriendPageItemContainer = connect(mapStateToProps, mapDispatchToProps)(FriendPageItem);
-
-export default FriendPageItemContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(FriendPageItem);

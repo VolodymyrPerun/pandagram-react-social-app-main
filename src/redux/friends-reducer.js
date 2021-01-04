@@ -10,7 +10,7 @@ let initialState = {
         {
             id: '1',
             avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6rJRc-gmleY_o81I3XqmRUdcbi1cSVA9-0pginDiZcjatHaTm&s',
-            status: 'Hi dude!',
+            status: 'What`s app!',
             name: 'Andriy',
             surname: 'Limych',
             age: '25',
@@ -21,7 +21,7 @@ let initialState = {
         {
             id: '2',
             avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa1asMeOM9Iu5WLkWA2zBSt880Byy0pNsBep-mzrmuMdn3ciYJ&s',
-            status: 'Hi dude!',
+            status: 'Don1t talk to much!',
             name: 'Vasil',
             surname: 'Limych',
             age: '20',
@@ -32,7 +32,7 @@ let initialState = {
         {
             id: '3',
             avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSwuUp8Er5oGVlTHuRSa3HOuRK6hCrynJwCz-ILNE4H8v_TXV56Q&s',
-            status: 'Hi dude!',
+            status: 'In node we trust!',
             name: 'Victor',
             surname: 'Fazer',
             age: '22',
@@ -43,7 +43,7 @@ let initialState = {
         {
             id: '4',
             avatar: 'https://cdn1.iconfinder.com/data/icons/ninja-things-1/720/ninja-background-512.png',
-            status: 'Hi dude!',
+            status: 'PHP the best!',
             name: 'Igor',
             surname: 'Kynitskyi',
             age: '31',
@@ -54,7 +54,7 @@ let initialState = {
         {
             id: '5',
             avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1sg0fDxi7hWNevmAoJaYwYtporvxrqM8cG_btxW1ToTOAZM92&s',
-            status: 'Hi dude!',
+            status: 'Like to play games!',
             name: 'Nazar',
             surname: 'Boxxyy',
             age: '21',
@@ -65,7 +65,7 @@ let initialState = {
         {
             id: '6',
             avatar: 'https://cdn3.iconfinder.com/data/icons/women-avatars/314/1-01-512.png',
-            status: 'Hi dude!',
+            status: 'Need some money everytime!',
             name: 'Irina',
             surname: 'Perun',
             age: '29',
@@ -76,7 +76,7 @@ let initialState = {
         {
             id: '7',
             avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYXbvq8MhynRVIMj8WtRXSLN5quNTSBoFl4hvmKplLPo5qnsTE&s',
-            status: 'Hi dude!',
+            status: 'Can i take a phone please!',
             name: 'Veronica',
             surname: 'Perun',
             age: '7',
@@ -87,7 +87,7 @@ let initialState = {
         {
             id: '8',
             avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ83cbwqMY5hTwutBPn1X0xSHMTSqezfVVXM_ZQ3C6nQo48boOd&s',
-            status: 'Hi dude!',
+            status: 'Lets go drink...!',
             name: 'Marian',
             surname: 'Sorokivsky',
             age: '33',
@@ -98,7 +98,7 @@ let initialState = {
         {
             id: '9',
             avatar: 'https://cdn.iconscout.com/icon/free/png-256/ninja-1659490-1410012.png',
-            status: 'Hi dude!',
+            status: 'I am at astral...',
             name: 'Eugene',
             surname: 'Kozoriz',
             age: '32',
@@ -109,7 +109,7 @@ let initialState = {
         {
             id: '10',
             avatar: 'https://cdn2.iconfinder.com/data/icons/super-hero/154/ironman-head-comics-avatar-iron-man-512.png',
-            status: 'Hi dude!',
+            status: 'Saving the world...',
             name: 'Iron',
             surname: 'Man',
             age: cmm - 1986,
@@ -132,21 +132,16 @@ let initialState = {
 };
 
 const reducerFriends = (state = initialState, action) => {
-    switch (action.type === FOLLOW) {
+    switch (action.type) {
         case FOLLOW:
             return {
                 ...state,
-                friends: state.friends.map(f => {
-                    if (f.id === action.userId) {
-                        return {...f, following: true}
-                    }
-                    return f;
-                })
+                friends: state.friends.map(f => f.id === action.userId ? {...f, followed: true} : f)
             };
         case UNFOLLOW:
             return {
                 ...state,
-                friends: state.friends.map(f => f.id === action.userId ? {...f, following: false} : f)
+                friends: state.friends.map(f => f.id === action.userId ? {...f, followed: false} : f)
             };
         case SET_FRIENDS:
             return {
@@ -158,7 +153,7 @@ const reducerFriends = (state = initialState, action) => {
     }
 };
 
-export const followActionCreator = (userId) => ({type: FOLLOW, userId});
-export const unfollowActionCreator = (userId) => ({type: UNFOLLOW, userId});
-export const setFriendsActionCreator = (friends) => ({type: SET_FRIENDS, friends});
+export const followActionCreator = userId => ({type: FOLLOW, userId});
+export const unfollowActionCreator = userId => ({type: UNFOLLOW, userId});
+export const setFriendsActionCreator = friends => ({type: SET_FRIENDS, friends});
 export default reducerFriends;
