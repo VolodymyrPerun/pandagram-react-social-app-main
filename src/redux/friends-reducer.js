@@ -1,6 +1,7 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 let SET_FRIENDS = 'SET_FRIENDS';
+let SET_PAGE_SIZE = 'SET_PAGE_SIZE';
 let SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 let SET_TOTAL_FRIENDS_COUNT = 'SET_TOTAL_FRIENDS_COUNT'
 
@@ -142,8 +143,8 @@ let initialState = {
         //     followed: true
         // }
     ],
-    pageSize: 40,
-    totalFriendsCount: 1,
+    pageSize: 10,
+    totalFriendsCount: 0,
     currentPage: 1
 };
 
@@ -174,6 +175,11 @@ const reducerFriends = (state = initialState, action) => {
                 ...state,
                 totalFriendsCount: action.totalFriendsCount
             }
+        case SET_PAGE_SIZE:
+            return {
+                ...state,
+                pageSize: action.pageSize
+            }
         default:
             return state;
     }
@@ -182,6 +188,7 @@ const reducerFriends = (state = initialState, action) => {
 export const followActionCreator = userId => ({type: FOLLOW, userId});
 export const unfollowActionCreator = userId => ({type: UNFOLLOW, userId});
 export const setFriendsActionCreator = friends => ({type: SET_FRIENDS, friends});
+export const setPageSizeActionCreator = pageSize => ({type: SET_PAGE_SIZE, pageSize});
 export const setCurrentPageActionCreator = currentPage => ({type: SET_CURRENT_PAGE, currentPage});
 export const setTotalFriendsCountActionCreator = totalFriendsCount => ({
     type: SET_TOTAL_FRIENDS_COUNT,

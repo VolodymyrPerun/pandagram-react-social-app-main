@@ -5,7 +5,7 @@ import {
     unfollowActionCreator,
     setCurrentPageActionCreator,
     setFriendsActionCreator,
-    setTotalFriendsCountActionCreator
+    setTotalFriendsCountActionCreator, setPageSizeActionCreator
 } from "../../../redux/friends-reducer";
 
 
@@ -24,6 +24,7 @@ let mapDispatchToProps = dispatch => {
         unfollow: userId => dispatch(unfollowActionCreator(userId)),
         setFriends: friends => dispatch(setFriendsActionCreator(friends)),
         setCurrentPage: page => dispatch(setCurrentPageActionCreator(page)),
+        setPageSize: pageSize => dispatch(setPageSizeActionCreator(pageSize)),
         setTotalFriendsCount: totalFriendsCount => dispatch(setTotalFriendsCountActionCreator(totalFriendsCount))
     }
 };

@@ -10,6 +10,62 @@ body {
     }
 }
 
+.btn {
+    width: 140px;
+    height: 50px;
+    display: inline-block;
+    border: none;
+    color: #fff;
+    text-decoration: none;
+    background-color: #F0650D;
+    padding: 5px 5px;
+    font-size: 20px;
+    font-family: raleway-grid, sans-serif;
+    font-weight: 800;
+    letter-spacing: 3px;
+    border-radius: 2px;
+    text-align: center;
+    position: relative;
+    outline: none;
+    transition: background-color .1s ease;
+    cursor: pointer;
+
+    &::after {
+        transition: background-color .2s ease;
+        position: absolute;
+        content: '';
+        height: 4px;
+        bottom: 0;
+        width: 100%;
+        background-color: darken(#F0650D, 50%);
+        opacity: .18;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        left: 0;
+    }
+
+    &:focus, &:hover {
+        text-decoration: none;
+        color: #fff
+    }
+
+    &:hover {
+        background-color: lighten(#F0650D, 5%);
+
+        &::after {
+            opacity: .22
+        }
+    }
+
+    &:active {
+        background-color: darken(#F0650D, 5%);
+
+        &::after {
+            opacity: .32
+        }
+    }
+}
+
 .app-wrapper {
     display: grid;
     width: 80vw;
