@@ -1,26 +1,72 @@
 import React from 'react';
 import style from './FriendPageItem.module.scss';
-// import * as axios from 'axios';
+import * as axios from 'axios';
 import avatar from '../../../assets/images/avatar_black.jpg';
+import {Pagination} from 'antd';
 
 
-const FriendPageItem = props => {
-    // if (props.friends.length === 0) {
-    //     axios.get("https://social-network.samuraijs.com/api/1.0/users")
-    //         .then(response => {
-    //         props.setFriends(response.data.items);
-    //     });
-    // }
-    //
-    // console.log(props);
+class FriendPageItem extends React.Component {
 
-    return (
-        <>
+    componentDidMount() {
+        if (this.props.friends.length === 0) {
+            axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+                .then(response => {
+                    this.props.setFriends(response.data.items);//.items
+                    this.props.setTotalFriendsCount(response.data.totalCount);//.totalCount
+                });
+        }
+    };
+
+    onPageChange(pageNumber) {
+        this.props.setCurrentPage(pageNumber);
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
+            .then(response => {
+                this.props.setFriends(response.data.items);//.items
+            });
+    }
+
+    render() {
+
+        let pagesCount = Math.ceil(Math.floor(this.props.totalFriendsCount / this.props.pageSize));
+
+        let pages = [];
+        for (let i = 1; i <= pagesCount; i++) {
+            pages.push(i);
+        }
+
+        function itemRender(current, type, originalElement) {
+            if (type === 'prev') {
+                return <a>Previous</a>;
+            }
+            if (type === 'next') {
+                return <a>Next</a>;
+            }
+            return originalElement;
+        }
+
+
+        return <>
+            <div>
+                <Pagination className={style.pagination}
+                            total={this.props.totalFriendsCount}
+                            current={pages.length}
+                            itemRender={itemRender}
+                            onChange={(p) => {
+                                this.onPageChange(p)
+                            }}
+                />
+
+                <div className={style.pagesCounter}>Maximum Friends on one page: {this.props.pageSize}</div>
+            </div>
             {
-                props.friends.map((f) =>
+                this.props.friends.map((f) =>
                     < div key={f.id}>
                         <div className={style.friendItem}>
-                            <img src={f.avatar != null ? f.avatar: avatar} alt='img'/>
+                            <img src={f.photos.large != null ? f.photos.large : avatar}//photos
+                                //<img src={f.user_photo != null ?
+                                //'http://localhost:5000/' +
+                                // f.user_photo : avatar}
+                                 alt='img'/>
                             <div className={style.info}>
                                 <div className={style.status}>{f.status}</div>
                                 <div>{'Name:  ' + f.name}</div>
@@ -30,9 +76,9 @@ const FriendPageItem = props => {
                                 <div>{'Address:  ' + f.address}</div>
                                 <div className={style.followed}>
                                     {f.followed ? <button onClick={() => {
-                                        props.unfollow(f.id)
+                                        this.props.unfollow(f.userId)//id
                                     }}>Unfollow</button> : <button onClick={() => {
-                                        props.follow(f.id)
+                                        this.props.follow(f.userId)//id
                                     }}>Follow</button>}
                                 </div>
                             </div>
@@ -40,8 +86,20 @@ const FriendPageItem = props => {
                     </div>
                 )
             }
+            <div>
+                <Pagination className={style.pagination}
+                            total={this.props.totalFriendsCount}
+                            current={pages.length}
+                            itemRender={itemRender}
+                            onChange={(p) => {
+                                this.onPageChange(p)
+                            }}
+                />
+
+                <div className={style.pagesCounter}>Maximum Friends on one page: {this.props.pageSize}</div>
+            </div>
         </>
-    )
-};
+    };
+}
 
 export default FriendPageItem;

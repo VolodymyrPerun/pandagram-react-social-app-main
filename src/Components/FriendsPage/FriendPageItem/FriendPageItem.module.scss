@@ -1,3 +1,70 @@
+.pagination {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+
+  svg {
+    display: none !important;
+  }
+
+  li {
+    color: #c21500;
+    display: flex;
+    justify-items: center;
+    padding: 0;
+    max-height: 35px;
+    margin-right: 10px;
+
+    &:nth-child(10), &:nth-child(11), &:nth-child(12) {
+      display: none !important;
+    }
+
+    a {
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 5px;
+      color: #dfd087;
+      background-color: black;
+      opacity: 0.8;
+      -ms-user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      user-select: none;
+
+      &:active {
+        color: black;
+        background-color: #dfd087;
+        border: none;
+      }
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.pagesCounter {
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: column;
+  padding: 15px 0;
+  width: 99%;
+  border-radius: 15px;
+  background: black;
+  justify-content: flex-start;
+  color: tomato;
+  font: 25px "Matura MT Script Capitals", sans-serif;
+  opacity: 0.8;
+}
+
 .friendItem {
   background: url("https://images.pexels.com/photos/1227511/pexels-photo-1227511.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500") no-repeat center/ cover;
   display: flex;
@@ -34,6 +101,7 @@
   }
 
   .status {
+    max-width: 400px;
     color: darkgoldenrod;
     padding: 3px;
     background-color: aliceblue;
@@ -41,6 +109,7 @@
     border-radius: 5px;
     position: relative;
     margin: 15px 10px;
+    word-break: break-word;
 
     &:after {
       content: '';
