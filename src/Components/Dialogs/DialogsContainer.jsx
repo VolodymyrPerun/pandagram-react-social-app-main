@@ -3,20 +3,20 @@ import Dialogs from "./Dialogs";
 import {connect} from 'react-redux';
 
 
-let mapStateToProps = (state) => {
+let mapStateToProps = state => {
 
     return {
         messagesPage: state.messagesPage
     }
 };
 
-let mapDispatchToProps = (dispatch) => {
+let mapDispatchToProps = dispatch => {
 
     return {
         addMessage: () => {
             dispatch(addMessageActionCreator());
         },
-        onMessageChange: (text) => {
+        onMessageChange: text => {
             dispatch(updateNewMessageActionCreator(text));
         }
     }

@@ -11,7 +11,7 @@ import FriendsPage from "./Components/FriendsPage/FriendsPage";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 
 
-const App = (props) => {
+const App = props => {
 
     return (
         <div className='app-wrapper'>
