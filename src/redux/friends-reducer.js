@@ -145,7 +145,8 @@ let initialState = {
     ],
     pageSize: 10,
     totalFriendsCount: 1,
-    currentPage: 1
+    currentPage: 1,
+    isFetching: false
 };
 
 const reducerFriends = (state = initialState, action) => {

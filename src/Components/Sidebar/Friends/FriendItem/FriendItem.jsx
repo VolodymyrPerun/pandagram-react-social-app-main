@@ -1,8 +1,10 @@
 import React from 'react';
 import style from './FriendItem.module.scss';
+import avatar from "../../../../assets/images/panda_avatar2.gif";
 
 
 const FriendsData = props => {
+
     return (
         <div>
             <img
@@ -14,8 +16,8 @@ const FriendsData = props => {
 };
 
 const FriendItem = props => {
-
-    let state = props.sidebar;
+    console.log(props);
+    // let state = props.sidebar;
 
     // eslint-disable-next-line no-unused-vars
     let invalidEntries = 0;
@@ -28,9 +30,13 @@ const FriendItem = props => {
         return false;
     }
 
-    props = (state.friends).filter(filterByID);
+    props = (props.friends).filter(filterByID);
     let friendName = props.map((f) =>
-        <FriendsData key={f.id} id={f.id} avatar={f.avatar} name={f.name}/>);
+        <FriendsData key={f.id}
+                     id={f.id}
+                     avatar={f.photos.large != null ? f.photos.large : avatar}//photos
+                     name={f.name}
+        />);
 
     return (
         <div className={style.friend}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './FriendPageItem.module.scss';
 import '../../../App.scss'
-import avatar from '../../../assets/images/avatar_black.jpg';
+import avatar from '../../../assets/images/panda_avatar2.gif';
 import {Pagination} from 'antd';
 import {FastBackwardFilled, FastForwardFilled} from '@ant-design/icons';
 

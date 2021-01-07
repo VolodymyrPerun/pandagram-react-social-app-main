@@ -5,7 +5,7 @@ import {setFriendsActionCreator} from "../../../../redux/friends-reducer";
 
 let mapStateToProps = state => {
     return {
-        sidebar: state.sidebar
+        friends: state.friendsPage.friends,
     }
 };
 
@@ -15,6 +15,5 @@ let mapDispatchToProps = dispatch => {
     }
 };
 
-const FriendItemContainer = connect(mapStateToProps, mapDispatchToProps)(FriendItem);
 
-export default FriendItemContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(FriendItem);

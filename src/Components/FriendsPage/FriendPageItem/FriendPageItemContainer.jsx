@@ -10,6 +10,7 @@ import {
     setPageSizeActionCreator
 } from "../../../redux/friends-reducer";
 import FriendPageItem from "./FriendPageItem";
+import isFetching  from "../../../assets/images/isFetching.gif";
 
 
 class FriendPageItemContainer extends React.Component {
@@ -30,7 +31,6 @@ class FriendPageItemContainer extends React.Component {
     };
 
     onPageChangeMaxFriendsTo50 = pageSize => {
-        this.props.setPageSize(pageSize);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=50`)
             .then(response => {
                 this.props.setPageSize(pageSize = 50);
@@ -47,7 +47,6 @@ class FriendPageItemContainer extends React.Component {
     };
 
     onPageChangeMaxFriendsTo10 = pageSize => {
-        this.props.setPageSize(pageSize);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=10`)
             .then(response => {
                 this.props.setPageSize(pageSize = 10);
@@ -56,17 +55,22 @@ class FriendPageItemContainer extends React.Component {
     };
 
     render() {
-        return <FriendPageItem totalFriendsCount={this.props.totalFriendsCount}
-                               pageSize={this.props.pageSize}
-                               currentPage={this.props.currentPage}
-                               onPageChange={this.onPageChange}
-                               friends={this.props.friends}
-                               follow={this.props.follow}
-                               unfollow={this.props.unfollow}
-                               onPageChangeMaxFriendsTo50={this.onPageChangeMaxFriendsTo50}
-                               onPageChangeMaxFriendsTo20={this.onPageChangeMaxFriendsTo20}
-                               onPageChangeMaxFriendsTo10={this.onPageChangeMaxFriendsTo10}
-        />
+        return <>
+
+            {this.props.isFetching ? <img src={isFetching}/> : null}
+            <FriendPageItem totalFriendsCount={this.props.totalFriendsCount}
+                            pageSize={this.props.pageSize}
+                            currentPage={this.props.currentPage}
+                            onPageChange={this.onPageChange}
+                            friends={this.props.friends}
+                            follow={this.props.follow}
+                            unfollow={this.props.unfollow}
+                            isFetching={this.props.isFetching}
+                            onPageChangeMaxFriendsTo50={this.onPageChangeMaxFriendsTo50}
+                            onPageChangeMaxFriendsTo20={this.onPageChangeMaxFriendsTo20}
+                            onPageChangeMaxFriendsTo10={this.onPageChangeMaxFriendsTo10}
+            />
+        </>
     }
 }
 
@@ -75,7 +79,8 @@ let mapStateToProps = state => {
         friends: state.friendsPage.friends,
         pageSize: state.friendsPage.pageSize,
         totalFriendsCount: state.friendsPage.totalFriendsCount,
-        currentPage: state.friendsPage.currentPage
+        currentPage: state.friendsPage.currentPage,
+        isFetching: state.friendsPage.isFetching,
     }
 };
 

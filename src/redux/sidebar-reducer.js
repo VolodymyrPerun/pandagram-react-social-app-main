@@ -126,15 +126,16 @@ let initialState = {
 };
 
 const reducerSidebar = (state = initialState, action) => {
-    if (action.type === SET_FRIENDS) {
-        return {
-            ...state,
-            friends: [...state.friends, ...action.friends]
-        };
-    } else {
-        return state;
+    switch (action.type) {
+        case SET_FRIENDS:
+            return {
+                ...state,
+                friends: [...action.friends]
+            }
+        default:
+            return state;
     }
 };
 
-export const setFriendsActionCreator = (friends) => ({type: SET_FRIENDS, friends});
+export const setFriendsActionCreator = friends => ({type: SET_FRIENDS, friends});
 export default reducerSidebar;

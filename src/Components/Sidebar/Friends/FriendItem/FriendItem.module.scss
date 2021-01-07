@@ -1,25 +1,35 @@
 .friend {
-    text-align: center;
-    color: wheat;
-    font: 65% "Matura MT Script Capitals", sans-serif;
-    display: flex;
-    justify-content: space-around;
-    justify-items: center;
-    padding-bottom: 10px;
+  word-break: break-word;
+  word-wrap: break-word;
+  text-align: center;
+  color: wheat;
+  font: 9px "Matura MT Script Capitals", sans-serif;
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  padding-bottom: 10px;
 
-    img{
-        max-width: 70%;
-        border: 2px solid crimson;
-        border-radius: 50%;
-    }
+
+  img {
+    height: 30px;
+    width: 30px;
+    max-width: 30px;
+    max-height: 30px;
+    border: 2px solid crimson;
+    border-radius: 50%;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
 }
 
 @media only screen and (max-width: 798px) {
-    .friend {
-        font-size: 35%;
+  .friend {
+    font-size: 7px;
+    flex-direction: column;
 
-        img{
-            max-width: 60%;
-        }
+    img {
+      height: 20px;
+      width: 20px;
     }
+  }
 }
