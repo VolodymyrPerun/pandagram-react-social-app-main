@@ -7,7 +7,7 @@ const Sidebar = () => {
     return (
         <div className={style.sidebar}>
             <NavBar/>
-            <Friends />
+            <Friends/>
         </div>
     )
 };
