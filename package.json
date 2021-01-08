@@ -6,7 +6,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.3.0",
     "antd": "^4.10.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "browserslist": "^4.16.1",
     "classnames": "^2.2.6",
     "node-sass": "^4.14.1",
