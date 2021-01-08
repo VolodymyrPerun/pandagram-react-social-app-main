@@ -5,8 +5,8 @@ let SET_PAGE_SIZE = 'SET_PAGE_SIZE';
 let SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 let SET_TOTAL_FRIENDS_COUNT = 'SET_TOTAL_FRIENDS_COUNT';
 
-let current_date = new Date();
-let cmm = current_date.getFullYear();
+// let current_date = new Date();
+// let cmm = current_date.getFullYear();
 
 let initialState = {
     friends: [

@@ -13,7 +13,6 @@ let mapDispatchToProps = dispatch => {
     return {
         setFriends: friends => dispatch(setFriendsActionCreator(friends))
     }
-
 };
 
 const FriendCountContainer = connect(mapStateToProps, mapDispatchToProps)(FriendsCount);

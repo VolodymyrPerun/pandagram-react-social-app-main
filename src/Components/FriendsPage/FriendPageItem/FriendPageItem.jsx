@@ -12,10 +12,10 @@ const FriendPageItem = props => {
 
     function itemRender(current, type, originalElement) {
         if (type === 'prev') {
-            return <a><FastBackwardFilled/></a>;
+            return <button><FastBackwardFilled/></button>;
         }
         if (type === 'next') {
-            return <a><FastForwardFilled/></a>;
+            return <button><FastForwardFilled/></button>;
         }
         return originalElement;
     }

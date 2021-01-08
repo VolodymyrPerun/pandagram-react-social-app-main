@@ -16,9 +16,6 @@ const FriendsData = props => {
 };
 
 const FriendItem = props => {
-    console.log(props);
-    // let state = props.sidebar;
-
     // eslint-disable-next-line no-unused-vars
     let invalidEntries = 0;
 

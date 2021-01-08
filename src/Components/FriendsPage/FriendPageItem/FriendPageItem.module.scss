@@ -12,7 +12,8 @@
     max-height: 35px;
     margin-right: 10px;
 
-    a {
+    a, button {
+      outline: none;
       cursor: pointer;
       font-size: 15px;
       font-weight: bold;

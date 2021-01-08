@@ -57,7 +57,7 @@ class FriendPageItemContainer extends React.Component {
     render() {
         return <>
 
-            {this.props.isFetching ? <img src={isFetching}/> : null}
+            {this.props.isFetching ? <img alt="preloader" src={isFetching}/> : null}
             <FriendPageItem totalFriendsCount={this.props.totalFriendsCount}
                             pageSize={this.props.pageSize}
                             currentPage={this.props.currentPage}
