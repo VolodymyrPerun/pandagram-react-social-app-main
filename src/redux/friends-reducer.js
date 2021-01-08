@@ -144,7 +144,7 @@ let initialState = {
         // }
     ],
     pageSize: 10,
-    totalFriendsCount: 1,
+    totalFriendsCount: 0,
     currentPage: 1,
     isFetching: false
 };
