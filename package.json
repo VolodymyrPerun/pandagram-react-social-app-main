@@ -37,9 +37,9 @@
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 3 safari version"
     ]
   },
   "devDependencies": {
@@ -52,7 +52,6 @@
     "@types/redux": "^3.6.0",
     "@node-sass/node-module-importer": "^1.2.3",
     "@node-sass/cdn-importer": "^1.0.0",
-    "gh-pages": "^2.1.1",
     "react-test-renderer": "^16.8.6"
   }
 }
