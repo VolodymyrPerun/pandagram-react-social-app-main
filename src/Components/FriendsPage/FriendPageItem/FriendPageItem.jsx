@@ -2,8 +2,8 @@ import React from 'react';
 import style from './FriendPageItem.module.scss';
 import '../../../App.scss'
 import avatar from '../../../assets/images/panda_avatar2.gif';
-import {Pagination} from 'antd';
-import {FastBackwardFilled, FastForwardFilled} from '@ant-design/icons';
+import {Pagination, Spin} from 'antd';
+import {FastBackwardFilled, FastForwardFilled, LoadingOutlined} from '@ant-design/icons';
 
 
 const FriendPageItem = props => {
@@ -20,9 +20,9 @@ const FriendPageItem = props => {
         return originalElement;
     }
 
-
     return <>
         <div>
+
             <Pagination className={style.pagination}
                         total={pagesCount}
                         itemRender={itemRender}
@@ -50,28 +50,35 @@ const FriendPageItem = props => {
         </div>
         {
             props.friends.map((f) =>
-                < div key={f.id}>
+                <div key={f.id}>
                     <div className={style.friendItem}>
-                        <img src={f.photos.large != null ? f.photos.large : avatar}//photos
-                            //<img src={f.user_photo != null ?
-                            //'http://localhost:5000/' +
-                            // f.user_photo : avatar}
-                             alt='img'/>
-                        <div className={style.info}>
-                            <div className={style.status}>{f.status}</div>
-                            <div>{'Name:  ' + f.name}</div>
-                            <div>{'Surname:  ' + f.surname}</div>
-                            <div>{'Age:  ' + f.age}</div>
-                            <div>{'Sex:  ' + f.sex}</div>
-                            <div>{'Address:  ' + f.address}</div>
-                            <div className={style.followed}>
-                                {f.followed ? <button onClick={() => {
-                                    props.unfollow(f.userId)//id
-                                }}>Unfollow</button> : <button onClick={() => {
-                                    props.follow(f.userId)//id
-                                }}>Follow</button>}
-                            </div>
-                        </div>
+                        {props.isFetching ?
+                            <img src={f.photos.small != null ? f.photos.small : avatar} alt='spin'/> :
+                            <img src={f.photos.large != null ? f.photos.large : avatar} alt='img'/>}
+                        {props.isFetching ?
+                            <div className={style.info}>
+                                <Spin className={style.tip}
+                                      tip="Loading..."
+                                      indicator={<LoadingOutlined
+                                          className={`${style.spinner} ${style.spinnerBig}`}
+                                          spin/>}
+                                />
+                            </div> :
+                            <div className={style.info}>
+                                <div className={style.status}>{f.status}</div>
+                                <div>{'Name:  ' + f.name}</div>
+                                <div>{'Surname:  ' + f.surname}</div>
+                                <div>{'Age:  ' + f.age}</div>
+                                <div>{'Sex:  ' + f.sex}</div>
+                                <div>{'Address:  ' + f.address}</div>
+                                <div className={style.followed}>
+                                    {f.followed ? <button onClick={() => {
+                                        props.unfollow(f.userId)//id
+                                    }}>Unfollow</button> : <button onClick={() => {
+                                        props.follow(f.userId)//id
+                                    }}>Follow</button>}
+                                </div>
+                            </div>}
                     </div>
                 </div>
             )

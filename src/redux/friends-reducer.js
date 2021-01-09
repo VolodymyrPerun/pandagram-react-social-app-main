@@ -4,6 +4,7 @@ let SET_FRIENDS = 'SET_FRIENDS';
 let SET_PAGE_SIZE = 'SET_PAGE_SIZE';
 let SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 let SET_TOTAL_FRIENDS_COUNT = 'SET_TOTAL_FRIENDS_COUNT';
+let TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 
 // let current_date = new Date();
 // let cmm = current_date.getFullYear();
@@ -146,7 +147,7 @@ let initialState = {
     pageSize: 10,
     totalFriendsCount: 0,
     currentPage: 1,
-    isFetching: false
+    isFetching: true
 };
 
 const reducerFriends = (state = initialState, action) => {
@@ -181,6 +182,11 @@ const reducerFriends = (state = initialState, action) => {
                 ...state,
                 pageSize: action.pageSize
             }
+        case TOGGLE_IS_FETCHING:
+            return {
+                ...state,
+                isFetching: action.isFetching
+            }
         default:
             return state;
     }
@@ -195,4 +201,5 @@ export const setTotalFriendsCountActionCreator = totalFriendsCount => ({
     type: SET_TOTAL_FRIENDS_COUNT,
     totalFriendsCount
 });
+export const setIsFetchingActionCreator = isFetching => ({type: TOGGLE_IS_FETCHING, isFetching});
 export default reducerFriends;

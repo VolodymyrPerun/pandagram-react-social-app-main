@@ -7,16 +7,22 @@ import {
     setCurrentPageActionCreator,
     setFriendsActionCreator,
     setTotalFriendsCountActionCreator,
-    setPageSizeActionCreator
+    setPageSizeActionCreator,
+    setIsFetchingActionCreator
 } from "../../../redux/friends-reducer";
 import FriendPageItem from "./FriendPageItem";
-import isFetching  from "../../../assets/images/isFetching.gif";
+import {Spin} from 'antd';
+import {LoadingOutlined} from '@ant-design/icons';
+import style from './FriendPageItem.module.scss';
 
 
 class FriendPageItemContainer extends React.Component {
+
     componentDidMount() {
+        this.props.setIsFetchingActionCreator(true);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
             .then(response => {
+                this.props.setIsFetchingActionCreator(false);
                 this.props.setFriends(response.data.items);
                 this.props.setTotalFriendsCount(response.data.totalCount);
             });
@@ -24,40 +30,53 @@ class FriendPageItemContainer extends React.Component {
 
     onPageChange = pageNumber => {
         this.props.setCurrentPage(pageNumber);
+        this.props.setIsFetchingActionCreator(true);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
             .then(response => {
+                this.props.setIsFetchingActionCreator(false);
                 this.props.setFriends(response.data.items);//.items
             });
     };
 
     onPageChangeMaxFriendsTo50 = pageSize => {
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=50`)
+        this.props.setPageSize(pageSize = 50);
+        this.props.setIsFetchingActionCreator(true);
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${pageSize}`)
             .then(response => {
-                this.props.setPageSize(pageSize = 50);
+                this.props.setIsFetchingActionCreator(false);
                 this.props.setFriends(response.data.items);//.items
             });
     };
 
     onPageChangeMaxFriendsTo20 = pageSize => {
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=20`)
+        this.props.setPageSize(pageSize = 20);
+        this.props.setIsFetchingActionCreator(true);
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${pageSize}`)
             .then(response => {
-                this.props.setPageSize(pageSize = 20);
+                this.props.setIsFetchingActionCreator(false);
                 this.props.setFriends(response.data.items);//.items
             });
     };
 
     onPageChangeMaxFriendsTo10 = pageSize => {
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=10`)
+        this.props.setPageSize(pageSize = 10);
+        this.props.setIsFetchingActionCreator(true);
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${pageSize}`)
             .then(response => {
-                this.props.setPageSize(pageSize = 10);
+                this.props.setIsFetchingActionCreator(false);
                 this.props.setFriends(response.data.items);//.items
             });
     };
 
+
     render() {
         return <>
 
-            {this.props.isFetching ? <img alt="preloader" src={isFetching}/> : null}
+            {this.props.isFetching ?
+                <Spin className={style.tip}
+                      tip="Loading..."
+                      indicator={<LoadingOutlined className={style.spinner} spin/>}
+                /> : null}
             <FriendPageItem totalFriendsCount={this.props.totalFriendsCount}
                             pageSize={this.props.pageSize}
                             currentPage={this.props.currentPage}
@@ -84,16 +103,14 @@ let mapStateToProps = state => {
     }
 };
 
-let mapDispatchToProps = dispatch => {
-    return {
-        follow: userId => dispatch(followActionCreator(userId)),
-        unfollow: userId => dispatch(unfollowActionCreator(userId)),
-        setFriends: friends => dispatch(setFriendsActionCreator(friends)),
-        setCurrentPage: pageNumber => dispatch(setCurrentPageActionCreator(pageNumber)),
-        setPageSize: pageSize => dispatch(setPageSizeActionCreator(pageSize)),
-        setTotalFriendsCount: totalFriendsCount => dispatch(setTotalFriendsCountActionCreator(totalFriendsCount))
-    }
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(FriendPageItemContainer);
+export default connect(mapStateToProps,
+    {
+        follow: followActionCreator,
+        unfollow: unfollowActionCreator,
+        setFriends: setFriendsActionCreator,
+        setCurrentPage: setCurrentPageActionCreator,
+        setPageSize: setPageSizeActionCreator,
+        setTotalFriendsCount: setTotalFriendsCountActionCreator,
+        setIsFetchingActionCreator: setIsFetchingActionCreator
+    })(FriendPageItemContainer);
 
