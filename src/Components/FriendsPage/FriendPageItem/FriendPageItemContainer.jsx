@@ -2,13 +2,13 @@ import React from "react";
 import * as axios from "axios";
 import {connect} from 'react-redux';
 import {
-    followActionCreator,
-    unfollowActionCreator,
-    setCurrentPageActionCreator,
-    setFriendsActionCreator,
-    setTotalFriendsCountActionCreator,
-    setPageSizeActionCreator,
-    setIsFetchingActionCreator
+    follow,
+    unfollow,
+    setCurrentPage,
+    setFriends,
+    setTotalFriendsCount,
+    setPageSize,
+    setIsFetching
 } from "../../../redux/friends-reducer";
 import FriendPageItem from "./FriendPageItem";
 import {Spin} from 'antd';
@@ -19,10 +19,10 @@ import style from './FriendPageItem.module.scss';
 class FriendPageItemContainer extends React.Component {
 
     componentDidMount() {
-        this.props.setIsFetchingActionCreator(true);
+        this.props.setIsFetching(true);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
             .then(response => {
-                this.props.setIsFetchingActionCreator(false);
+                this.props.setIsFetching(false);
                 this.props.setFriends(response.data.items);
                 this.props.setTotalFriendsCount(response.data.totalCount);
             });
@@ -30,40 +30,40 @@ class FriendPageItemContainer extends React.Component {
 
     onPageChange = pageNumber => {
         this.props.setCurrentPage(pageNumber);
-        this.props.setIsFetchingActionCreator(true);
+        this.props.setIsFetching(true);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
             .then(response => {
-                this.props.setIsFetchingActionCreator(false);
+                this.props.setIsFetching(false);
                 this.props.setFriends(response.data.items);//.items
             });
     };
 
     onPageChangeMaxFriendsTo50 = pageSize => {
         this.props.setPageSize(pageSize = 50);
-        this.props.setIsFetchingActionCreator(true);
+        this.props.setIsFetching(true);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${pageSize}`)
             .then(response => {
-                this.props.setIsFetchingActionCreator(false);
+                this.props.setIsFetching(false);
                 this.props.setFriends(response.data.items);//.items
             });
     };
 
     onPageChangeMaxFriendsTo20 = pageSize => {
         this.props.setPageSize(pageSize = 20);
-        this.props.setIsFetchingActionCreator(true);
+        this.props.setIsFetching(true);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${pageSize}`)
             .then(response => {
-                this.props.setIsFetchingActionCreator(false);
+                this.props.setIsFetching(false);
                 this.props.setFriends(response.data.items);//.items
             });
     };
 
     onPageChangeMaxFriendsTo10 = pageSize => {
         this.props.setPageSize(pageSize = 10);
-        this.props.setIsFetchingActionCreator(true);
+        this.props.setIsFetching(true);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${pageSize}`)
             .then(response => {
-                this.props.setIsFetchingActionCreator(false);
+                this.props.setIsFetching(false);
                 this.props.setFriends(response.data.items);//.items
             });
     };
@@ -105,12 +105,12 @@ let mapStateToProps = state => {
 
 export default connect(mapStateToProps,
     {
-        follow: followActionCreator,
-        unfollow: unfollowActionCreator,
-        setFriends: setFriendsActionCreator,
-        setCurrentPage: setCurrentPageActionCreator,
-        setPageSize: setPageSizeActionCreator,
-        setTotalFriendsCount: setTotalFriendsCountActionCreator,
-        setIsFetchingActionCreator: setIsFetchingActionCreator
+        follow,
+        unfollow,
+        setFriends,
+        setCurrentPage,
+        setPageSize,
+        setTotalFriendsCount,
+        setIsFetching
     })(FriendPageItemContainer);
 

@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import FriendsCount from "./FriendsCount";
-import {setFriendsActionCreator} from "../../../redux/friends-reducer";
+import {setFriends} from "../../../redux/friends-reducer";
 
 
 let mapStateToProps = state => {
@@ -11,7 +11,7 @@ let mapStateToProps = state => {
 };
 let mapDispatchToProps = dispatch => {
     return {
-        setFriends: friends => dispatch(setFriendsActionCreator(friends))
+        setFriends: friends => dispatch(setFriends(friends))
     }
 };
 

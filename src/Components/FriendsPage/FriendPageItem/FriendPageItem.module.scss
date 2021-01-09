@@ -26,14 +26,10 @@
       -webkit-user-select: none;
       user-select: none;
 
-      &:active {
+      &:active, &:focus, &:hover  {
         color: black;
         background-color: #dfd087;
         border: none;
-      }
-
-      &:hover {
-        transform: scale(1.2);
       }
     }
 
@@ -44,7 +40,7 @@
 }
 
 .spinner {
-  font-size: 54px;
+  font-size: 44px;
   color: #F0650D;
   padding: 10px;
 }
@@ -58,7 +54,6 @@
   font-weight: 400;
   color: #F0650D;
 }
-
 
 .pagesCounter {
   display: flex;
@@ -85,6 +80,7 @@
   border: 4px solid chocolate;
   border-radius: 15px;
   margin: 10px 10px 10px 0;
+  z-index: 1;
 
   .info {
     display: flex;
@@ -101,12 +97,23 @@
   }
 
   img {
+    align-items: center;
+    align-self: center;
     height: 200px;
     width: 200px;
-    max-height: 200px;
-    max-width: 200px;
+    max-height: 250px;
+    max-width: 250px;
     border: 2px solid crimson;
     border-radius: 50%;
+    transition: 0.7s ease;
+
+
+    &:hover, &:focus{
+      height: 250px;
+      width: 250px;
+      border-radius: 15px;
+      z-index: 2;
+    }
   }
 
   .status {

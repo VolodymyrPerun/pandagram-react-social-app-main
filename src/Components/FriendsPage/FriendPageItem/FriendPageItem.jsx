@@ -1,7 +1,8 @@
 import React from 'react';
 import style from './FriendPageItem.module.scss';
 import '../../../App.scss'
-import avatar from '../../../assets/images/panda_avatar2.gif';
+import avatar from '../../../assets/images/panda_avatar.gif';
+import avatarSmall from '../../../assets/images/panda_avatar_small.gif'
 import {Pagination, Spin} from 'antd';
 import {FastBackwardFilled, FastForwardFilled, LoadingOutlined} from '@ant-design/icons';
 
@@ -24,6 +25,7 @@ const FriendPageItem = props => {
         <div>
 
             <Pagination className={style.pagination}
+                        activeClassName={style.active}
                         total={pagesCount}
                         itemRender={itemRender}
                         showLessItems={true}
@@ -53,8 +55,8 @@ const FriendPageItem = props => {
                 <div key={f.id}>
                     <div className={style.friendItem}>
                         {props.isFetching ?
-                            <img src={f.photos.small != null ? f.photos.small : avatar} alt='spin'/> :
-                            <img src={f.photos.large != null ? f.photos.large : avatar} alt='img'/>}
+                            <img src={f.photos.small != null ? f.photos.small : avatarSmall} alt='avatar'/> :
+                            <img src={f.photos.large != null ? f.photos.large : avatar} alt='avatar'/>}
                         {props.isFetching ?
                             <div className={style.info}>
                                 <Spin className={style.tip}

@@ -18,8 +18,6 @@ const App = props => {
             <Header/>
             <Sidebar/>
             <div className='app-wrapper-content'>
-                <Route exact path='/' render={() =>
-                    <Profile/>}/>
                 <Route path='/dialogs' render={() =>
                     <DialogsContainer/>}/>
                 <Route path='/profile' render={() =>

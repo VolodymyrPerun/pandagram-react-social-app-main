@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './FriendItem.module.scss';
-import avatar from "../../../../assets/images/panda_avatar2.gif";
+import avatarSmall from "../../../../assets/images/panda_avatar_small.gif";
 
 
 const FriendsData = props => {
@@ -31,7 +31,7 @@ const FriendItem = props => {
     let friendName = props.map((f) =>
         <FriendsData key={f.id}
                      id={f.id}
-                     avatar={f.photos.large != null ? f.photos.large : avatar}//photos
+                     avatar={f.photos.small != null ? f.photos.small : avatarSmall}//photos
                      name={f.name}
         />);
 

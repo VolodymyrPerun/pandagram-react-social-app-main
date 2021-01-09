@@ -192,14 +192,14 @@ const reducerFriends = (state = initialState, action) => {
     }
 };
 
-export const followActionCreator = userId => ({type: FOLLOW, userId});
-export const unfollowActionCreator = userId => ({type: UNFOLLOW, userId});
-export const setFriendsActionCreator = friends => ({type: SET_FRIENDS, friends});
-export const setPageSizeActionCreator = pageSize => ({type: SET_PAGE_SIZE, pageSize});
-export const setCurrentPageActionCreator = currentPage => ({type: SET_CURRENT_PAGE, currentPage});
-export const setTotalFriendsCountActionCreator = totalFriendsCount => ({
+export const follow = userId => ({type: FOLLOW, userId});
+export const unfollow = userId => ({type: UNFOLLOW, userId});
+export const setFriends = friends => ({type: SET_FRIENDS, friends});
+export const setPageSize = pageSize => ({type: SET_PAGE_SIZE, pageSize});
+export const setCurrentPage = currentPage => ({type: SET_CURRENT_PAGE, currentPage});
+export const setTotalFriendsCount = totalFriendsCount => ({
     type: SET_TOTAL_FRIENDS_COUNT,
     totalFriendsCount
 });
-export const setIsFetchingActionCreator = isFetching => ({type: TOGGLE_IS_FETCHING, isFetching});
+export const setIsFetching = isFetching => ({type: TOGGLE_IS_FETCHING, isFetching});
 export default reducerFriends;
