@@ -14,8 +14,9 @@ import {withRouter} from "react-router-dom";
 class ProfileContainer extends React.Component {
 
     componentDidMount() {
+        console.log(this.props);
         this.props.setIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${this.props.match.params.userId != null ? this.props.match.params.userId : 2}`)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${this.props.match.params.userId != null ? this.props.match.params.userId : 13934}`)
             .then(res => {
                 this.props.setIsFetching(false);
                 this.props.setUserProfile(res.data);

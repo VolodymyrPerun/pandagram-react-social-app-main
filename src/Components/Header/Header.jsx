@@ -3,7 +3,6 @@ import style from './Header.module.scss';
 import logo from '../../assets/images/logo.png'
 import {NavLink} from "react-router-dom";
 import {UserOutlined, UserAddOutlined} from '@ant-design/icons';
-import bg from "../../assets/images/file_item_bg.png";
 
 const Header = props => {
     return (

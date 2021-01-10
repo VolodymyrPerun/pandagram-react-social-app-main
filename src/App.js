@@ -3,7 +3,7 @@ import './App.scss';
 import Settings from "./Components/Settings/Settings";
 import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
-import {Route} from "react-router-dom";
+import {Route, Redirect} from "react-router-dom";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import FriendsPage from "./Components/FriendsPage/FriendsPage";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
@@ -18,6 +18,8 @@ const App = props => {
             <HeaderContainer/>
             <Sidebar/>
             <div className='app-wrapper-content'>
+                <Route exact path='/'
+                       render={() => <Redirect to={"/profile"}/>}/>
                 <Route path='/dialogs' render={() =>
                     <DialogsContainer/>}/>
                 <Route path='/profile/:userId?' render={() =>

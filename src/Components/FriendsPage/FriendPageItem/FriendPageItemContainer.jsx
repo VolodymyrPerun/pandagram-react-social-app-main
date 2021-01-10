@@ -20,7 +20,10 @@ class FriendPageItemContainer extends React.Component {
 
     componentDidMount() {
         this.props.setIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`,
+            {
+                withCredentials: true
+            })
             .then(response => {
                 this.props.setIsFetching(false);
                 this.props.setFriends(response.data.items);
@@ -31,7 +34,10 @@ class FriendPageItemContainer extends React.Component {
     onPageChange = pageNumber => {
         this.props.setCurrentPage(pageNumber);
         this.props.setIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`,
+            {
+                withCredentials: true
+            })
             .then(response => {
                 this.props.setIsFetching(false);
                 this.props.setFriends(response.data.items);//.items
@@ -41,7 +47,10 @@ class FriendPageItemContainer extends React.Component {
     onPageChangeMaxFriendsTo50 = pageSize => {
         this.props.setPageSize(pageSize = 50);
         this.props.setIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${pageSize}`)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${pageSize}`,
+            {
+                withCredentials: true
+            })
             .then(response => {
                 this.props.setIsFetching(false);
                 this.props.setFriends(response.data.items);//.items
@@ -51,7 +60,10 @@ class FriendPageItemContainer extends React.Component {
     onPageChangeMaxFriendsTo20 = pageSize => {
         this.props.setPageSize(pageSize = 20);
         this.props.setIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${pageSize}`)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${pageSize}`,
+            {
+                withCredentials: true
+            })
             .then(response => {
                 this.props.setIsFetching(false);
                 this.props.setFriends(response.data.items);//.items
@@ -61,7 +73,10 @@ class FriendPageItemContainer extends React.Component {
     onPageChangeMaxFriendsTo10 = pageSize => {
         this.props.setPageSize(pageSize = 10);
         this.props.setIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${pageSize}`)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${pageSize}`,
+            {
+                withCredentials: true
+            })
             .then(response => {
                 this.props.setIsFetching(false);
                 this.props.setFriends(response.data.items);//.items
