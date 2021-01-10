@@ -71,7 +71,6 @@ class FriendPageItemContainer extends React.Component {
 
     render() {
         return <>
-
             {this.props.isFetching ?
                 <Spin className={style.tip}
                       tip="Loading..."

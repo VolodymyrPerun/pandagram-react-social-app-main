@@ -2,9 +2,11 @@ import React from 'react';
 import style from './FriendPageItem.module.scss';
 import '../../../App.scss'
 import avatar from '../../../assets/images/panda_avatar.gif';
+import bg from '../../../assets/images/file_item_bg.png'
 import avatarSmall from '../../../assets/images/panda_avatar_small.gif'
 import {Pagination, Spin} from 'antd';
 import {FastBackwardFilled, FastForwardFilled, LoadingOutlined} from '@ant-design/icons';
+import {NavLink} from 'react-router-dom';
 
 
 const FriendPageItem = props => {
@@ -25,7 +27,6 @@ const FriendPageItem = props => {
         <div>
 
             <Pagination className={style.pagination}
-                        activeClassName={style.active}
                         total={pagesCount}
                         itemRender={itemRender}
                         showLessItems={true}
@@ -38,7 +39,7 @@ const FriendPageItem = props => {
                         }}
             />
 
-            <div className={style.pagesCounter}>Maximum Friends on one page {props.pageSize}. Click to change:
+            <div className={style.pagesCounter}>Max Friends on one page {props.pageSize}. Click to change:
                 <button className='btn' style={{width: '50px', height: '40px'}} onClick={() => {
                     props.onPageChangeMaxFriendsTo10()
                 }}>{10}</button>
@@ -53,50 +54,49 @@ const FriendPageItem = props => {
         {
             props.friends.map((f) =>
                 <div key={f.id}>
-                    <div className={style.friendItem}>
-                        {props.isFetching ?
-                            <img src={f.photos.small != null ? f.photos.small : avatarSmall} alt='avatar'/> :
-                            <img src={f.photos.large != null ? f.photos.large : avatar} alt='avatar'/>}
-                        {props.isFetching ?
-                            <div className={style.info}>
-                                <Spin className={style.tip}
-                                      tip="Loading..."
-                                      indicator={<LoadingOutlined
-                                          className={`${style.spinner} ${style.spinnerBig}`}
-                                          spin/>}
-                                />
-                            </div> :
-                            <div className={style.info}>
-                                <div className={style.status}>{f.status}</div>
-                                <div>{'Name:  ' + f.name}</div>
-                                <div>{'Surname:  ' + f.surname}</div>
-                                <div>{'Age:  ' + f.age}</div>
-                                <div>{'Sex:  ' + f.sex}</div>
-                                <div>{'Address:  ' + f.address}</div>
-                                <div className={style.followed}>
-                                    {f.followed ? <button onClick={() => {
-                                        props.unfollow(f.userId)//id
-                                    }}>Unfollow</button> : <button onClick={() => {
-                                        props.follow(f.userId)//id
-                                    }}>Follow</button>}
+                    <NavLink to={'/profile/' + f.id}>
+                        <div className={style.friendItem}
+                             style={{
+                                 backgroundImage: `url(${bg})`,
+                                 backgroundPosition: 'center',
+                                 backgroundSize: 'cover',
+                                 backgroundRepeat: 'no-repeat'
+                             }}>
+
+                            {props.isFetching ?
+                                <img src={f.photos.small != null ? f.photos.small : avatarSmall} alt='avatar'/> :
+                                <img src={f.photos.large != null ? f.photos.large : avatar} alt='avatar'/>}
+                            {props.isFetching ?
+                                <div className={style.info}>
+                                    <Spin className={style.tip}
+                                          tip="Loading..."
+                                          indicator={<LoadingOutlined
+                                              className={`${style.spinner} ${style.spinnerBig}`}
+                                              spin/>}
+                                    />
+                                </div> :
+                                <div className={style.info}>
+                                    <div className={style.status}>{f.status}</div>
+                                    <div><span>Name: </span>{f.name != null ? f.name : 'sorry, it`s my business...'}
+                                    </div>
+                                    <div>
+                                        <span>Nickname: </span>{f.uniqueUrlName ? f.uniqueUrlName : 'sorry, it`s a secret...'}
+                                    </div>
+                                    <div className={style.followed}>
+                                        {f.followed ? <button onClick={() => {
+                                            props.unfollow(f.userId)//id
+                                        }}>Unfollow</button> : <button onClick={() => {
+                                            props.follow(f.userId)//id
+                                        }}>Follow</button>}
+                                    </div>
                                 </div>
-                            </div>}
-                    </div>
+                            }
+                        </div>
+                    </NavLink>
                 </div>
             )
         }
         <div>
-            <div className={style.pagesCounter}>Maximum Friends on one page {props.pageSize}. Click to change:
-                <button className='btn' style={{width: '50px', height: '40px'}} onClick={() => {
-                    props.onPageChangeMaxFriendsTo10()
-                }}>{10}</button>
-                <button className='btn' style={{width: '50px', height: '40px'}} onClick={() => {
-                    props.onPageChangeMaxFriendsTo20()
-                }}>{20}</button>
-                <button className='btn' style={{width: '50px', height: '40px'}} onClick={() => {
-                    props.onPageChangeMaxFriendsTo50()
-                }}>{50}</button>
-            </div>
 
             <Pagination className={style.pagination}
                         total={pagesCount}
@@ -111,7 +111,17 @@ const FriendPageItem = props => {
                         }}
             />
 
-            <div className={style.pagesCounter}>Maximum Friends on one page: {props.pageSize}</div>
+            <div className={style.pagesCounter}>MaxFriends on one page {props.pageSize}. Click to change:
+                <button className='btn' style={{width: '50px', height: '40px'}} onClick={() => {
+                    props.onPageChangeMaxFriendsTo10()
+                }}>{10}</button>
+                <button className='btn' style={{width: '50px', height: '40px'}} onClick={() => {
+                    props.onPageChangeMaxFriendsTo20()
+                }}>{20}</button>
+                <button className='btn' style={{width: '50px', height: '40px'}} onClick={() => {
+                    props.onPageChangeMaxFriendsTo50()
+                }}>{50}</button>
+            </div>
         </div>
     </>
 };

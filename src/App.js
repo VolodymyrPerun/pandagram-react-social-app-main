@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.scss';
 import Header from "./Components/Header/Header";
-import Profile from "./Components/Profile/Profile";
 import Settings from "./Components/Settings/Settings";
 import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
@@ -9,6 +8,7 @@ import {Route} from "react-router-dom";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import FriendsPage from "./Components/FriendsPage/FriendsPage";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
+import ProfileContainer from "./Components/Profile/ProfileContainer";
 
 
 const App = props => {
@@ -21,7 +21,7 @@ const App = props => {
                 <Route path='/dialogs' render={() =>
                     <DialogsContainer/>}/>
                 <Route path='/profile' render={() =>
-                    <Profile/>}/>
+                    <ProfileContainer/>}/>
                 <Route path='/news' render={() => <News/>}/>
                 <Route path='/music' render={() => <Music/>}/>
                 <Route path='/settings' render={() => <Settings/>}/>

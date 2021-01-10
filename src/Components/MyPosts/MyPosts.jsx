@@ -2,6 +2,7 @@ import React from 'react';
 import style from './MyPosts.module.scss';
 import Post from './Post/Post';
 import TextareaAutosize from 'react-textarea-autosize';
+import bg from "../../assets/images/file_item_bg_white.png";
 
 
 const MyPosts = props => {
@@ -25,7 +26,13 @@ const MyPosts = props => {
     return (
         <div className={style.postsBlock}>
             <h3>M<span>y </span>p<span>o</span>s<span>t</span>s</h3>
-            <div className={style.item}>
+            <div className={style.item}
+                 style={{
+                     backgroundImage: `url(${bg})`,
+                     backgroundPosition: 'center',
+                     backgroundSize: 'cover',
+                     backgroundRepeat: 'no-repeat'
+                 }}>>
                 <div>
                     <TextareaAutosize
                         className={style.textarea}
@@ -52,7 +59,13 @@ const MyPosts = props => {
                     <button className={style.btn} onClick={addPost}>Add Post</button>
                 </div>
             </div>
-            <div className={style.posts}>
+            <div className={style.posts}
+                 style={{
+                     backgroundImage: `url(${bg})`,
+                     backgroundPosition: 'center',
+                     backgroundSize: 'cover',
+                     backgroundRepeat: 'no-repeat'
+                 }}>>
                 {postElements}
             </div>
         </div>

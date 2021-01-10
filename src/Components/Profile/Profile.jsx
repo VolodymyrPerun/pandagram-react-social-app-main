@@ -2,11 +2,13 @@ import React from 'react';
 import ProfileInfo from "../Profile/ProfileInfo/ProfileInfo";
 import MyPostsContainer from "../MyPosts/MyPostsContainer";
 
-const Profile = () => {
-
+const Profile = props => {
     return (
         <div className='app-wrapper-content'>
-            <ProfileInfo/>
+            <ProfileInfo
+                profile={props.profile}
+                isFetching={props.isFetching}
+            />
             <MyPostsContainer/>
         </div>
     )

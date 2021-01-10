@@ -18,17 +18,17 @@
       font-size: 15px;
       font-weight: bold;
       padding: 5px;
-      color: #dfd087;
-      background-color: black;
+      color: black;
+      background-color: #dfd087;
       opacity: 0.8;
       -ms-user-select: none;
       -moz-user-select: none;
       -webkit-user-select: none;
       user-select: none;
 
-      &:active, &:focus, &:hover  {
-        color: black;
-        background-color: #dfd087;
+      &:active, &:focus, &:hover {
+        color: #dfd087;
+        background-color: black;
         border: none;
       }
     }
@@ -70,7 +70,6 @@
 }
 
 .friendItem {
-  background: url("https://images.pexels.com/photos/1227511/pexels-photo-1227511.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500") no-repeat center/ cover;
   display: flex;
   text-align: center;
   flex-direction: row;
@@ -83,6 +82,8 @@
   z-index: 1;
 
   .info {
+    min-width: 300px;
+    max-width: 450px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -92,8 +93,12 @@
     border-radius: 15px;
     background: black;
     color: tomato;
-    font: 25px "Matura MT Script Capitals", sans-serif;
+    font: 20px "Matura MT Script Capitals", -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     opacity: 0.8;
+
+    span {
+      color: orange;
+    }
   }
 
   img {
@@ -105,10 +110,10 @@
     max-width: 250px;
     border: 2px solid crimson;
     border-radius: 50%;
-    transition: 0.7s ease;
+    transition: 1s ease;
 
 
-    &:hover, &:focus{
+    &:hover, &:focus {
       height: 250px;
       width: 250px;
       border-radius: 15px;
