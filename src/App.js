@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.scss';
-import Header from "./Components/Header/Header";
 import Settings from "./Components/Settings/Settings";
 import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
@@ -9,13 +8,14 @@ import Sidebar from "./Components/Sidebar/Sidebar";
 import FriendsPage from "./Components/FriendsPage/FriendsPage";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
+import HeaderContainer from "./Components/Header/HeaderContainer";
 
 
 const App = props => {
 
     return (
         <div className='app-wrapper'>
-            <Header/>
+            <HeaderContainer/>
             <Sidebar/>
             <div className='app-wrapper-content'>
                 <Route path='/dialogs' render={() =>

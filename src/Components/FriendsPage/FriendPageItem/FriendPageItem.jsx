@@ -77,8 +77,7 @@ const FriendPageItem = props => {
                                 </div> :
                                 <div className={style.info}>
                                     <div className={style.status}>{f.status}</div>
-                                    <div><span>Name: </span>{f.name != null ? f.name : 'sorry, it`s my business...'}
-                                    </div>
+                                    <div><span>Name: </span>{f.name != null ? f.name : 'sorry, it`s my business...'}</div>
                                     <div>
                                         <span>Nickname: </span>{f.uniqueUrlName ? f.uniqueUrlName : 'sorry, it`s a secret...'}
                                     </div>

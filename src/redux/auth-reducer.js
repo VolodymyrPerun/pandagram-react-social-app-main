@@ -6,7 +6,8 @@ let SET_USER_DATA = 'SET_USER_DATA';
 let initialState = {
     usrId: null,
     email: null,
-    login: null
+    login: null,
+    isAuth: false
 };
 
 const reducerAuth = (state = initialState, action) => {
@@ -24,7 +25,8 @@ const reducerAuth = (state = initialState, action) => {
         case SET_USER_DATA:
             return {
                 ...state,
-                ...action.data
+                ...action.data,
+                isAuth: true
             }
         default:
             return state;
@@ -33,6 +35,6 @@ const reducerAuth = (state = initialState, action) => {
 
 export const follow = userId => ({type: FOLLOW, userId});
 export const unfollow = userId => ({type: UNFOLLOW, userId});
-export const setUserData = (userId, email, login) => ({type: SET_USER_DATA, data: {userId, email, login}});
+export const setAuthUserData = (userId, email, login) => ({type: SET_USER_DATA, data: {userId, email, login}});
 
 export default reducerAuth;
