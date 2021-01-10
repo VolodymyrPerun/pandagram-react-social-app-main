@@ -3,6 +3,7 @@ import style from './Header.module.scss';
 import logo from '../../assets/images/logo.png'
 import {NavLink} from "react-router-dom";
 import {UserOutlined, UserAddOutlined} from '@ant-design/icons';
+import bg from "../../assets/images/file_item_bg.png";
 
 const Header = props => {
     return (
@@ -14,7 +15,8 @@ const Header = props => {
             </div>
             <div className={style.loginBlock}>
                 {props.isAuth ?
-                    <div className={style.itemLink}>{props.login }</div> :
+                    <div className={style.itemLink}
+                         style={{top: '0', fontSize: '9px !important', padding: '0'}}>{props.login}</div> :
                     <NavLink activeClassName={style.active} className={style.itemLink} to={'/login'}>
                         <UserOutlined/>Login
                     </NavLink>}

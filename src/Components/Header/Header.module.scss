@@ -71,14 +71,28 @@
 }
 
 @media only screen and (max-width: 550px) {
-  .itemLink {
-    padding: 0 !important;
-    left: -10px !important;
-    font-size: 10px !important;
-    margin-right: 4px !important;
+  .header {
+    grid-template-columns: 1fr 1fr 2fr;
 
-    &:hover, &:focus, &:active, .active {
+    .logoText {
+      margin-top: 5.5px !important;
+
+      p {
+        width: 80% !important;
+        font-size: 13px !important;
+        padding: 5px !important;
+      }
+    }
+
+    .itemLink {
+      padding: 0 !important;
+      left: -10px !important;
       font-size: 10px !important;
+      margin-right: 4px !important;
+
+      &:hover, &:focus, &:active, .active {
+        font-size: 10px !important;
+      }
     }
   }
 }
