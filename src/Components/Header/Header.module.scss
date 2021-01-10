@@ -1,6 +1,6 @@
 .header {
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-columns: 1fr 2fr 1fr;
   grid-area: header;
   background: #c21500; /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #ffc500, #c21500); /* Chrome 10-25, Safari 5.1-6 */
@@ -8,13 +8,13 @@
   z-index: 1;
 
   .logo {
-    grid-column: 1 / 2;
+    grid-column: 1;
     width: 92px;
     padding-right: 10px;
   }
 
   .logoText {
-    grid-column: 2 / 3;
+    grid-column: 2;
     margin-top: -11.5px;
 
     p {
@@ -22,7 +22,7 @@
       font-size: 20px;
       font-weight: bold;
       text-transform: uppercase;
-      width: 100%;
+      width: 80%;
       color: whitesmoke;
       border-radius: 10px;
       text-align: center;
@@ -33,6 +33,52 @@
       span {
         color: goldenrod
       }
+    }
+  }
+
+  .loginBlock {
+    grid-column: 3;
+    text-align: center;
+    align-self: center;
+
+    .itemLink {
+      font-size: 13px;
+      font-family: raleway-grid, sans-serif;
+      font-weight: 400;
+      position: relative;
+      top: -10px;
+      color: #dfd087;
+      margin-right: 15px;
+      transition: 0.5s;
+
+      &:hover, &:focus, &:active, .active {
+        color: #fdf497;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .itemLink {
+    font-size: 11px !important;
+    margin-right: 5px !important;
+
+    &:hover, &:focus, &:active, .active {
+      font-size: 11px !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .itemLink {
+    padding: 0 !important;
+    left: -10px !important;
+    font-size: 10px !important;
+    margin-right: 4px !important;
+
+    &:hover, &:focus, &:active, .active {
+      font-size: 10px !important;
     }
   }
 }

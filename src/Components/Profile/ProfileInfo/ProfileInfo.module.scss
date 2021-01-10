@@ -34,7 +34,7 @@
       padding: 15px;
       border-radius: 15px;
       background: black;
-      font: 20px "Matura MT Script Capitals",-apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+      font: 20px "Matura MT Script Capitals", -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
       opacity: 0.8;
 
       ul {
@@ -49,6 +49,33 @@
 
           span {
             color: orange;
+
+            svg:nth-child(3) {
+              color: red !important;
+            }
+          }
+
+          .facebook > span > svg {
+            color: #3b5998;
+          }
+
+          .twitter > span > svg {
+            color: #1DA1F2;
+          }
+
+          .instagram > span > svg {
+            color: #fff;
+            background: #d6249f;
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, .25);
+          }
+
+          .youtube > span > svg {
+            color: #FF0000;
+          }
+
+          .github > span > svg {
+            color: #fff;
           }
         }
       }
@@ -64,8 +91,6 @@
       }
     }
   }
-
-
 }
 
 .spinner {

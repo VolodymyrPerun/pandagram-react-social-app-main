@@ -32,7 +32,7 @@ const MyPosts = props => {
                      backgroundPosition: 'center',
                      backgroundSize: 'cover',
                      backgroundRepeat: 'no-repeat'
-                 }}>>
+                 }}>
                 <div>
                     <TextareaAutosize
                         className={style.textarea}
