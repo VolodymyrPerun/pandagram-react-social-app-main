@@ -19,27 +19,13 @@ const reducerFriends = (state = initialState, action) => {
     switch (action.type) {
         case FOLLOW:
             return {
-                // ...state,
-                // friends: state.friends.map(f => f.id === action.id ? {...f, followed: true} : f)
                 ...state,
-                friends: state.friends.map(f => {
-                    if (f.id === action.id) {
-                        return {...f, followed: true}
-                    }
-                    return f;
-                })
+                friends: state.friends.map(f => f.id === action.id ? {...f, followed: true} : f)
             };
         case UNFOLLOW:
             return {
-                // ...state,
-                // friends: state.friends.map(f => f.id === action.id ? {...f, followed: false} : f)
                 ...state,
-                friends: state.friends.map(f => {
-                    if (f.id === action.id) {
-                        return {...f, followed: false}
-                    }
-                    return f;
-                })
+                friends: state.friends.map(f => f.id === action.id ? {...f, followed: false} : f)
             };
         case SET_FRIENDS:
             return {
