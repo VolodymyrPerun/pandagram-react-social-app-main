@@ -15,6 +15,27 @@ export const friendsAPI = {
             .then(response => {
                 return response.data;
             });
+    },
+    unfollow(id) {
+        return instance.delete(`follow/${id}`)
+            .then(response => {
+                return response.data;
+            });
+    },
+    follow(id) {
+        return instance.post(`follow/${id}`)
+            .then(response => {
+                return response.data;
+            });
+    }
+}
+
+export const sidebarAPI = {
+    getSidebarFriends(currentPage = 1, pageSize = 3) {
+    return instance(`users?page=${currentPage}&count=${pageSize}`)
+            .then(response => {
+                return response.data;
+            });
     }
 }
 
@@ -23,7 +44,7 @@ export const authAPI = {
     return instance(`auth/me`)
         .then(response => {
             return response.data;
-        })
+        });
     }
 }
 
@@ -32,23 +53,9 @@ export const profileAPI = {
         return instance(`profile/${userId}`)
             .then(response => {
                 return response.data;
-            })
+            });
     }
 }
 
-// export const followedAPI = {
-//     unfollowUser(id) {
-//         return instance(`follow/${id}`)
-//             .then(response => {
-//                 return response.data;
-//             })
-//     },
-//     followUser(id) {
-//         return instance(`follow/${id}`)
-//             .then(response => {
-//                 return response.data;
-//             })
-//     }
-// }
 
 

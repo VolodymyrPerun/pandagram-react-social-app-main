@@ -1,3 +1,5 @@
+import {friendsAPI} from "../API/API";
+
 let FOLLOW = 'FOLLOW';
 let UNFOLLOW = 'UNFOLLOW';
 let SET_FRIENDS = 'SET_FRIENDS';
@@ -5,6 +7,7 @@ let SET_PAGE_SIZE = 'SET_PAGE_SIZE';
 let SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 let SET_TOTAL_FRIENDS_COUNT = 'SET_TOTAL_FRIENDS_COUNT';
 let TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
+let TOGGLE_IS_FOLLOWING_PROGRESS = 'TOGGLE_IS_FOLLOWING_PROGRESS';
 
 
 let initialState = {
@@ -12,7 +15,8 @@ let initialState = {
     pageSize: 10,
     totalFriendsCount: 0,
     currentPage: 1,
-    isFetching: true
+    isFetching: true,
+    followingInProgress: []
 };
 
 const reducerFriends = (state = initialState, action) => {
@@ -52,6 +56,13 @@ const reducerFriends = (state = initialState, action) => {
                 ...state,
                 isFetching: action.isFetching
             }
+        case TOGGLE_IS_FOLLOWING_PROGRESS:
+            return {
+                ...state,
+                followingInProgress: action.followingInProgress
+                    ? [state.followingInProgress, action.id]
+                    : [state.followingInProgress.filter(id => id !== action.id)]
+            }
         default:
             return state;
     }
@@ -67,4 +78,48 @@ export const setTotalFriendsCount = totalFriendsCount => ({
     totalFriendsCount
 });
 export const setIsFetching = isFetching => ({type: TOGGLE_IS_FETCHING, isFetching});
+export const toggleFollowingInProgress = (followingInProgress, id) => ({
+    type: TOGGLE_IS_FOLLOWING_PROGRESS,
+    followingInProgress,
+    id
+});
+
+export const getFriends = (currentPage, pageSize) => {
+    return dispatch => {
+        dispatch(setIsFetching(true));
+        friendsAPI.getFriends(currentPage, pageSize)
+            .then(data => {
+                dispatch(setIsFetching(false));
+                dispatch(setFriends(data.items));
+                dispatch(setTotalFriendsCount(data.totalCount));
+            });
+    }
+}
+
+export const unfollowToggle = id => {
+    return dispatch => {
+        dispatch(toggleFollowingInProgress(true, id));
+        friendsAPI.unfollow(id)
+            .then(data => {
+                if (data.resultCode === 0) {
+                    dispatch(unfollow(id));
+                }
+                dispatch(toggleFollowingInProgress(false, id));
+            })
+    }
+}
+
+export const followToggle = id => {
+    return dispatch => {
+        dispatch(toggleFollowingInProgress(true, id));
+        friendsAPI.follow(id)
+            .then(data => {
+                if (data.resultCode === 0) {
+                    dispatch(follow(id));
+                }
+                dispatch(toggleFollowingInProgress(false, id));
+            })
+    }
+}
+
 export default reducerFriends;
