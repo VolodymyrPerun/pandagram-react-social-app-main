@@ -6,7 +6,6 @@ import {setAuthUserData, authMe} from "../../redux/auth-reducer";
 class HeaderContainer extends React.Component {
 
     componentDidMount() {
-        console.log(this.props);
         this.props.authMe()
     }
 
@@ -18,7 +17,6 @@ class HeaderContainer extends React.Component {
 }
 
 let mapStateToProps = state => {
-    // console.log(state.auth.login);
     return {
         isAuth: state.auth.isAuth,
         login: state.auth.login

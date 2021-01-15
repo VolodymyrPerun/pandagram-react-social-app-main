@@ -7,6 +7,8 @@ const Profile = props => {
         <div className='app-wrapper-content'>
             <ProfileInfo
                 profile={props.profile}
+                status={props.status}
+                updateUserStatus={props.updateUserStatus}
                 isFetching={props.isFetching}
             />
             <MyPostsContainer/>
