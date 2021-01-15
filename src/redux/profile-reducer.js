@@ -1,9 +1,12 @@
-import {authAPI, profileAPI} from "../API/API";
+import {authAPI} from "../API/authAPI/authAPI";
+import {profileAPI} from "../API/profileAPI/profileAPI";
+
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 let TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 let SET_USER_PROFILE = 'SET-USER-PROFILE';
 let SET_USER_DATA = 'SET_USER_DATA';
+let SET_USER_STATUS = 'SET_USER_STATUS';
 
 let initialState = {
     posts: [
@@ -14,7 +17,8 @@ let initialState = {
     newPostText: 'Hello!!!',
     id: null,
     profile: null,
-    isFetching: true
+    isFetching: true,
+    status: ''
 };
 
 const reducerProfile = (state = initialState, action) => {
@@ -42,13 +46,18 @@ const reducerProfile = (state = initialState, action) => {
             return {
                 ...state,
                 profile: action.profile
-            }
+            };
         case SET_USER_DATA:
             return {
                 ...state,
                 ...action.data,
                 isAuth: true
-            }
+            };
+        case SET_USER_STATUS:
+            return {
+                ...state,
+                status: action.status
+            };
         default:
             return state;
     }
@@ -58,24 +67,39 @@ export const addPostActionCreator = () => ({type: ADD_POST});
 export const updateNewPostActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
 export const setIsFetching = isFetching => ({type: TOGGLE_IS_FETCHING, isFetching});
 export const setUserProfile = profile => ({type: SET_USER_PROFILE, profile});
+export const setStatus = status => ({type: SET_USER_STATUS, status});
 export const setAuthUserData = (login, id, email) => ({type: SET_USER_DATA, data: {login, id, email}});
 
-export const getUserProfile = userId => {
-    return dispatch => {
+export const getUserProfile = userId => dispatch => {
         dispatch(setIsFetching(true));
         authAPI.authMe()
-            .then(data => {
-                if (data.resultCode === 0) {
-                    let {login, id, email} = data.data;
+            .then(res => {
+                if (res.resultCode === 0) {
+                    let {login, id, email} = res.data.data;
                     dispatch(setAuthUserData(login, id, email));
                     profileAPI.getProfile(userId != null ? userId : id)
-                        .then(data => {
+                        .then(res => {
                             dispatch(setIsFetching(false));
-                            dispatch(setUserProfile(data));
+                            dispatch(setUserProfile(res));
                         });
                 }
             });
-    }
+}
+
+export const getUserStatus = userId => dispatch => {
+        profileAPI.getStatus(userId)
+            .then(res => {
+                dispatch(setStatus(res));
+            });
+}
+
+export const updateUserStatus = status => dispatch => {
+        profileAPI.updateStatus(status)
+            .then(res => {
+                if (res.resultCode === 0) {
+                    dispatch(setStatus(res));
+                }
+            });
 }
 
 export default reducerProfile;

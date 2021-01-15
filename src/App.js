@@ -9,9 +9,10 @@ import FriendsPage from "./Components/FriendsPage/FriendsPage";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
 import HeaderContainer from "./Components/Header/HeaderContainer";
+import Login from "./Components/Login/Login";
 
 
-const App = props => {
+const App = () => {
 
     return (
         <div className='app-wrapper'>
@@ -29,6 +30,7 @@ const App = props => {
                 <Route path='/settings' render={() => <Settings/>}/>
                 <Route path='/friendsPage' render={() =>
                     <FriendsPage/>}/>
+                <Route path='/login' render={() => <Login/>}/>
             </div>
         </div>);
 };

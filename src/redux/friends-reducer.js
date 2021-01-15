@@ -1,4 +1,4 @@
-import {friendsAPI} from "../API/API";
+import {friendsAPI} from "../API/friendsAPI/friendsAPI";
 
 let FOLLOW = 'FOLLOW';
 let UNFOLLOW = 'UNFOLLOW';

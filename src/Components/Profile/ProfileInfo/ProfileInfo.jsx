@@ -13,6 +13,7 @@ import {
 } from '@ant-design/icons';
 import avatar from "../../../assets/images/panda_avatar.gif";
 import bg from "../../../assets/images/file_item_bg.png";
+import ProfileStatus from "../ProfileStatus/ProfileStatus";
 
 const ProfileInfo = props => {
 
@@ -51,6 +52,10 @@ const ProfileInfo = props => {
                                     src={props.profile.photos.large != null ? props.profile.photos.large : avatar}
                                     alt='avatar'/>
                                 <div className={style.contentInfo}>
+                                    <ProfileStatus
+                                        status={props.status != null ? props.status : 'sorry, it`s my business...'}
+                                        updateUserStatus={props.updateUserStatus}
+                                    />
                                     <ul>
                                         <li>
                                             <span>Full name:</span> {props.profile.fullName != null ? props.profile.fullName : 'sorry, it`s my business...'}
@@ -65,27 +70,37 @@ const ProfileInfo = props => {
                                     <ul className={style.socialMedias}>
                                         <li>
                                             {/* eslint-disable-next-line react/jsx-no-target-blank */}
-                                            <a className={style.facebook} href={"http://" + props.profile.contacts.facebook} target="_blank"><FacebookOutlined /></a>
+                                            <a className={style.facebook}
+                                               href={"http://" + props.profile.contacts.facebook}
+                                               target="_blank"><FacebookOutlined/></a>
                                         </li>
                                         <li>
                                             {/* eslint-disable-next-line react/jsx-no-target-blank */}
-                                            <a className={style.twitter} href={"http://" + props.profile.contacts.twitter} target="_blank"><TwitterOutlined /></a>
+                                            <a className={style.twitter}
+                                               href={"http://" + props.profile.contacts.twitter}
+                                               target="_blank"><TwitterOutlined/></a>
                                         </li>
                                         <li>
                                             {/* eslint-disable-next-line react/jsx-no-target-blank */}
-                                            <a className={style.instagram} href={"http://" + props.profile.contacts.instagram} target="_blank"><InstagramOutlined /></a>
+                                            <a className={style.instagram}
+                                               href={"http://" + props.profile.contacts.instagram}
+                                               target="_blank"><InstagramOutlined/></a>
                                         </li>
                                         <li>
                                             {/* eslint-disable-next-line react/jsx-no-target-blank */}
-                                            <a className={style.youtube} href={"http://" + props.profile.contacts.youtube} target="_blank"><YoutubeOutlined /></a>
+                                            <a className={style.youtube}
+                                               href={"http://" + props.profile.contacts.youtube}
+                                               target="_blank"><YoutubeOutlined/></a>
                                         </li>
                                         <li>
                                             {/* eslint-disable-next-line react/jsx-no-target-blank */}
-                                            <a className={style.github} href={"http://" + props.profile.contacts.github} target="_blank"><GithubOutlined /></a>
+                                            <a className={style.github} href={"http://" + props.profile.contacts.github}
+                                               target="_blank"><GithubOutlined/></a>
                                         </li>
                                         <li>
                                             {/* eslint-disable-next-line react/jsx-no-target-blank */}
-                                            <a href={"mailto:" + props.profile.contacts.website} target="_blank"><MailOutlined /></a>
+                                            <a href={"mailto:" + props.profile.contacts.website}
+                                               target="_blank"><MailOutlined/></a>
                                         </li>
                                     </ul>
                                 </div>

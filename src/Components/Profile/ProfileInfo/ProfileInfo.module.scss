@@ -6,7 +6,7 @@
   justify-items: center;
   border: 4px solid chocolate;
   border-radius: 15px;
-  margin: 10px 10px 10px 0;
+  margin: 10px 10px -10px 0;
   z-index: 1;
 
   .content {
@@ -19,8 +19,8 @@
     img {
       align-items: center;
       align-self: center;
-      height: 350px;
-      width: 350px;
+      height: 300px;
+      width: 300px;
       border-radius: 15px;
       max-height: 350px;
       max-width: 350px;

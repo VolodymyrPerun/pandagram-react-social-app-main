@@ -1,4 +1,4 @@
-import {sidebarAPI} from "../API/API";
+import {sidebarAPI} from "../API/sidebarAPI/sidebarAPI";
 import {setTotalFriendsCount} from "./friends-reducer";
 
 let SET_FRIENDS = 'SET_FRIENDS';

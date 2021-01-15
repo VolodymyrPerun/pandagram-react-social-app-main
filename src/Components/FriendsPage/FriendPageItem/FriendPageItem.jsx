@@ -11,8 +11,6 @@ import {NavLink} from 'react-router-dom';
 
 const FriendPageItem = props => {
 
-    console.log(props);
-
     let pagesCount = Math.ceil(Math.floor(props.totalFriendsCount / props.pageSize) * 10);
 
     function itemRender(current, type, originalElement) {
