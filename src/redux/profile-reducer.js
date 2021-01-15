@@ -70,43 +70,37 @@ export const setUserProfile = profile => ({type: SET_USER_PROFILE, profile});
 export const setStatus = status => ({type: SET_USER_STATUS, status});
 export const setAuthUserData = (login, id, email) => ({type: SET_USER_DATA, data: {login, id, email}});
 
-export const getUserProfile = userId => {
-    return dispatch => {
-        dispatch(setIsFetching(true));
-        authAPI.authMe()
-            .then(data => {
-                if (data.resultCode === 0) {
-                    let {login, id, email} = data.data;
-                    dispatch(setAuthUserData(login, id, email));
-                    profileAPI.getProfile(userId != null ? userId : id)
-                        .then(data => {
-                            dispatch(setIsFetching(false));
-                            dispatch(setUserProfile(data));
-                        });
-                }
-            });
-    }
+export const getUserProfile = (userId) => (dispatch) => {
+    dispatch(setIsFetching(true));
+    authAPI.authMe()
+        .then(response => {
+            if (response.data.resultCode === 0) {
+                let {login, id, email} = response.data.data;
+                dispatch(setAuthUserData(login, id, email));
+                profileAPI.getProfile(userId != null ? userId : id)
+                    .then(response => {
+                        dispatch(setIsFetching(false));
+                        dispatch(setUserProfile(response.data));
+                    });
+            }
+        });
 }
 
-export const getUserStatus = userId => {
-    return dispatch => {
-        profileAPI.getStatus(userId)
-            .then(data => {
-                debugger;
-                dispatch(setStatus(data));
-            });
-    }
+
+export const getUserStatus = userId => dispatch => {
+    profileAPI.getStatus(userId)
+        .then(response => {
+            dispatch(setStatus(response.data));
+        });
 }
 
-export const updateUserStatus = status => {
-    return dispatch => {
-        profileAPI.updateStatus(status)
-            .then(data => {
-                if (data.resultCode === 0) {
-                    dispatch(updateUserStatus(data));
-                }
-            });
-    }
+export const updateUserStatus = status => dispatch => {
+    profileAPI.updateStatus(status)
+        .then(response => {
+            if (response.data.resultCode === 0) {
+                dispatch(setStatus(status));
+            }
+        });
 }
 
 export default reducerProfile;

@@ -76,7 +76,7 @@ const FriendPageItem = props => {
                                     />
                                 </div> :
                                 <div className={style.info}>
-                                    <div className={style.status}>{f.status}</div>
+                                    <div className={style.status}>{f.status  != null ? f.status : 'nothing to say...'}</div>
                                     <div><span>Name: </span>{f.name != null ? f.name : 'sorry, it`s my business...'}
                                     </div>
                                     <div>

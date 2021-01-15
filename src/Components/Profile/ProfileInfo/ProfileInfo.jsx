@@ -53,7 +53,7 @@ const ProfileInfo = props => {
                                     alt='avatar'/>
                                 <div className={style.contentInfo}>
                                     <ProfileStatus
-                                        status={props.status != null ? props.status : 'sorry, it`s my business...'}
+                                        status={props.status}
                                         updateUserStatus={props.updateUserStatus}
                                     />
                                     <ul>
