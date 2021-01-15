@@ -13,6 +13,8 @@ import FriendPageItem from "./FriendPageItem";
 import {Spin} from 'antd';
 import {LoadingOutlined} from '@ant-design/icons';
 import style from './FriendPageItem.module.scss';
+import {compose} from "redux";
+import {withAuthRegister} from "../../../HOC/withAuthRegister";
 
 
 class FriendPageItemContainer extends React.Component {
@@ -24,33 +26,21 @@ class FriendPageItemContainer extends React.Component {
     onPageChange = pageNumber => {
         this.props.setCurrentPage(pageNumber);
         this.props.getFriends(pageNumber, this.props.pageSize)
-            .then(response => {
-                return response.data;
-            });
     };
 
     onPageChangeMaxFriendsTo50 = pageSize => {
         this.props.setPageSize(pageSize = 50);
         this.props.getFriends(this.props.currentPage, pageSize)
-            .then(response => {
-                return response.data;
-            });
     };
 
     onPageChangeMaxFriendsTo20 = pageSize => {
         this.props.setPageSize(pageSize = 20);
         this.props.getFriends(this.props.currentPage, pageSize)
-            .then(response => {
-                return response.data;
-            });
     };
 
     onPageChangeMaxFriendsTo10 = pageSize => {
         this.props.setPageSize(pageSize = 10);
         this.props.getFriends(this.props.currentPage, pageSize)
-            .then(response => {
-                return response.data;
-            });
     };
 
 
@@ -85,18 +75,22 @@ let mapStateToProps = state => {
         totalFriendsCount: state.friendsPage.totalFriendsCount,
         currentPage: state.friendsPage.currentPage,
         isFetching: state.friendsPage.isFetching,
-        followingInProgress: state.friendsPage.followingInProgress
+        followingInProgress: state.friendsPage.followingInProgress,
+        isAuth: state.auth.isAuth
     }
 };
 
-export default connect(mapStateToProps,
-    {
-        follow,
-        unfollow,
-        setCurrentPage,
-        setPageSize,
-        getFriends,
-        followToggle,
-        unfollowToggle,
-    })(FriendPageItemContainer);
+export default compose(
+    connect(mapStateToProps,
+        {
+            follow,
+            unfollow,
+            setCurrentPage,
+            setPageSize,
+            getFriends,
+            followToggle,
+            unfollowToggle
+        }),
+    withAuthRegister,
+)(FriendPageItemContainer);
 
