@@ -24,16 +24,16 @@ const reducerAuth = (state = initialState, action) => {
 
 export const setAuthUserData = (userId, email, login) => ({type: SET_USER_DATA, data: {userId, email, login}});
 
-export const authMe = () => dispatch  => {
+export const authMe = () => {
+    return dispatch  => {
         authAPI.authMe()
-            .then(res => {
-                // console.log(res.data.data);
-                if (res.resultCode === 0) {
-                    let {id, email, login} = res.data.data;
-
+            .then(data => {
+                if (data.resultCode === 0) {
+                    let {id, email, login} = data.data;
                     dispatch(setAuthUserData(id, email, login));
                 }
             });
+    }
 }
 
 export default reducerAuth;
