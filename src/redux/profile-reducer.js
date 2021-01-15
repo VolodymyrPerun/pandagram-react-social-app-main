@@ -70,36 +70,43 @@ export const setUserProfile = profile => ({type: SET_USER_PROFILE, profile});
 export const setStatus = status => ({type: SET_USER_STATUS, status});
 export const setAuthUserData = (login, id, email) => ({type: SET_USER_DATA, data: {login, id, email}});
 
-export const getUserProfile = userId => dispatch => {
+export const getUserProfile = userId => {
+    return dispatch => {
         dispatch(setIsFetching(true));
         authAPI.authMe()
-            .then(res => {
-                if (res.resultCode === 0) {
-                    let {login, id, email} = res.data.data;
+            .then(data => {
+                if (data.resultCode === 0) {
+                    let {login, id, email} = data.data;
                     dispatch(setAuthUserData(login, id, email));
                     profileAPI.getProfile(userId != null ? userId : id)
-                        .then(res => {
+                        .then(data => {
                             dispatch(setIsFetching(false));
-                            dispatch(setUserProfile(res));
+                            dispatch(setUserProfile(data));
                         });
                 }
             });
+    }
 }
 
-export const getUserStatus = userId => dispatch => {
+export const getUserStatus = userId => {
+    return dispatch => {
         profileAPI.getStatus(userId)
-            .then(res => {
-                dispatch(setStatus(res));
+            .then(data => {
+                debugger;
+                dispatch(setStatus(data));
             });
+    }
 }
 
-export const updateUserStatus = status => dispatch => {
+export const updateUserStatus = status => {
+    return dispatch => {
         profileAPI.updateStatus(status)
-            .then(res => {
-                if (res.resultCode === 0) {
-                    dispatch(setStatus(res));
+            .then(data => {
+                if (data.resultCode === 0) {
+                    dispatch(updateUserStatus(data));
                 }
             });
+    }
 }
 
 export default reducerProfile;
