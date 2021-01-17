@@ -18,8 +18,9 @@
   .forms {
     min-width: 150px;
     max-width: 300px;
+    align-content: center;
+    align-items: center;
     align-self: center;
-    text-align: center;
     grid-column: 2;
     grid-row: 1;
     padding: 15px;
@@ -38,6 +39,26 @@
       font: 15px "Matura MT Script Capitals", -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
       max-width: 150px;
       color: tomato;
+    }
+  }
+}
+
+@media only screen and (max-width: 572px) {
+  .login {
+    grid-template-columns: 1fr;
+
+    img {
+      grid-column: 1;
+      grid-row: 2;
+      width: auto;
+      z-index: 2;
+    }
+
+    .forms {
+      grid-column: 1;
+      grid-row: 2;
+      max-width: 100%;
+      z-index: 3;
     }
   }
 }

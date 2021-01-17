@@ -3,6 +3,8 @@
   flex-direction: row;
   justify-content: center;
   flex-wrap: nowrap;
+  position: relative;
+  left: -17.5px;
 
   li {
     color: #c21500;
@@ -82,7 +84,6 @@
   z-index: 1;
 
   .info {
-    min-width: 300px;
     max-width: 450px;
     display: flex;
     flex-direction: column;
@@ -177,8 +178,14 @@
 }
 
 @media only screen and (max-width: 798px) {
+
   .friendItem {
     flex-direction: column;
+    font-size: 15px;
+
+    .info {
+      font-size: 15px;
+    }
 
     img {
       margin: 10px auto;
@@ -186,6 +193,26 @@
       width: 240px;
       border: 2px solid crimson;
       border-radius: 50%;
+    }
+  }
+
+  .pagination {
+    margin-right: 3px;
+
+    button {
+      padding: 2px !important;
+    }
+  }
+
+  .pagesCounter {
+    font-size: 20px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      width: 40px;
+      margin: 5px;
     }
   }
 }

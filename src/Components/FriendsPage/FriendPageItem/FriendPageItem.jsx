@@ -117,15 +117,15 @@ const FriendPageItem = props => {
             />
 
             <div className={style.pagesCounter}>MaxFriends on one page {props.pageSize}. Click to change:
-                <ApplyBtn handleClick={() => {
-                    props.onPageChangeMaxFriendsTo10()
-                }} label='10'/>
-                <ApplyBtn handleClick={() => {
-                    props.onPageChangeMaxFriendsTo20()
-                }} label='20'/>
-                <ApplyBtn handleClick={() => {
-                    props.onPageChangeMaxFriendsTo50()
-                }} label='50'/>
+                    <ApplyBtn handleClick={() => {
+                        props.onPageChangeMaxFriendsTo10()
+                    }} label='10'/>
+                    <ApplyBtn handleClick={() => {
+                        props.onPageChangeMaxFriendsTo20()
+                    }} label='20'/>
+                    <ApplyBtn handleClick={() => {
+                        props.onPageChangeMaxFriendsTo50()
+                    }} label='50'/>
             </div>
         </div>
     </>
