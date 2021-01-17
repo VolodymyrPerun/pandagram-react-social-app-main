@@ -18,7 +18,7 @@ let initialState = {
     id: null,
     profile: null,
     isFetching: true,
-    status: ''
+    status: null
 };
 
 const reducerProfile = (state = initialState, action) => {

@@ -3,6 +3,7 @@ import style from './MyPosts.module.scss';
 import Post from './Post/Post';
 import TextareaAutosize from 'react-textarea-autosize';
 import bg from "../../assets/images/file_item_bg_white.png";
+import ApplyBtn from "../Buttons/Apply/ApplyBtn";
 
 
 const MyPosts = props => {
@@ -56,7 +57,7 @@ const MyPosts = props => {
                         placeholder='Enter your message...'/>
                 </div>
                 <div>
-                    <button className={style.btn} onClick={addPost}>Add Post</button>
+                    <ApplyBtn handleClick={addPost} style={{width: '140px', height: '50px'}} label='Add Post'/>
                 </div>
             </div>
             <div className={style.posts}
