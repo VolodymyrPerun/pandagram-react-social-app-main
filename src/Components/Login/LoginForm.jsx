@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Login.module.scss';
 import {Field, reduxForm} from "redux-form";
-import SubmitFollowBtn from "../Buttons/SubmitFollow/SubmitFollowBtn";
+import SubmitFollowBtn from "../commons/Buttons/SubmitFollow/SubmitFollowBtn";
 
 
 let LoginForm = props => {
@@ -20,7 +20,6 @@ let LoginForm = props => {
                 <label className={style.input} htmlFor={"rememberMe"}> remember me</label>
             </div>
             <div>
-
                 <SubmitFollowBtn label="Login" name={'Submit'} type={"submit"}/>
             </div>
         </form>

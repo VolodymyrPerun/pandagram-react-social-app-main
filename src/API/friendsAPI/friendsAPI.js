@@ -1,4 +1,4 @@
-import instance from '../API';
+import instance from '../../helpers/API';
 
 export const friendsAPI = {
     getFriends(currentPage = 1, pageSize = 10) {

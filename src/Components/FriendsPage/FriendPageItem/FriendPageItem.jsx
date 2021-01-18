@@ -7,7 +7,7 @@ import avatarSmall from '../../../assets/images/panda_avatar_small.gif'
 import {Pagination, Spin} from 'antd';
 import {FastBackwardFilled, FastForwardFilled, LoadingOutlined} from '@ant-design/icons';
 import {NavLink} from 'react-router-dom';
-import ApplyBtn from "../../Buttons/Apply/ApplyBtn";
+import ApplyBtn from "../../commons/Buttons/Apply/ApplyBtn";
 
 
 const FriendPageItem = props => {

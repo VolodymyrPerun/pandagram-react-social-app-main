@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './MessageFormItem.module.scss';
 import {Field, reduxForm} from "redux-form";
-import ApplyBtn from "../../Buttons/Apply/ApplyBtn";
+import ApplyBtn from "../../commons/Buttons/Apply/ApplyBtn";
 
 
 const MessageFormItem = props => {

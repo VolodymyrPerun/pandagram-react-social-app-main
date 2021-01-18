@@ -1,4 +1,4 @@
-import instance from '../API';
+import instance from '../../helpers/API';
 
 
 export const sidebarAPI = {
