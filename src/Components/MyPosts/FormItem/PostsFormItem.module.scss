@@ -1,0 +1,31 @@
+.formWrapper {
+  display: grid;
+  padding: 10px;
+  grid-row: 2;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+
+    .formItem {
+      margin: 10px;
+
+      .textareaField {
+        height: 75px;
+        resize: none;
+        padding: 9px;
+        box-sizing: border-box;
+        overflow: hidden;
+        font-size: 15px;
+        background-color: #FFEFBA;
+        word-break: break-word;
+        max-lines: 50;
+        width: 35vw;
+      }
+    }
+  }
+}

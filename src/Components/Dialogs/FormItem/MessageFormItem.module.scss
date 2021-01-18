@@ -1,0 +1,17 @@
+.formItem {
+  padding: 10px;
+  grid-row: 2;
+
+  .textareaField {
+    height: 55px;
+    resize: none;
+    padding: 9px;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-size: 15px;
+    background-color: #FFEFBA;
+    word-break: break-word;
+    max-lines: 50;
+    width: 35vw;
+  }
+}

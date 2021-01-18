@@ -2,7 +2,6 @@ import {authAPI} from "../API/authAPI/authAPI";
 import {profileAPI} from "../API/profileAPI/profileAPI";
 
 const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 let TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 let SET_USER_PROFILE = 'SET-USER-PROFILE';
 let SET_USER_DATA = 'SET_USER_DATA';
@@ -14,7 +13,6 @@ let initialState = {
         {id: 2, message: "It's my first post", likesCount: 45},
         {id: 3, message: "What's up!!! Dude!!!", likesCount: 5}
     ],
-    newPostText: 'Hello!!!',
     id: null,
     profile: null,
     isFetching: true,
@@ -28,14 +26,8 @@ const reducerProfile = (state = initialState, action) => {
                 ...state,
                 posts: [
                     ...state.posts,
-                    {id: 4, message: state.newPostText, likesCount: 0}
+                    {id: 4, message: action.newPostText, likesCount: 0}
                 ],
-                newPostText: ''
-            };
-        case UPDATE_NEW_POST_TEXT:
-            return {
-                ...state,
-                newPostText: action.newText
             };
         case TOGGLE_IS_FETCHING:
             return {
@@ -63,14 +55,13 @@ const reducerProfile = (state = initialState, action) => {
     }
 };
 
-export const addPostActionCreator = () => ({type: ADD_POST});
-export const updateNewPostActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
+export const addPost = newPostText => ({type: ADD_POST, newPostText});
 export const setIsFetching = isFetching => ({type: TOGGLE_IS_FETCHING, isFetching});
 export const setUserProfile = profile => ({type: SET_USER_PROFILE, profile});
 export const setStatus = status => ({type: SET_USER_STATUS, status});
 export const setAuthUserData = (login, id, email) => ({type: SET_USER_DATA, data: {login, id, email}});
 
-export const getUserProfile = (userId) => (dispatch) => {
+export const getUserProfile = userId => dispatch => {
     dispatch(setIsFetching(true));
     authAPI.authMe()
         .then(response => {

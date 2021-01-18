@@ -1,5 +1,4 @@
 const ADD_MESSAGE = 'ADD-MESSAGE';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
 let initialState = {
     messagesData: [
@@ -8,7 +7,6 @@ let initialState = {
         {id: 3, message: "What's up! React is top!"},
         {id: 4, message: 'Socket.io? Middleware? Token? ... Ease!!!)'}
     ],
-    newMessageText: 'What\'s up!!!',
     dialogsData: [
         {id: 1, name: 'Andriy'},
         {id: 2, name: 'Vasil'},
@@ -26,20 +24,13 @@ const reducerDialogs = (state = initialState, action) => {
                 ...state,
                 messagesData: [
                     ...state.messagesData,
-                    {id: 5, message: state.newMessageText}
-                ],
-                newMessageText: ''
+                    {id: 5, message: action.newMessageText}
+                ]
             }
-        case UPDATE_NEW_MESSAGE_TEXT:
-            return {
-                ...state,
-                newMessageText: action.text
-            };
         default:
             return state;
     }
 };
 
-export const addMessageActionCreator = () => ({type: ADD_MESSAGE});
-export const updateNewMessageActionCreator = (text) => ({type: UPDATE_NEW_MESSAGE_TEXT, text: text});
+export const addMessage = newMessageText => ({type: ADD_MESSAGE, newMessageText});
 export default reducerDialogs;
