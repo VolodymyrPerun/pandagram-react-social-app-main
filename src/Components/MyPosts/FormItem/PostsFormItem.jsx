@@ -7,10 +7,11 @@ import {
     minLengthCreator,
     required
 } from "../../../validators/validators";
-import Textarea from "../../commons/FormsControls/FormsControls";
+import FormsControlItem from "../../commons/FormsControls/FormsControls";
+import {TEXTAREA} from "../../../constants/formsControls.enum";
 
 
-const maxLength10 = maxLengthCreator(10);
+const maxLength50 = maxLengthCreator(50);
 const minLength2 = minLengthCreator(2);
 
 const PostsFormItem = props => {
@@ -22,11 +23,10 @@ const PostsFormItem = props => {
                     <div className={style.formItem}>
                         <Field
                             name={"newPostText"}
-                            component={Textarea}
+                            component={FormsControlItem(TEXTAREA)}
                             type={"textarea"}
-                            // label={'Enter your post...'}
                             placeholder={'Enter your post...'}
-                            validate={[required, maxLength10, minLength2]}
+                            validate={[required, maxLength50, minLength2]}
                         />
                     </div>
                     <div className={style.formItem}>

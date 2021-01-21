@@ -16,13 +16,15 @@ const Header = props => {
             <div className={style.loginBlock}>
                 {props.isAuth ?
                     <div className={style.itemLink}
-                         style={{top: '0', fontSize: '9px !important', padding: '0'}}>{props.login}</div> :
-                    <NavLink activeClassName={style.active} className={style.itemLink} to={'/login'}>
-                        <UserOutlined/>Login
-                    </NavLink>}
-                <NavLink activeClassName={style.active} className={style.itemLink} to={'/register'}>
-                    <UserAddOutlined/>Register
-                </NavLink>
+                         style={{top: '-7px', fontSize: '9px !important', padding: '0'}}>{props.login}</div> :
+                    <>
+                        <NavLink activeClassName={style.active} className={style.itemLink} to={'/login'}>
+                            <UserOutlined/>Login
+                        </NavLink>
+                        <NavLink activeClassName={style.active} className={style.itemLink} to={'/register'}>
+                            <UserAddOutlined/>Register
+                        </NavLink>
+                    </>}
             </div>
         </header>
     )

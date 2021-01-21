@@ -3,6 +3,8 @@ import style from './Login.module.scss';
 import loginPagePhoto from '../../assets/images/login-panda.gif'
 import bg from "../../assets/images/login-page-bg.png";
 import LoginForm from "./LoginForm";
+import {faSignInAlt} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
 const Login = props => {
@@ -25,7 +27,9 @@ const Login = props => {
 
             <div className={style.forms}>
 
-                <h1 className={style.title}>Login</h1>
+                <h1 className={style.title}><FontAwesomeIcon
+                    style={{marginRight: '13px', bottom:'-5px', position:'relative'}}
+                    icon={faSignInAlt}/>Login</h1>
                 <LoginForm onSubmit={onSubmit}/>
 
             </div>
