@@ -41,6 +41,10 @@
     text-align: center;
     align-self: center;
 
+    font-size: 13px;
+    font-family: raleway-grid, sans-serif;
+    font-weight: 400;
+
     .itemLink {
       font-size: 13px;
       font-family: raleway-grid, sans-serif;
@@ -55,6 +59,13 @@
         color: #fdf497;
         font-size: 14px;
       }
+
+      button {
+        padding: 0;
+        width: 50px;
+        font-size: 10px;
+        font-weight: 400;
+      }
     }
   }
 }
@@ -62,7 +73,7 @@
 @media only screen and (max-width: 992px) {
   .itemLink {
     font-size: 11px !important;
-    margin-right: 5px !important;
+    //margin-right: 5px !important;
 
     &:hover, &:focus, &:active, .active {
       font-size: 11px !important;

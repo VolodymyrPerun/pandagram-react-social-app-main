@@ -5,12 +5,20 @@ import bg from "../../assets/images/login-page-bg.png";
 import LoginForm from "./LoginForm";
 import {faSignInAlt} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {connect} from "react-redux";
+import {login} from "../../redux/auth-reducer";
+import {withAuthRegister} from "../../HOC/withAuthRegister";
+import {Redirect} from "react-router-dom";
 
 
 const Login = props => {
 
     let onSubmit = formData => {
-        console.log(formData);
+        props.login(formData.email, formData.password, formData.rememberMe);
+    }
+
+    if (props.isAuth) {
+        return <Redirect to={'/profile'}/>
     }
 
     return (
@@ -28,7 +36,7 @@ const Login = props => {
             <div className={style.forms}>
 
                 <h1 className={style.title}><FontAwesomeIcon
-                    style={{marginRight: '13px', bottom:'-5px', position:'relative'}}
+                    style={{marginRight: '13px', bottom: '-5px', position: 'relative'}}
                     icon={faSignInAlt}/>Login</h1>
                 <LoginForm onSubmit={onSubmit}/>
 
@@ -37,5 +45,12 @@ const Login = props => {
     )
 };
 
-export default Login;
+const mapStateToProps = state => {
+    return {
+        isAuth: state.auth.isAuth
+    }
+};
+
+export default connect
+(mapStateToProps, {login})(Login);
 

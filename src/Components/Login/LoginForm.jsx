@@ -6,38 +6,42 @@ import {faAt, faKey} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import FormsControlItem from "../commons/FormsControls/FormsControls";
 import {INPUT} from "../../constants/formsControls.enum";
-import {maxLengthCreator, minLengthCreator, required} from "../../validators/validators";
+import {email, maxLengthCreator, minLengthCreator, password, required} from "../../validators/validators";
 
 
-const maxLength25 = maxLengthCreator(25);
+const maxLength20 = maxLengthCreator(20);
+const maxLength45 = maxLengthCreator(45);
 const minLength2 = minLengthCreator(2);
+const minLength8 = minLengthCreator(8);
 
 let LoginForm = props => {
 
     return (
         <form onSubmit={props.handleSubmit}>
             <div className={style.inputContainer}>
-                <FontAwesomeIcon
-                    style={{marginRight: '13px', bottom:'-5px', position:'relative'}}
-                    icon={faAt}/>
+
                 <Field className={style.input}
                        name={"email"}
                        component={FormsControlItem(INPUT)}
                        type={"email"}
                        placeholder={'Email'}
-                       validate={[required, maxLength25, minLength2]}
+                       validate={[email, required, maxLength45, minLength2]}
+                       label={<FontAwesomeIcon
+                           style={{marginRight: '13px', bottom:'-5px', position:'relative'}}
+                           icon={faAt}/>}
                 />
             </div>
             <div className={style.inputContainer}>
-                <FontAwesomeIcon
-                    style={{marginRight: '13px', bottom:'-5px', position:'relative'}}
-                    icon={faKey}/>
+
                 <Field className={style.input}
                        name={"password"}
                        component={FormsControlItem(INPUT)}
-                       type={"password"}
+                       type={'password'}
                        placeholder={'Password'}
-                       validate={[required, maxLength25, minLength2]}
+                       validate={[password, required, maxLength20, minLength8]}
+                       label={<FontAwesomeIcon
+                           style={{marginRight: '13px', bottom:'-5px', position:'relative'}}
+                           icon={faKey}/>}
                 />
             </div>
             <div className={style.inputContainer}>

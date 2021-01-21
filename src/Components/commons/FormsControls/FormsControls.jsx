@@ -5,7 +5,7 @@ import {faExclamationCircle} from '@fortawesome/free-solid-svg-icons';
 import {INPUT, TEXTAREA} from '../../../constants/formsControls.enum'
 
 
-const FormsControlItem = item => ({input, meta: {touched, error, warning}, label, ...props}) => {
+const FormsControlItem = item => ({input, meta: {touched, error, warning}, child, ...restProps}) => {
 
     let isError = touched && ((error || warning));
 
@@ -16,8 +16,8 @@ const FormsControlItem = item => ({input, meta: {touched, error, warning}, label
                 {isError && (<span>
                             <FontAwesomeIcon
                                 style={{marginRight: '3px'}}
-                                icon={faExclamationCircle}/>{
-                        error}</span> ||
+                                icon={faExclamationCircle}/>
+                        {error}</span> ||
                     <span>
                             <FontAwesomeIcon
                                 style={{marginRight: '3px'}}
@@ -25,20 +25,19 @@ const FormsControlItem = item => ({input, meta: {touched, error, warning}, label
                         {warning}</span>)}
             </div>
         )
-    }
+    };
 
 
     switch (item) {
         case TEXTAREA:
             return (
                 <>
-                    {/*<label>{label}</label>*/}
                     <div className={`${style.formsControls} ${isError ? style.error : ""}`}>
                 <textarea className={style.textareaField}
-                           {...input}
-                           placeholder={props.placeholder}
-                           rows="4"
-                           cols="50"/>
+                          {...input}
+                          {...restProps}
+                          rows="4"
+                          cols="50"/>
                         <Error/>
                     </div>
                 </>
@@ -46,11 +45,12 @@ const FormsControlItem = item => ({input, meta: {touched, error, warning}, label
         case INPUT:
             return (
                 <>
-                    {/*<label>{label}</label>*/}
+                    <label>{restProps.label}</label>
                     <div className={`${style.formsControls} ${isError ? style.error : ""}`}>
                         <input className={style.inputField}
-                                {...input}
-                                placeholder={props.placeholder}/>
+                               {...input}
+                               {...restProps}
+                        />
                         <Error/>
                     </div>
                 </>
