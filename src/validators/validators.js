@@ -1,20 +1,13 @@
-export const required = value => {
-    if (value) return undefined;
+export const required = value => value ? undefined : "Field is required";
 
-    return "Field is required";
-};
 
-export const maxLengthCreator = maxLength => value => {
-    if (value && value.length <= maxLength) return undefined;
+export const maxLengthCreator = maxLength => value =>
+    value && value.length <= maxLength ? undefined : `Max length is ${maxLength} symbols`;
 
-    return `Max length is ${maxLength} symbols`;
-};
 
-export const minLengthCreator = minLength => value => {
-    if (value && value.length >= minLength) return undefined;
+export const minLengthCreator = minLength => value =>
+    value && value.length >= minLength ? undefined : `Min length is ${minLength} symbols`;
 
-    return `Min length is ${minLength} symbols`;
-};
 
 export const email = value =>
     value && !/^(?!.*\.{2})(?!\.)[a-z0-9_.'-]*[a-z0-9_'-]@(?!_)(?:[a-z0-9_'-]+\.)+[a-z0-9_'-]{2,}$/.test(value)

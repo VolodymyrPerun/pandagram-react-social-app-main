@@ -6,7 +6,6 @@ import {UserOutlined, UserAddOutlined} from '@ant-design/icons';
 import SubmitFollowBtn from "../commons/Buttons/SubmitFollow/SubmitFollowBtn";
 
 const Header = props => {
-    console.log(props.logout);
 
     return (
         <header className={style.header}>

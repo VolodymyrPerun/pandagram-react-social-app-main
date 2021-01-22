@@ -15,7 +15,7 @@ const minLength2 = minLengthCreator(2);
 const minLength8 = minLengthCreator(8);
 
 let LoginForm = props => {
-
+    console.log(email);
     return (
         <form onSubmit={props.handleSubmit}>
             <div className={style.inputContainer}>
@@ -25,7 +25,9 @@ let LoginForm = props => {
                        component={FormsControlItem(INPUT)}
                        type={"email"}
                        placeholder={'Email'}
-                       validate={[email, required, maxLength45, minLength2]}
+                       validate={[required, maxLength45, minLength2]}
+                       warning={props.warning}
+                       warn={email}
                        label={<FontAwesomeIcon
                            style={{marginRight: '13px', bottom:'-5px', position:'relative'}}
                            icon={faAt}/>}
@@ -38,7 +40,8 @@ let LoginForm = props => {
                        component={FormsControlItem(INPUT)}
                        type={'password'}
                        placeholder={'Password'}
-                       validate={[password, required, maxLength20, minLength8]}
+                       validate={[required, maxLength20, minLength8]}
+                       warn={password}
                        label={<FontAwesomeIcon
                            style={{marginRight: '13px', bottom:'-5px', position:'relative'}}
                            icon={faKey}/>}
@@ -53,7 +56,12 @@ let LoginForm = props => {
                 <label className={style.input} htmlFor={"rememberMe"}> remember me</label>
             </div>
             <div className={style.inputContainer}>
-                <SubmitFollowBtn label="Login" name={'Submit'} type={"submit"}/>
+                <SubmitFollowBtn
+                    label="Login"
+                    name={'Submit'}
+                    type={"submit"}
+                    disabled={props.pristine || props.submitting} onClick={props.reset}
+                />
             </div>
         </form>
     )

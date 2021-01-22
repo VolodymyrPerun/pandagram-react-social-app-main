@@ -1,28 +1,29 @@
 import React from 'react';
 import style from './FormsControls.module.scss';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faExclamationCircle} from '@fortawesome/free-solid-svg-icons';
+import {faExclamationCircle, faExclamationTriangle} from '@fortawesome/free-solid-svg-icons';
 import {INPUT, TEXTAREA} from '../../../constants/formsControls.enum'
 
 
 const FormsControlItem = item => ({input, meta: {touched, error, warning}, child, ...restProps}) => {
 
-    let isError = touched && ((error || warning));
+     let isError = touched && ((error || warning));
 
     const Error = () => {
 
         return (
             <div className={style.errorsContainer}>
-                {isError && (<span>
+                {touched &&
+                ((error && <span>
                             <FontAwesomeIcon
                                 style={{marginRight: '3px'}}
                                 icon={faExclamationCircle}/>
-                        {error}</span> ||
-                    <span>
+                        {error}</span> ) ||
+                    (warning && <span className={style.warning}>
                             <FontAwesomeIcon
                                 style={{marginRight: '3px'}}
-                                icon={faExclamationCircle}/>
-                        {warning}</span>)}
+                                icon={faExclamationTriangle}/>
+                        {warning}</span>))}
             </div>
         )
     };
