@@ -28,7 +28,6 @@ const FormsControlItem = item => ({input, meta: {touched, error, warning}, child
         )
     };
 
-
     switch (item) {
         case TEXTAREA:
             return (

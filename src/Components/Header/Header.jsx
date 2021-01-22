@@ -19,7 +19,7 @@ const Header = props => {
                     ? <div className={style.itemLink}
                            style={{top: '-7px', fontSize: '9px !important', padding: '0', marginRight: '10px'}}>
                         {props.login}
-                        <div style={{marginTop: '2px'}}>
+                        <div>
                             <SubmitFollowBtn handleClick={props.logout} label="Logout"/>
                         </div>
                     </div>

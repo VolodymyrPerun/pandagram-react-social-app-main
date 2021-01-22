@@ -61,10 +61,20 @@
       }
 
       button {
+        color: #dfd087;
         padding: 0;
         width: 50px;
         font-size: 10px;
         font-weight: 400;
+        margin-top: 2px;
+        background-color: #2B1100;
+        opacity: 0.9;
+
+        &:hover, &:focus, &:active, .active {
+          color: #fdf497;
+          padding: 1px;
+          width: 51px;
+        }
       }
     }
   }

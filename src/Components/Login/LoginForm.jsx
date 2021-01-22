@@ -14,8 +14,9 @@ const maxLength45 = maxLengthCreator(45);
 const minLength2 = minLengthCreator(2);
 const minLength8 = minLengthCreator(8);
 
+
 let LoginForm = props => {
-    console.log(email);
+
     return (
         <form onSubmit={props.handleSubmit}>
             <div className={style.inputContainer}>
@@ -29,7 +30,7 @@ let LoginForm = props => {
                        warning={props.warning}
                        warn={email}
                        label={<FontAwesomeIcon
-                           style={{marginRight: '13px', bottom:'-5px', position:'relative'}}
+                           style={{marginRight: '13px', bottom: '-5px', position: 'relative'}}
                            icon={faAt}/>}
                 />
             </div>
@@ -43,7 +44,7 @@ let LoginForm = props => {
                        validate={[required, maxLength20, minLength8]}
                        warn={password}
                        label={<FontAwesomeIcon
-                           style={{marginRight: '13px', bottom:'-5px', position:'relative'}}
+                           style={{marginRight: '13px', bottom: '-5px', position: 'relative'}}
                            icon={faKey}/>}
                 />
             </div>
@@ -63,6 +64,10 @@ let LoginForm = props => {
                     disabled={props.pristine || props.submitting} onClick={props.reset}
                 />
             </div>
+            {props.error &&
+            <div className={style.formsSummaryError}>
+                <span>ERROR: {props.error}</span>
+            </div>}
         </form>
     )
 }

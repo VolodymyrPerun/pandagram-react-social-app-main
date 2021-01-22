@@ -45,10 +45,27 @@
         font: 15px "Matura MT Script Capitals", -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
         max-width: 150px;
         color: tomato;
+
+        &:last-child {
+          margin-bottom: 5px;
+        }
       }
     }
-  }
 
+    .formsSummaryError {
+      font: 15px raleway-grid, sans-serif;
+      font-weight: bold;
+      margin: 5px auto;
+      display: flex;
+      color: #c21500;
+      max-width: 70%;
+      justify-content: center;
+      align-self: center;
+      align-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
 }
 
 @media only screen and (max-width: 572px) {
