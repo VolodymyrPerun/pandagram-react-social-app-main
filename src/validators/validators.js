@@ -15,6 +15,6 @@ export const email = value =>
         : undefined;
 
 export const password = value =>
-    value && !/^(?=[A-Z])(?=.*?[0-9])(?=.*?[^\\w\\s]).+$/i.test(value)
+    value && (value)
         ? 'Passwords must at least 8 characters, include one capital letter, one number, and one special character'
         : undefined;
