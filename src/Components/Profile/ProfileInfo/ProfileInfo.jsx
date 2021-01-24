@@ -58,37 +58,37 @@ const ProfileInfo = props => {
                                     </ul>
                                     <ul className={style.socialMedias}>
                                         <li>
-                                            {/* eslint-disable-next-line react/jsx-no-target-blank */}
                                             <a className={style.facebook}
                                                href={"http://" + props.profile.contacts.facebook}
+                                               rel="noopener noreferrer"
                                                target="_blank"><FacebookOutlined/></a>
                                         </li>
                                         <li>
-                                            {/* eslint-disable-next-line react/jsx-no-target-blank */}
                                             <a className={style.twitter}
                                                href={"http://" + props.profile.contacts.twitter}
+                                               rel="noopener noreferrer"
                                                target="_blank"><TwitterOutlined/></a>
                                         </li>
                                         <li>
-                                            {/* eslint-disable-next-line react/jsx-no-target-blank */}
                                             <a className={style.instagram}
                                                href={"http://" + props.profile.contacts.instagram}
+                                               rel="noopener noreferrer"
                                                target="_blank"><InstagramOutlined/></a>
                                         </li>
                                         <li>
-                                            {/* eslint-disable-next-line react/jsx-no-target-blank */}
                                             <a className={style.youtube}
                                                href={"http://" + props.profile.contacts.youtube}
+                                               rel="noopener noreferrer"
                                                target="_blank"><YoutubeOutlined/></a>
                                         </li>
                                         <li>
-                                            {/* eslint-disable-next-line react/jsx-no-target-blank */}
                                             <a className={style.github} href={"http://" + props.profile.contacts.github}
+                                               rel="noopener noreferrer"
                                                target="_blank"><GithubOutlined/></a>
                                         </li>
                                         <li>
-                                            {/* eslint-disable-next-line react/jsx-no-target-blank */}
                                             <a href={"mailto:" + props.profile.contacts.website}
+                                               rel="noopener noreferrer"
                                                target="_blank"><MailOutlined/></a>
                                         </li>
                                     </ul>
