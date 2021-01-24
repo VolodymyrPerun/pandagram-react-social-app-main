@@ -42,7 +42,7 @@ let LoginForm = props => {
                        type={'password'}
                        placeholder={'Password'}
                        validate={[required, maxLength20, minLength4]}
-                       warn={password}
+                       // warn={password}
                        label={<FontAwesomeIcon
                            style={{marginRight: '13px', bottom: '-5px', position: 'relative'}}
                            icon={faKey}/>}
