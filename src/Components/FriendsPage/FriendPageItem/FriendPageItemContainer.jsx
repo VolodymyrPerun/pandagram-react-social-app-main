@@ -1,14 +1,20 @@
 import React from "react";
 import {connect} from 'react-redux';
 import {
-    follow,
-    unfollow,
     setCurrentPage,
     setPageSize,
     followToggle,
     unfollowToggle,
-    getFriends
+    getAllFriends
 } from "../../../redux/friends-reducer";
+import {
+    getCurrentPage,
+    getFollowingInProgress,
+    getIsFetching,
+    getPageSize,
+    getTotalFriendsCount,
+    getFriends
+} from "../../../redux/friends-selectors";
 import FriendPageItem from "./FriendPageItem";
 import Preloader from "../../commons/Preloader/Preloader";
 
@@ -16,27 +22,27 @@ import Preloader from "../../commons/Preloader/Preloader";
 class FriendPageItemContainer extends React.Component {
 
     componentDidMount() {
-        this.props.getFriends(this.props.currentPage, this.props.pageSize)
+        this.props.getAllFriends(this.props.currentPage, this.props.pageSize)
     }
 
     onPageChange = pageNumber => {
         this.props.setCurrentPage(pageNumber);
-        this.props.getFriends(pageNumber, this.props.pageSize)
+        this.props.getAllFriends(pageNumber, this.props.pageSize)
     };
 
     onPageChangeMaxFriendsTo50 = pageSize => {
         this.props.setPageSize(pageSize = 50);
-        this.props.getFriends(this.props.currentPage, pageSize)
+        this.props.getAllFriends(this.props.currentPage, pageSize)
     };
 
     onPageChangeMaxFriendsTo20 = pageSize => {
         this.props.setPageSize(pageSize = 20);
-        this.props.getFriends(this.props.currentPage, pageSize)
+        this.props.getAllFriends(this.props.currentPage, pageSize)
     };
 
     onPageChangeMaxFriendsTo10 = pageSize => {
         this.props.setPageSize(pageSize = 10);
-        this.props.getFriends(this.props.currentPage, pageSize)
+        this.props.getAllFriends(this.props.currentPage, pageSize)
     };
 
 
@@ -61,25 +67,34 @@ class FriendPageItemContainer extends React.Component {
     }
 }
 
+// let mapStateToProps = state => {
+//     return {
+//         friends: state.friendsPage.friends,
+//         pageSize: state.friendsPage.pageSize,
+//         totalFriendsCount: state.friendsPage.totalFriendsCount,
+//         currentPage: state.friendsPage.currentPage,
+//         isFetching: state.friendsPage.isFetching,
+//         followingInProgress: state.friendsPage.followingInProgress,
+//         isAuth: state.auth.isAuth
+//     }
+// };
+
 let mapStateToProps = state => {
     return {
-        friends: state.friendsPage.friends,
-        pageSize: state.friendsPage.pageSize,
-        totalFriendsCount: state.friendsPage.totalFriendsCount,
-        currentPage: state.friendsPage.currentPage,
-        isFetching: state.friendsPage.isFetching,
-        followingInProgress: state.friendsPage.followingInProgress,
-        isAuth: state.auth.isAuth
+        friends: getFriends(state),
+        isFetching: getIsFetching(state),
+        pageSize: getPageSize(state),
+        totalFriendsCount: getTotalFriendsCount(state),
+        currentPage: getCurrentPage(state),
+        followingInProgress: getFollowingInProgress(state)
     }
 };
 
 export default connect(mapStateToProps,
     {
-        follow,
-        unfollow,
         setCurrentPage,
         setPageSize,
-        getFriends,
+        getAllFriends,
         followToggle,
         unfollowToggle
     })(FriendPageItemContainer);

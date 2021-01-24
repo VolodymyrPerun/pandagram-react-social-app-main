@@ -19,7 +19,7 @@ export const friendsAPI = {
                 return response.data;
             });
     }
-}
+};
 
 
 

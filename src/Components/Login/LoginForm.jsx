@@ -6,7 +6,7 @@ import {faAt, faKey} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import FormsControlItem from "../commons/FormsControls/FormsControls";
 import {INPUT} from "../../constants/formsControls.enum";
-import {email, maxLengthCreator, minLengthCreator, required} from "../../validators/validators";
+import {email, maxLengthCreator, minLengthCreator, password, required} from "../../validators/validators";
 
 
 const maxLength20 = maxLengthCreator(20);
@@ -42,6 +42,7 @@ let LoginForm = props => {
                        type={'password'}
                        placeholder={'Password'}
                        validate={[required, maxLength20, minLength4]}
+                       warn={password}
                        label={<FontAwesomeIcon
                            style={{marginRight: '13px', bottom: '-5px', position: 'relative'}}
                            icon={faKey}/>}
