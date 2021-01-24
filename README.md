@@ -20,7 +20,7 @@
 
 
 
-![1562585643793](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1562585643793.png)
+![1562585643793](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1562585643793.png)
 
 ## Пропсы
 
