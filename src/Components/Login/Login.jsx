@@ -50,6 +50,5 @@ const mapStateToProps = state => {
     }
 };
 
-export default connect
-(mapStateToProps, {login})(Login);
+export default connect(mapStateToProps, {login})(Login);
 
