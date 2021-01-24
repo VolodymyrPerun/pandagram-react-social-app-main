@@ -11,7 +11,7 @@ import {
 } from '@ant-design/icons';
 import avatar from "../../../assets/images/panda_avatar.gif";
 import bg from "../../../assets/images/file_item_bg.png";
-import ProfileStatus from "../ProfileStatus/ProfileStatus";
+import ProfileStatus from "../ProfileStatus/ProfileStatusWithHooks";
 import Preloader from "../../commons/Preloader/Preloader";
 
 const ProfileInfo = props => {
