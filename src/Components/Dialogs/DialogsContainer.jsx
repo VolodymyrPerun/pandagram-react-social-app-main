@@ -1,4 +1,4 @@
-import {addMessage} from '../../redux/dialogs-reducer';
+import {addMessage, setIsFetching} from '../../redux/dialogs-reducer';
 import Dialogs from "./Dialogs";
 import {connect} from 'react-redux';
 import {withAuthRedirect} from "../../HOC/withAuthRedirect";
@@ -9,11 +9,12 @@ let mapStateToProps = state => {
 
     return {
         messagesPage: state.messagesPage,
-        isAuth: state.auth.isAuth
+        isAuth: state.auth.isAuth,
+        isFetching: state.messagesPage.isFetching
     }
 };
 
 export default compose(
-    connect(mapStateToProps, {addMessage}),
+    connect(mapStateToProps, {addMessage, setIsFetching}),
     withAuthRedirect
 )(Dialogs);

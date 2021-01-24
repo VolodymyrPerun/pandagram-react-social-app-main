@@ -13,10 +13,9 @@ let initialState = {
         {id: 2, message: "It's my first post", likesCount: 45},
         {id: 3, message: "What's up!!! Dude!!!", likesCount: 5}
     ],
-    id: null,
     profile: null,
     isFetching: true,
-    status: null
+    status: ''
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -39,12 +38,6 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 profile: action.profile
             };
-        case SET_USER_DATA:
-            return {
-                ...state,
-                ...action.data,
-                isAuth: true
-            };
         case SET_USER_STATUS:
             return {
                 ...state,
@@ -59,23 +52,15 @@ export const addPost = newPostText => ({type: ADD_POST, newPostText});
 export const setIsFetching = isFetching => ({type: TOGGLE_IS_FETCHING, isFetching});
 export const setUserProfile = profile => ({type: SET_USER_PROFILE, profile});
 export const setStatus = status => ({type: SET_USER_STATUS, status});
-export const setAuthUserData = (login, id, email) => ({type: SET_USER_DATA, data: {login, id, email}});
 
 export const getUserProfile = userId => dispatch => {
     dispatch(setIsFetching(true));
-    authAPI.authMe()
+    profileAPI.getProfile(userId)
         .then(response => {
-            if (response.data.resultCode === 0) {
-                let {login, id, email} = response.data.data;
-                dispatch(setAuthUserData(login, id, email));
-                profileAPI.getProfile(userId != null ? userId : id)
-                    .then(response => {
-                        dispatch(setIsFetching(false));
-                        dispatch(setUserProfile(response.data));
-                    });
-            }
+            dispatch(setIsFetching(false));
+            dispatch(setUserProfile(response.data));
         });
-}
+};
 
 
 export const getUserStatus = userId => dispatch => {
@@ -83,7 +68,7 @@ export const getUserStatus = userId => dispatch => {
         .then(response => {
             dispatch(setStatus(response.data));
         });
-}
+};
 
 export const updateUserStatus = status => dispatch => {
     profileAPI.updateStatus(status)
@@ -92,6 +77,6 @@ export const updateUserStatus = status => dispatch => {
                 dispatch(setStatus(status));
             }
         });
-}
+};
 
 export default profileReducer;

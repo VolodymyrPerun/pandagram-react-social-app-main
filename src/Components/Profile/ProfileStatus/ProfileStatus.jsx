@@ -4,7 +4,7 @@ import style from './ProfileStatus.module.scss'
 class ProfileStatus extends React.Component {
 
     state = {
-        editMode: true,
+        editMode: false,
         status: this.props.status
     }
 

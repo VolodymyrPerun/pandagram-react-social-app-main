@@ -11,6 +11,6 @@ export const profileAPI = {
     updateStatus(status) {
         return instance.put(`profile/status/`, {status});
     }
-}
+};
 
 
