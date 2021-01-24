@@ -154,7 +154,7 @@ let text = newPostElement.current.value;
 
 ## ReRender
 
-![1562938967001](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1562938967001.png)
+![1562938967001](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1562938967001.png)
 
 **Файл render.js:**
 
@@ -214,7 +214,7 @@ serviceWorker.unregister();
 
 ## FLUX Концепция/Архитектура
 
-![1562940934753](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1562940934753.png)
+![1562940934753](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1562940934753.png)
 
 **Концепция звучит так:** *Изменения в UI мире должны происходить только тогда, когда произойдут изменения в BLL мире*
 
@@ -485,7 +485,7 @@ let initialState = {
 
 Логика такова:
 
-![1564063093206](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1564063093206.png)
+![1564063093206](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1564063093206.png)
 
 ## Redux
 
@@ -944,7 +944,7 @@ let b = a;
 
 Казалось бы, всё готово. И в консоль выводит всё верно.
 
-![1564214889509](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1564214889509.png)
+![1564214889509](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1564214889509.png)
 
 Два одинаковых массива.
 
@@ -954,7 +954,7 @@ let b = a;
 b.name = 'TextB'
 ```
 
-![1564215021643](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1564215021643.png)
+![1564215021643](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1564215021643.png)
 
 Как можете видеть, name изменилось и в объекте a.
 
@@ -990,7 +990,7 @@ let b = {...a}
 b.name = 'TextB'
 ```
 
-![1564215283657](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1564215283657.png)
+![1564215283657](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1564215283657.png)
 
 Ура! Теперь это на первый взгляд два разных объекта. Но давайте добавим Sema в массив students объекта b. И выведем это
 
@@ -998,7 +998,7 @@ b.name = 'TextB'
 b.students.push('Sema')
 ```
 
-![1564215428311](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1564215428311.png)
+![1564215428311](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1564215428311.png)
 
 Опять всё идёт не по плану. Изменились оба массива.
 
@@ -1030,7 +1030,7 @@ b.students = [...a.students]
 
 Давайте по бумажке, promise  - это обещание, которое даёт dal - ui, что возьмёт с сервера данные, взяв их оттуда, он передаёт их в виде того обещания, что он дал ранее. 
 
-![1564427302517](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1564427302517.png)
+![1564427302517](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1564427302517.png)
 
 ```javascript
 const resultBlock = document.querySelector('#result');
@@ -1136,7 +1136,7 @@ async function postTasksFetch () {
 
 ## Class
 
-[class extends React.Component](https://github.com/Dvachee/SocialNetworkReact/commit/8c264525183ab242eed19b8c017d62010e2addb9)
+[class extends React.Component](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/commit/8c264525183ab242eed19b8c017d62010e2addb9)
 
 **Что такое класс? Что такое конструктор? Что это за слово такое new?**
 
@@ -1161,7 +1161,7 @@ Man2('Dimon', 8)
 
 Это легко можно проверить в консоли браузера после вызова данной функции
 
-![1565187371752](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1565187371752.png)
+![1565187371752](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1565187371752.png)
 
 Т.е теперь наши name и age - это новые ключи объекта window, а их значения - это параметры функции Man2
 
@@ -1173,21 +1173,21 @@ Man2('Dimon', 8)
 let m3 = new Man2('Dima', 31);
 ```
 
-![1565187623311](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1565187623311.png)
+![1565187623311](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1565187623311.png)
 
 И мы видим что в консоль вывелся **ОБЪЕКТ** с **КЛАССОМ** Man2
 
 В sources это выглядит так
 
-![1565187882877](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1565187882877.png)
+![1565187882877](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1565187882877.png)
 
 Если бы мы создали этот объект через литерал объекта, то мы бы увидели такую картину
 
-![1565187791164](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1565187791164.png)
+![1565187791164](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1565187791164.png)
 
 А в sources было бы написано object
 
-![1565187836760](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1565187836760.png)
+![1565187836760](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1565187836760.png)
 
 Используя слово new можно создавать неограниченное количество **ЭКЗЕМПЛЯРОВ** класса **Man2**
 
@@ -1418,7 +1418,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(withRouterProfileCon
 
 И именно она вызовется в App.js. Давайте взглянем на наши пропсы теперь
 
-![1565517952176](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1565517952176.png)
+![1565517952176](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1565517952176.png)
 
 Теперь помимо profileData и setUserProfile к нам приходит множество новых данных. Но самое главное находится в match.
 
@@ -1438,7 +1438,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(withRouterProfileCon
 
 Давайте снова глянем на props
 
-![1565518489591](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1565518489591.png)
+![1565518489591](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1565518489591.png)
 
 Теперь isExact  - true и в params есть ключ userId со значением 8
 
@@ -1461,25 +1461,25 @@ componentDidMount() {
 
 **Вот и всё!)**
 
-![1565524485562](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1565524485562.png)
+![1565524485562](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1565524485562.png)
 
 ## Архитектурный паттерн нашего приложения в одной картинке
 
 Начало:  2 уровня. UI - User Interface. BLL - business logic layer.
 
-![1565949602035](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1565949602035.png)
+![1565949602035](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1565949602035.png)
 
-![1565949713701](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1565949713701.png)
+![1565949713701](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1565949713701.png)
 
 Эволюция - 3 уровня.UI - User Interface. BLL - business logic layer. DAL - data access layer
 
-![1565949848685](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1565949848685.png)
+![1565949848685](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1565949848685.png)
 
 Эволюция vol 2.0. Разгрузка UI уровня
 
-![1565950092440](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1565950092440.png)
+![1565950092440](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1565950092440.png)
 
-![1565951914995](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1565951914995.png)
+![1565951914995](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1565951914995.png)
 
 
 
@@ -1508,7 +1508,7 @@ getUsers здесь является thunkCreator'ом. Он возвращае�
 
 Это решает проблемы конвейера. Всё начинает идти последовательно.
 
-![1565950092440](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1565950092440.png)
+![1565950092440](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1565950092440.png)
 
 И BLL уровень становится по истине самым главным. Он становится как бы "менеджером" или "посредником" между всеми уровнями.
 
@@ -1534,7 +1534,7 @@ componentDidMount() {
 
 Картинка ниже очень хорошо описывает весь процесс
 
-![1566127947019](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1566127947019.png)
+![1566127947019](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1566127947019.png)
 
 Но есть одно но, наш store умеет принимать только action. Т.е только объект. Как нам быть?
 
@@ -1651,7 +1651,7 @@ export const withAuthRedirect = (Component) => {
 
 Давайте по шагам. Изначально внутри функции withAuthRedirect мы создаём компоненту (Она может быть как классовой, так и функциональной), снабжаем её нужной логикой(в нашем случаем проверкой на авторизованность) и возвращаем пришедшую в нас компоненту. ЗАТЕМ всё это мы оборачиваем connect'ом чтобы передать нашей компоненте isAuth из state.
 
-![1566304151424](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1566304151424.png)
+![1566304151424](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1566304151424.png)
 
 Мы уже использовали HOC до этого. Например **withRouter**.
 
@@ -1867,7 +1867,7 @@ const LoginReduxForm = reduxForm({
 
 Необходимо указать уникальное имя. ( это то, как будет называться подветка ветки form)
 
-![1567066574050](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1567066574050.png)
+![1567066574050](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1567066574050.png)
 
 Теперь необходимо отрисовать это
 
@@ -1886,13 +1886,13 @@ const Login = (props) => {
 
 Ставим dubugger в созданной нами форме, и вводим любой символ в поле, например В
 
-![1567067268523](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1567067268523.png)
+![1567067268523](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1567067268523.png)
 
 Написанное нами значение автоматически внеслось в state. Это можно увидеть по свойству values в объекте login
 
 Вот такие  props передаёт HOC в нашу компоненту
 
-![1567067454013](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1567067454013.png)
+![1567067454013](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1567067454013.png)
 
 5) Сбор данных с формы по нажатию на кнопку.
 
@@ -1922,7 +1922,7 @@ const Login = (props) => {
 
 Ниже на рисунке показано как происходит вызов каждого callback и когда.
 
-![reduxform](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/reduxform.png)
+![reduxform](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/reduxform.png)
 
 ## Redux-Form validators и деструктуризация
 
@@ -2111,7 +2111,7 @@ let log = (prop) => {
 log(1,2,3,4,5);
 ```
 
-![1567363368480](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1567363368480.png)
+![1567363368480](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1567363368480.png)
 
 А теперь применим rest оператор
 
@@ -2123,7 +2123,7 @@ let log = (...prop) => {
 log(1,2,3,4,5);
 ```
 
-![1567363461202](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1567363461202.png)
+![1567363461202](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1567363461202.png)
 
 Он объединил все входные параметры в одну сущность.
 
@@ -2150,11 +2150,11 @@ let log = (prop) => {
 log(prop);
 ```
 
-![1567363747497](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1567363747497.png)
+![1567363747497](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1567363747497.png)
 
 Выводит объект. Если применить rest оператор на параметр, то он выведет это
 
-![1567363862457](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1567363862457.png)
+![1567363862457](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1567363862457.png)
 
 Теперь давайте попробуем это
 
@@ -2166,7 +2166,7 @@ let log = ({input, ...props}) => {
 log(prop);
 ```
 
-![1567364011979](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1567364011979.png)
+![1567364011979](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1567364011979.png)
 
 Выводит только input. Все же остальные свойства объединяются в одну сущность под общим названием props (Можно называть как угодно)
 
@@ -2180,7 +2180,7 @@ let log = ({input, ...props}) => {
 log(prop);
 ```
 
-![1567364125842](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/1567364125842.png)
+![1567364125842](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/1567364125842.png)
 
 ## Reselect
 
@@ -2230,7 +2230,7 @@ const mapStateToProps = (state) => {
 
 Давайте посмотрим на простой селектор, используя Reselect:
 
-![444444444](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/0_SSDchB03yEUDUYHg_.png)
+![444444444](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/0_SSDchB03yEUDUYHg_.png)
 
 В приведенном выше примере, мы разбили нашу функцию поиска товаров в корзине на две функции. Первая функция (строка 3) просто получит все элементы в корзине, а вторая функция является мемоизированным селектором. Reselect предоставляет `createSelector`API, позволяющий нам создать мемоизированный селектор. Это означает, что `getItemsWithTotals` будет вычисляться при первом запуске функции. Если эта же функция вызывается снова, но входные данные (результат `getItems`) не изменились, функция просто вернет кешированный расчет элементов и их итогов. Если элементы изменены (например, добавлен элемент, изменилось количество, любые манипуляции с результатом `getItems`), функция снова будет выполнена.
 
@@ -2292,7 +2292,7 @@ React.createElement("div");
 
 Теперь давайте заглянем под капот и вы сразу всё поймёте.
 
-![image-20191023235920585](https://github.com/Dvachee/SocialNetworkReact/raw/master/README-IMG/image-20191023235920585.png)
+![image-20191023235920585](https://github.com/VolodymyrPerun/pandagram-react-social-app-main/raw/master/README-IMG/image-20191023235920585.png)
 
 Так мы можем понять, что на самом деле компонента возвращает не jsx разметку, а обычный js код. 
 
