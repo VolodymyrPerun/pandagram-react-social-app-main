@@ -8,7 +8,7 @@ import Preloader from "../../../commons/Preloader/Preloader";
 class FriendItemContainer extends React.Component {
 
     componentDidMount() {
-        this.props.getSidebarFriends()
+        this.props.getSidebarFriends();
     }
 
     render() {

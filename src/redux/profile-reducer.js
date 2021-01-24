@@ -1,10 +1,8 @@
-import {authAPI} from "../API/authAPI/authAPI";
 import {profileAPI} from "../API/profileAPI/profileAPI";
 
 const ADD_POST = 'ADD-POST';
 let TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 let SET_USER_PROFILE = 'SET-USER-PROFILE';
-let SET_USER_DATA = 'SET_USER_DATA';
 let SET_USER_STATUS = 'SET_USER_STATUS';
 
 let initialState = {

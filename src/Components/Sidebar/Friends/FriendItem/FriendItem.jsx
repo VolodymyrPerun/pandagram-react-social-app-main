@@ -16,24 +16,15 @@ const FriendsData = props => {
 };
 
 const FriendItem = props => {
-    // eslint-disable-next-line no-unused-vars
-    let invalidEntries = 0;
 
-    function filterByID(item, index) {
-        if (index !== -1 && index <= 2) {
-            return true;
-        }
-        invalidEntries++;
-        return false;
-    }
-
-    props = (props.friends).filter(filterByID);
-    let friendName = props.map((f) =>
-        <FriendsData key={f.id}
-                     id={f.id}
-                     avatar={f.photos.small != null ? f.photos.small : avatarSmall}//photos
-                     name={f.name}
-        />);
+    let friendName = props.friends.map((f, i) =>
+        (i !== -1 && i <= 2)
+            ? <FriendsData key={f.id}
+                           id={f.id}
+                           avatar={f.photos.small != null ? f.photos.small : avatarSmall}//photos
+                           name={f.name}
+            />
+            : null);
 
     return (
         <div className={style.friend}>
