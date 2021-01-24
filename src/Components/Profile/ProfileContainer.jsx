@@ -7,7 +7,7 @@ import {LoadingOutlined} from '@ant-design/icons';
 import style from "../Profile/Profile.module.scss";
 import {withRouter} from "react-router-dom";
 import {compose} from "redux";
-import {withAuthRegister} from "../../HOC/withAuthRegister";
+import {withAuthRedirect} from "../../HOC/withAuthRedirect";
 
 class ProfileContainer extends React.Component {
 
@@ -51,5 +51,5 @@ let mapStateToProps = state => {
 export default compose(
     connect(mapStateToProps, {getUserProfile, getUserStatus, updateUserStatus}),
     withRouter,
-    withAuthRegister,
+    withAuthRedirect,
 )(ProfileContainer);

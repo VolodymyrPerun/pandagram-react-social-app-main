@@ -19,7 +19,7 @@ let initialState = {
     followingInProgress: []
 };
 
-const reducerFriends = (state = initialState, action) => {
+const friendsReducer = (state = initialState, action) => {
     switch (action.type) {
         case FOLLOW:
             return {
@@ -122,4 +122,4 @@ export const followToggle = id => {
     }
 }
 
-export default reducerFriends;
+export default friendsReducer;

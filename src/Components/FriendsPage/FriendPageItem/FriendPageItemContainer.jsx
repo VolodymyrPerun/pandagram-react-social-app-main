@@ -14,7 +14,7 @@ import {Spin} from 'antd';
 import {LoadingOutlined} from '@ant-design/icons';
 import style from './FriendPageItem.module.scss';
 import {compose} from "redux";
-import {withAuthRegister} from "../../../HOC/withAuthRegister";
+import {withAuthRedirect} from "../../../HOC/withAuthRedirect";
 
 
 class FriendPageItemContainer extends React.Component {
@@ -91,6 +91,6 @@ export default compose(
             followToggle,
             unfollowToggle
         }),
-    withAuthRegister,
+    withAuthRedirect,
 )(FriendPageItemContainer);
 

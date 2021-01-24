@@ -1,7 +1,7 @@
 import React from "react";
 import {Redirect} from "react-router-dom";
 
-export const withAuthRegister = Component => {
+export const withAuthRedirect = Component => {
 
     class RedirectComponent extends React.Component {
         render() {
@@ -11,4 +11,4 @@ export const withAuthRegister = Component => {
     }
 
     return RedirectComponent;
-}
+};

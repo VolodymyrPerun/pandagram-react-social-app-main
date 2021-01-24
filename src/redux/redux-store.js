@@ -1,19 +1,19 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux';
-import reducerProfile from './profile-reducer';
-import reducerDialogs from './dialogs-reducer';
-import reducerSidebar from './sidebar-reducer';
-import reducerFriends from "./friends-reducer";
-import reducerAuth from "./auth-reducer";
-import { reducer as formReducer } from 'redux-form'
+import profileReducer from './profile-reducer';
+import dialogsReducer from './dialogs-reducer';
+import sidebarReducer from './sidebar-reducer';
+import friendsReducer from "./friends-reducer";
+import authReducer from "./auth-reducer";
+import { reducer as formReducer } from 'redux-form';
 import thunkMiddleware from 'redux-thunk';
 
 
 let reducers = combineReducers({
-    profilePage: reducerProfile,
-    messagesPage: reducerDialogs,
-    friendsPage: reducerFriends,
-    sidebar: reducerSidebar,
-    auth: reducerAuth,
+    profilePage: profileReducer,
+    messagesPage: dialogsReducer,
+    friendsPage: friendsReducer,
+    sidebar: sidebarReducer,
+    auth: authReducer,
     form: formReducer
 });
 

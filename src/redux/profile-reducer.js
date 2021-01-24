@@ -19,7 +19,7 @@ let initialState = {
     status: null
 };
 
-const reducerProfile = (state = initialState, action) => {
+const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST:
             return {
@@ -94,4 +94,4 @@ export const updateUserStatus = status => dispatch => {
         });
 }
 
-export default reducerProfile;
+export default profileReducer;

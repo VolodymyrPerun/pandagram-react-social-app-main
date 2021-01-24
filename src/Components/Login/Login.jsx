@@ -7,7 +7,6 @@ import {faSignInAlt} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {connect} from "react-redux";
 import {login} from "../../redux/auth-reducer";
-import {withAuthRegister} from "../../HOC/withAuthRegister";
 import {Redirect} from "react-router-dom";
 
 

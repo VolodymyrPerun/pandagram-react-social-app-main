@@ -1,5 +1,4 @@
 import {sidebarAPI} from "../API/sidebarAPI/sidebarAPI";
-import {setTotalFriendsCount} from "./friends-reducer";
 
 let SET_FRIENDS = 'SET_FRIENDS';
 let TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
@@ -9,7 +8,7 @@ let initialState = {
     friends: [],
 };
 
-const reducerSidebar = (state = initialState, action) => {
+const sidebarReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_FRIENDS:
             return {
@@ -36,9 +35,8 @@ export const getSidebarFriends = () => {
             .then(data => {
                 dispatch(setIsFetching(false));
                 dispatch(setFriends(data.items));
-                dispatch(setTotalFriendsCount(data.totalCount));
             });
     }
 }
 
-export default reducerSidebar;
+export default sidebarReducer;
