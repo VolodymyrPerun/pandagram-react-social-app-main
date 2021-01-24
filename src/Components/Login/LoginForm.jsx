@@ -12,7 +12,7 @@ import {email, maxLengthCreator, minLengthCreator, password, required} from "../
 const maxLength20 = maxLengthCreator(20);
 const maxLength45 = maxLengthCreator(45);
 const minLength2 = minLengthCreator(2);
-const minLength8 = minLengthCreator(8);
+const minLength4 = minLengthCreator(4);
 
 
 let LoginForm = props => {
@@ -41,7 +41,7 @@ let LoginForm = props => {
                        component={FormsControlItem(INPUT)}
                        type={'password'}
                        placeholder={'Password'}
-                       validate={[required, maxLength20, minLength8]}
+                       validate={[required, maxLength20, minLength4]}
                        warn={password}
                        label={<FontAwesomeIcon
                            style={{marginRight: '13px', bottom: '-5px', position: 'relative'}}
