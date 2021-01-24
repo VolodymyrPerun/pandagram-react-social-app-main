@@ -8,7 +8,6 @@ import friendsPagePhoto from '../../assets/images/friendsPagePhoto.png'
 const FriendsPage = () => {
 
     return (
-
         <div className={style.friendsPage}>
             <img
                 src={friendsPagePhoto}

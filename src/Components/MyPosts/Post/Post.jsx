@@ -3,6 +3,7 @@ import style from './Post.module.scss';
 import chatCommentMessageUserAvatar from '../../../assets/images/chat__comment__message__user__avatar.png'
 
 const Post = props => {
+
     return (
         <div>
             <div className={style.item}>

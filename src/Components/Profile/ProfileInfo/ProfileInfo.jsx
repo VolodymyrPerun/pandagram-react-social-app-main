@@ -1,9 +1,7 @@
 import React from 'react';
 import style from './ProfileInfo.module.scss';
-import profilePagePhoto from '../../../assets/images/profilePhoto.png'
-import {Spin} from "antd";
+import profilePagePhoto from '../../../assets/images/profilePhoto.png';
 import {
-    LoadingOutlined,
     FacebookOutlined,
     TwitterOutlined,
     InstagramOutlined,
@@ -14,16 +12,12 @@ import {
 import avatar from "../../../assets/images/panda_avatar.gif";
 import bg from "../../../assets/images/file_item_bg.png";
 import ProfileStatus from "../ProfileStatus/ProfileStatus";
+import Preloader from "../../commons/Preloader/Preloader";
 
 const ProfileInfo = props => {
 
     if (!props.profile) {
-        return <Spin className={style.tip}
-                     tip="Loading..."
-                     indicator={<LoadingOutlined
-                         className={`${style.spinner} ${style.spinnerBig}`}
-                         spin/>}
-        />
+        return <Preloader/>
     } else {
         return (
             <div>
@@ -40,12 +34,7 @@ const ProfileInfo = props => {
                     <div>
                         {props.isFetching ?
                             <div>
-                                <Spin className={style.tip}
-                                      tip="Loading..."
-                                      indicator={<LoadingOutlined
-                                          className={`${style.spinner} ${style.spinnerBig}`}
-                                          spin/>}
-                                />
+                                <Preloader/>
                             </div> :
                             <div className={style.content}>
                                 <img

@@ -4,10 +4,11 @@ import '../../../App.scss'
 import avatar from '../../../assets/images/panda_avatar.gif';
 import bg from '../../../assets/images/file_item_bg.png'
 import avatarSmall from '../../../assets/images/panda_avatar_small.gif'
-import {Pagination, Spin} from 'antd';
-import {FastBackwardFilled, FastForwardFilled, LoadingOutlined} from '@ant-design/icons';
+import {Pagination} from 'antd';
+import {FastBackwardFilled, FastForwardFilled} from '@ant-design/icons';
 import {NavLink} from 'react-router-dom';
 import ApplyBtn from "../../commons/Buttons/Apply/ApplyBtn";
+import Preloader from "../../commons/Preloader/Preloader";
 
 
 const FriendPageItem = props => {
@@ -69,12 +70,7 @@ const FriendPageItem = props => {
                         </NavLink>
                         {props.isFetching ?
                             <div className={style.info}>
-                                <Spin className={style.tip}
-                                      tip="Loading..."
-                                      indicator={<LoadingOutlined
-                                          className={`${style.spinner} ${style.spinnerBig}`}
-                                          spin/>}
-                                />
+                                <Preloader/>
                             </div> :
                             <div className={style.info}>
                                 <div
@@ -102,7 +98,6 @@ const FriendPageItem = props => {
             )
         }
         <div>
-
             <Pagination className={style.pagination}
                         total={pagesCount}
                         itemRender={itemRender}
@@ -117,15 +112,15 @@ const FriendPageItem = props => {
             />
 
             <div className={style.pagesCounter}>MaxFriends on one page {props.pageSize}. Click to change:
-                    <ApplyBtn handleClick={() => {
-                        props.onPageChangeMaxFriendsTo10()
-                    }} label='10'/>
-                    <ApplyBtn handleClick={() => {
-                        props.onPageChangeMaxFriendsTo20()
-                    }} label='20'/>
-                    <ApplyBtn handleClick={() => {
-                        props.onPageChangeMaxFriendsTo50()
-                    }} label='50'/>
+                <ApplyBtn handleClick={() => {
+                    props.onPageChangeMaxFriendsTo10()
+                }} label='10'/>
+                <ApplyBtn handleClick={() => {
+                    props.onPageChangeMaxFriendsTo20()
+                }} label='20'/>
+                <ApplyBtn handleClick={() => {
+                    props.onPageChangeMaxFriendsTo50()
+                }} label='50'/>
             </div>
         </div>
     </>

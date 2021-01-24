@@ -1,5 +1,5 @@
 const FriendsCount = props => {
-    return props.totalFriendsCount
+    return props.totalFriendsCount;
 };
 
 export default FriendsCount;

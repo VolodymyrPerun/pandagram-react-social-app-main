@@ -2,9 +2,7 @@ import {connect} from 'react-redux';
 import FriendItem from "./FriendItem";
 import {getSidebarFriends} from "../../../../redux/sidebar-reducer";
 import React from "react";
-import {Spin} from "antd";
-import {LoadingOutlined} from '@ant-design/icons';
-import style from "../../../FriendsPage/FriendPageItem/FriendPageItem.module.scss";
+import Preloader from "../../../commons/Preloader/Preloader";
 
 
 class FriendItemContainer extends React.Component {
@@ -16,11 +14,9 @@ class FriendItemContainer extends React.Component {
     render() {
 
         return <>
-            {this.props.isFetching ?
-                <Spin className={style.tip}
-                      indicator={<LoadingOutlined className={style.spinner} spin/>}
-                /> :
-                <FriendItem friends={this.props.friends}/>}
+            {this.props.isFetching
+                ? <Preloader/>
+                : <FriendItem friends={this.props.friends}/>}
         </>
     }
 }

@@ -4,10 +4,11 @@ import DialogsItem from "./DialogItem/DialogItem";
 import MessagesItem from "./Message/Message";
 import dialogsPhoto from "../../assets/images/dialogsPhoto.png"
 import MessageFormItem from "./FormItem/MessageFormItem";
+import Preloader from "../commons/Preloader/Preloader";
 
 
 const Dialogs = props => {
-    console.log(props);
+
     let DialogItem = props.messagesPage.dialogsData.map(dialog =>
         <DialogsItem key={dialog.id} id={dialog.id} name={dialog.name}/>);
 
@@ -16,21 +17,25 @@ const Dialogs = props => {
 
 
     let onSubmit = formData => {
-       props.addMessage(formData.newMessageText);
+        props.addMessage(formData.newMessageText);
     }
 
     return (
-        <div className={style.dialogs}>
-            <img
-                src={dialogsPhoto}
-                alt="img"/>
-            <div>
-                {DialogItem}
-            </div>
-            <div>
-                <MessageFormItem onSubmit={onSubmit}/>
-                {Message}
-            </div>
+        <div>
+            {props.isFetching
+                ? <Preloader/>
+                : <div className={style.dialogs}>
+                    <img
+                        src={dialogsPhoto}
+                        alt="img"/>
+                    <div>
+                        {DialogItem}
+                    </div>
+                    <div>
+                        <MessageFormItem onSubmit={onSubmit}/>
+                        {Message}
+                    </div>
+                </div>}
         </div>
     )
 };

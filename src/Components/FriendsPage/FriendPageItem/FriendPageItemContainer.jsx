@@ -10,11 +10,7 @@ import {
     getFriends
 } from "../../../redux/friends-reducer";
 import FriendPageItem from "./FriendPageItem";
-import {Spin} from 'antd';
-import {LoadingOutlined} from '@ant-design/icons';
-import style from './FriendPageItem.module.scss';
-import {compose} from "redux";
-import {withAuthRedirect} from "../../../HOC/withAuthRedirect";
+import Preloader from "../../commons/Preloader/Preloader";
 
 
 class FriendPageItemContainer extends React.Component {
@@ -47,10 +43,7 @@ class FriendPageItemContainer extends React.Component {
     render() {
         return <>
             {this.props.isFetching ?
-                <Spin className={style.tip}
-                      tip="Loading..."
-                      indicator={<LoadingOutlined className={style.spinner} spin/>}
-                /> : null}
+                <Preloader/> : null}
             <FriendPageItem totalFriendsCount={this.props.totalFriendsCount}
                             pageSize={this.props.pageSize}
                             currentPage={this.props.currentPage}
@@ -80,17 +73,14 @@ let mapStateToProps = state => {
     }
 };
 
-export default compose(
-    connect(mapStateToProps,
-        {
-            follow,
-            unfollow,
-            setCurrentPage,
-            setPageSize,
-            getFriends,
-            followToggle,
-            unfollowToggle
-        }),
-    withAuthRedirect,
-)(FriendPageItemContainer);
+export default connect(mapStateToProps,
+    {
+        follow,
+        unfollow,
+        setCurrentPage,
+        setPageSize,
+        getFriends,
+        followToggle,
+        unfollowToggle
+    })(FriendPageItemContainer);
 
