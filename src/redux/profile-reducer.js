@@ -4,6 +4,7 @@ const ADD_POST = 'ADD-POST';
 let TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 let SET_USER_PROFILE = 'SET-USER-PROFILE';
 let SET_USER_STATUS = 'SET_USER_STATUS';
+let DELETE_POST = 'DELETE_POST';
 
 let initialState = {
     posts: [
@@ -41,6 +42,11 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 status: action.status
             };
+        case DELETE_POST:
+            return {
+                ...state,
+                posts: state.posts.filter(p => p.id !== action.id)
+            };
         default:
             return state;
     }
@@ -50,6 +56,7 @@ export const addPost = newPostText => ({type: ADD_POST, newPostText});
 export const setIsFetching = isFetching => ({type: TOGGLE_IS_FETCHING, isFetching});
 export const setUserProfile = profile => ({type: SET_USER_PROFILE, profile});
 export const setStatus = status => ({type: SET_USER_STATUS, status});
+export const deletePost = id => ({type: DELETE_POST, id});
 
 export const getUserProfile = userId => dispatch => {
     dispatch(setIsFetching(true));
