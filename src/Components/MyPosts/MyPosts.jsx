@@ -7,8 +7,11 @@ import PostsFormItem from "./FormItem/PostsFormItem";
 
 const MyPosts = props => {
 
-    let postElements = props.profilePage.posts.map(post =>
-        <Post key={post.id} id={post.id} message={post.message} likesCount={post.likesCount}/>);
+    let postElements =
+        [...props.profilePage.posts]
+            .reverse()
+            .map(post =>
+                <Post key={post.id} id={post.id} message={post.message} likesCount={post.likesCount}/>);
 
 
     let onSubmit = formData => {
@@ -36,7 +39,7 @@ const MyPosts = props => {
                      backgroundPosition: 'center',
                      backgroundSize: 'cover',
                      backgroundRepeat: 'no-repeat'
-                 }}>>
+                 }}>
                 {postElements}
             </div>
         </div>
