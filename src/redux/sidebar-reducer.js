@@ -1,7 +1,7 @@
 import {sidebarAPI} from "../API/sidebarAPI/sidebarAPI";
 
-let SET_FRIENDS = 'SET_FRIENDS';
-let TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
+let SET_FRIENDS = 'pandagram-react-social-app-main/sidebar/SET_FRIENDS';
+let TOGGLE_IS_FETCHING = 'pandagram-react-social-app-main/sidebar/TOGGLE_IS_FETCHING';
 
 
 let initialState = {
@@ -28,15 +28,11 @@ const sidebarReducer = (state = initialState, action) => {
 export const setFriends = friends => ({type: SET_FRIENDS, friends});
 export const setIsFetching = isFetching => ({type: TOGGLE_IS_FETCHING, isFetching});
 
-export const getSidebarFriends = () => {
-    return dispatch => {
-        dispatch(setIsFetching(true));
-        sidebarAPI.getSidebarFriends()
-            .then(data => {
-                dispatch(setIsFetching(false));
-                dispatch(setFriends(data.items));
-            });
-    }
+export const getSidebarFriends = () => async dispatch => {
+    dispatch(setIsFetching(true));
+    let response = await sidebarAPI.getSidebarFriends();
+    dispatch(setIsFetching(false));
+    dispatch(setFriends(response.data.items));
 }
 
 export default sidebarReducer;
