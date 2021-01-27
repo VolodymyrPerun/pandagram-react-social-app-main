@@ -1,13 +1,12 @@
 import React from 'react';
 import style from './SubmitFollowBtn.module.scss';
 
-const SubmitFollowBtn = props => {
-
+const SubmitFollowBtn = React.memo(({handleClick, label}) => {
     return (
         <>
-            <button className={style.button} onClick={props.handleClick}>{props.label}</button>
+            <button className={style.button} onClick={handleClick}>{label}</button>
         </>
     )
-};
+});
 
 export default SubmitFollowBtn;

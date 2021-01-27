@@ -5,9 +5,8 @@ import dialogsReducer from './dialogs-reducer';
 import friendsReducer from "./friends-reducer";
 import profileReducer from './profile-reducer';
 import sidebarReducer from './sidebar-reducer';
-import { reducer as formReducer } from 'redux-form';
+import {reducer as formReducer} from 'redux-form';
 import thunkMiddleware from 'redux-thunk';
-
 
 
 let reducers = combineReducers({

@@ -5,12 +5,12 @@ import {withAuthRedirect} from "../../HOC/withAuthRedirect";
 import {compose} from "redux";
 
 
-let mapStateToProps = state => {
+let mapStateToProps = ({messagesPage, auth}) => {
 
     return {
-        messagesPage: state.messagesPage,
-        isAuth: state.auth.isAuth,
-        isFetching: state.messagesPage.isFetching
+        messagesPage,
+        isAuth: auth.isAuth,
+        isFetching: messagesPage.isFetching
     }
 };
 

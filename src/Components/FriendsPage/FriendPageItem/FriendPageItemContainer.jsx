@@ -22,27 +22,32 @@ import Preloader from "../../commons/Preloader/Preloader";
 class FriendPageItemContainer extends React.Component {
 
     componentDidMount() {
-        this.props.getAllFriends(this.props.currentPage, this.props.pageSize);
+        const {currentPage, pageSize} = this.props;
+        this.props.getAllFriends(currentPage, pageSize);
     }
 
     onPageChange = pageNumber => {
+        const {pageSize} = this.props;
         this.props.setCurrentPage(pageNumber);
-        this.props.getAllFriends(pageNumber, this.props.pageSize);
+        this.props.getAllFriends(pageNumber, pageSize);
     };
 
     onPageChangeMaxFriendsTo50 = pageSize => {
+        const {currentPage} = this.props;
         this.props.setPageSize(pageSize = 50);
-        this.props.getAllFriends(this.props.currentPage, pageSize);
+        this.props.getAllFriends(currentPage, pageSize);
     };
 
     onPageChangeMaxFriendsTo20 = pageSize => {
+        const {currentPage} = this.props;
         this.props.setPageSize(pageSize = 20);
-        this.props.getAllFriends(this.props.currentPage, pageSize);
+        this.props.getAllFriends(currentPage, pageSize);
     };
 
     onPageChangeMaxFriendsTo10 = pageSize => {
+        const {currentPage} = this.props;
         this.props.setPageSize(pageSize = 10);
-        this.props.getAllFriends(this.props.currentPage, pageSize);
+        this.props.getAllFriends(currentPage, pageSize);
     };
 
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import style from './ApplyBtn.module.scss';
 
-const ApplyBtn = React.memo(props => {
+const ApplyBtn = React.memo(({handleClick, label}) => {
     return (
         <>
-            <button className={style.button} onClick={props.handleClick}>{props.label}</button>
+            <button className={style.button} onClick={handleClick}>{label}</button>
         </>
     )
 });

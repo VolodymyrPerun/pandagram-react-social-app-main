@@ -3,10 +3,10 @@ import {addPost} from '../../redux/profile-reducer';
 import {connect} from 'react-redux';
 
 
-let mapStateToProps = state => {
+let mapStateToProps = ({profilePage}) => {
 
     return {
-        profilePage: state.profilePage,
+        profilePage
     }
 };
 

@@ -3,21 +3,21 @@ import style from './FriendItem.module.scss';
 import avatarSmall from "../../../../assets/images/panda_avatar_small.gif";
 
 
-const FriendsData = props => {
+const FriendsData = ({avatar, name}) => {
 
     return (
         <div>
             <img
-                src={props.avatar}
+                src={avatar}
                 alt="avatar"/>
-            <div>{props.name}</div>
+            <div>{name}</div>
         </div>
     )
 };
 
-const FriendItem = props => {
+const FriendItem = ({friends}) => {
 
-    let friendName = props.friends.map((f, i) =>
+    let friendName = friends.map((f, i) =>
         (i !== -1 && i <= 2)
             ? <FriendsData key={f.id}
                            id={f.id}

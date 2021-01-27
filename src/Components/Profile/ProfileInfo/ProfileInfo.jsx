@@ -14,9 +14,9 @@ import bg from "../../../assets/images/file_item_bg.png";
 import ProfileStatus from "../ProfileStatus/ProfileStatusWithHooks";
 import Preloader from "../../commons/Preloader/Preloader";
 
-const ProfileInfo = props => {
+const ProfileInfo = ({profile, isFetching, status, updateUserStatus}) => {
 
-    if (!props.profile) {
+    if (!profile) {
         return <Preloader/>
     } else {
         return (
@@ -32,62 +32,62 @@ const ProfileInfo = props => {
                          backgroundRepeat: 'no-repeat'
                      }}>
                     <div>
-                        {props.isFetching ?
+                        {isFetching ?
                             <div>
                                 <Preloader/>
                             </div> :
                             <div className={style.content}>
                                 <img
-                                    src={props.profile.photos.large != null ? props.profile.photos.large : avatar}
+                                    src={profile.photos.large != null ? profile.photos.large : avatar}
                                     alt='avatar'/>
                                 <div className={style.contentInfo}>
                                     <ProfileStatus
-                                        status={props.status}
-                                        updateUserStatus={props.updateUserStatus}
+                                        status={status}
+                                        updateUserStatus={updateUserStatus}
                                     />
                                     <ul>
                                         <li>
-                                            <span>Full name:</span> {props.profile.fullName != null ? props.profile.fullName : 'sorry, it`s my business...'}
+                                            <span>Full name:</span> {profile.fullName != null ? profile.fullName : 'sorry, it`s my business...'}
                                         </li>
                                         <li>
-                                            <span>About me:</span> {props.profile.aboutMe != null ? props.profile.aboutMe : 'sorry, it`s a secret...'}
+                                            <span>About me:</span> {profile.aboutMe != null ? profile.aboutMe : 'sorry, it`s a secret...'}
                                         </li>
                                         <li>
-                                            <span>Looking for a job:</span> {props.profile.lookingForAJobDescription != null ? props.profile.lookingForAJobDescription : 'sorry, but it`m not looking for a job...'}
+                                            <span>Looking for a job:</span> {profile.lookingForAJobDescription != null ? profile.lookingForAJobDescription : 'sorry, but it`m not looking for a job...'}
                                         </li>
                                     </ul>
                                     <ul className={style.socialMedias}>
                                         <li>
                                             <a className={style.facebook}
-                                               href={"http://" + props.profile.contacts.facebook}
+                                               href={"http://" + profile.contacts.facebook}
                                                rel="noopener noreferrer"
                                                target="_blank"><FacebookOutlined/></a>
                                         </li>
                                         <li>
                                             <a className={style.twitter}
-                                               href={"http://" + props.profile.contacts.twitter}
+                                               href={"http://" + profile.contacts.twitter}
                                                rel="noopener noreferrer"
                                                target="_blank"><TwitterOutlined/></a>
                                         </li>
                                         <li>
                                             <a className={style.instagram}
-                                               href={"http://" + props.profile.contacts.instagram}
+                                               href={"http://" + profile.contacts.instagram}
                                                rel="noopener noreferrer"
                                                target="_blank"><InstagramOutlined/></a>
                                         </li>
                                         <li>
                                             <a className={style.youtube}
-                                               href={"http://" + props.profile.contacts.youtube}
+                                               href={"http://" + profile.contacts.youtube}
                                                rel="noopener noreferrer"
                                                target="_blank"><YoutubeOutlined/></a>
                                         </li>
                                         <li>
-                                            <a className={style.github} href={"http://" + props.profile.contacts.github}
+                                            <a className={style.github} href={"http://" + profile.contacts.github}
                                                rel="noopener noreferrer"
                                                target="_blank"><GithubOutlined/></a>
                                         </li>
                                         <li>
-                                            <a href={"mailto:" + props.profile.contacts.website}
+                                            <a href={"mailto:" + profile.contacts.website}
                                                rel="noopener noreferrer"
                                                target="_blank"><MailOutlined/></a>
                                         </li>

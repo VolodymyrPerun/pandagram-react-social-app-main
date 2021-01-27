@@ -14,11 +14,11 @@ import {TEXTAREA} from "../../../constants/formsControls.enum";
 const maxLength50 = maxLengthCreator(50);
 const minLength2 = minLengthCreator(2);
 
-const PostsFormItem = props => {
+const PostsFormItem = ({handleSubmit}) => {
 
     return (
         <div className={style.formWrapper}>
-            <form onSubmit={props.handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <div className={style.form}>
                     <div className={style.formItem}>
                         <Field

@@ -5,17 +5,17 @@ import bg from "../../assets/images/file_item_bg_white.png";
 import PostsFormItem from "./FormItem/PostsFormItem";
 
 
-const MyPosts = props => {
+const MyPosts = ({profilePage, addPost}) => {
 
     let postElements =
-        [...props.profilePage.posts]
+        [...profilePage.posts]
             .reverse()
             .map(post =>
                 <Post key={post.id} id={post.id} message={post.message} likesCount={post.likesCount}/>);
 
 
     let onSubmit = formData => {
-        props.addPost(formData.newPostText);
+        addPost(formData.newPostText);
     }
 
     return (

@@ -14,12 +14,12 @@ import {TEXTAREA} from "../../../constants/formsControls.enum";
 const maxLength50 = maxLengthCreator(50);
 const minLength2 = minLengthCreator(2);
 
-const MessageFormItem = props => {
+const MessageFormItem = ({handleSubmit}) => {
 
     return (
         <div className={style.formItem}>
             <div>
-                <form onSubmit={props.handleSubmit}>
+                <form onSubmit={handleSubmit}>
                     <div>
                         <Field
                             className={style.textareaField}

@@ -15,10 +15,10 @@ const minLength2 = minLengthCreator(2);
 const minLength4 = minLengthCreator(4);
 
 
-let LoginForm = props => {
+let LoginForm = ({handleSubmit, warning, pristine, submitting, reset, error}) => {
 
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <div className={style.inputContainer}>
 
                 <Field className={style.input}
@@ -27,7 +27,7 @@ let LoginForm = props => {
                        type={"email"}
                        placeholder={'Email'}
                        validate={[required, maxLength45, minLength2]}
-                       warning={props.warning}
+                       warning={warning}
                        warn={email}
                        label={<FontAwesomeIcon
                            style={{marginRight: '13px', bottom: '-5px', position: 'relative'}}
@@ -61,12 +61,12 @@ let LoginForm = props => {
                     label="Login"
                     name={'Submit'}
                     type={"submit"}
-                    disabled={props.pristine || props.submitting} onClick={props.reset}
+                    disabled={pristine || submitting} onClick={reset}
                 />
             </div>
-            {props.error &&
+            {error &&
             <div className={style.formsSummaryError}>
-                <span>ERROR: {props.error}</span>
+                <span>ERROR: {error}</span>
             </div>}
         </form>
     )

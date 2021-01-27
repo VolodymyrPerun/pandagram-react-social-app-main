@@ -11,9 +11,21 @@ import ApplyBtn from "../../commons/Buttons/Apply/ApplyBtn";
 import Preloader from "../../commons/Preloader/Preloader";
 
 
-const FriendPageItem = props => {
+const FriendPageItem = ({
+                            friends,
+                            totalFriendsCount,
+                            pageSize,
+                            onPageChange,
+                            onPageChangeMaxFriendsTo10,
+                            onPageChangeMaxFriendsTo20,
+                            onPageChangeMaxFriendsTo50,
+                            isFetching,
+                            followingInProgress,
+                            unfollowToggle,
+                            followToggle
+                        }) => {
 
-    let pagesCount = Math.ceil(Math.floor(props.totalFriendsCount / props.pageSize) * 10);
+    let pagesCount = Math.ceil(Math.floor(totalFriendsCount / pageSize) * 10);
 
     function itemRender(current, type, originalElement) {
         if (type === 'prev') {
@@ -34,27 +46,27 @@ const FriendPageItem = props => {
                         showLessItems={true}
                         showSizeChanger={false}
                         onChange={(p) => {
-                            props.onPageChange(p)
+                            onPageChange(p)
                         }}
                         onClick={(p) => {
-                            props.onPageChange(p)
+                            onPageChange(p)
                         }}
             />
 
-            <div className={style.pagesCounter}>Max Friends on one page {props.pageSize}. Click to change:
+            <div className={style.pagesCounter}>Max Friends on one page {pageSize}. Click to change:
                 <ApplyBtn handleClick={() => {
-                    props.onPageChangeMaxFriendsTo10()
+                    onPageChangeMaxFriendsTo10()
                 }} label='10'/>
                 <ApplyBtn handleClick={() => {
-                    props.onPageChangeMaxFriendsTo20()
+                    onPageChangeMaxFriendsTo20()
                 }} label='20'/>
                 <ApplyBtn handleClick={() => {
-                    props.onPageChangeMaxFriendsTo50()
+                    onPageChangeMaxFriendsTo50()
                 }} label='50'/>
             </div>
         </div>
         {
-            props.friends.map(f =>
+            friends.map(f =>
                 <div key={f.id}>
                     <div className={style.friendItem}
                          style={{
@@ -64,11 +76,11 @@ const FriendPageItem = props => {
                              backgroundRepeat: 'no-repeat'
                          }}>
                         <NavLink to={'/profile/' + f.id}>
-                            {props.isFetching ?
+                            {isFetching ?
                                 <img src={f.photos.small != null ? f.photos.small : avatarSmall} alt='avatar'/> :
                                 <img src={f.photos.large != null ? f.photos.large : avatar} alt='avatar'/>}
                         </NavLink>
-                        {props.isFetching ?
+                        {isFetching ?
                             <div className={style.info}>
                                 <Preloader/>
                             </div> :
@@ -82,13 +94,13 @@ const FriendPageItem = props => {
                                 </div>
                                 <div className={style.followed}>
                                     {f.followed
-                                        ? <button disabled={props.followingInProgress.some(id => id === f.id)}
+                                        ? <button disabled={followingInProgress.some(id => id === f.id)}
                                                   onClick={() => {
-                                                      props.unfollowToggle(f.id)
+                                                      unfollowToggle(f.id)
                                                   }}>Unfollow</button>
-                                        : <button disabled={props.followingInProgress.some(id => id === f.id)}
+                                        : <button disabled={followingInProgress.some(id => id === f.id)}
                                                   onClick={() => {
-                                                      props.followToggle(f.id)
+                                                      followToggle(f.id)
                                                   }}>Follow</button>}
                                 </div>
                             </div>
@@ -104,22 +116,22 @@ const FriendPageItem = props => {
                         showLessItems={true}
                         showSizeChanger={false}
                         onChange={(p) => {
-                            props.onPageChange(p)
+                            onPageChange(p)
                         }}
                         onClick={(p) => {
-                            props.onPageChange(p)
+                            onPageChange(p)
                         }}
             />
 
-            <div className={style.pagesCounter}>MaxFriends on one page {props.pageSize}. Click to change:
+            <div className={style.pagesCounter}>MaxFriends on one page {pageSize}. Click to change:
                 <ApplyBtn handleClick={() => {
-                    props.onPageChangeMaxFriendsTo10()
+                    onPageChangeMaxFriendsTo10()
                 }} label='10'/>
                 <ApplyBtn handleClick={() => {
-                    props.onPageChangeMaxFriendsTo20()
+                    onPageChangeMaxFriendsTo20()
                 }} label='20'/>
                 <ApplyBtn handleClick={() => {
-                    props.onPageChangeMaxFriendsTo50()
+                    onPageChangeMaxFriendsTo50()
                 }} label='50'/>
             </div>
         </div>

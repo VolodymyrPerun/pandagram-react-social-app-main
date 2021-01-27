@@ -7,22 +7,22 @@ import MessageFormItem from "./FormItem/MessageFormItem";
 import Preloader from "../commons/Preloader/Preloader";
 
 
-const Dialogs = props => {
+const Dialogs = ({messagesPage, addMessage, isFetching}) => {
 
-    let DialogItem = props.messagesPage.dialogsData.map(dialog =>
+    let DialogItem = messagesPage.dialogsData.map(dialog =>
         <DialogsItem key={dialog.id} id={dialog.id} name={dialog.name}/>);
 
-    let Message = props.messagesPage.messagesData.map(message =>
+    let Message = messagesPage.messagesData.map(message =>
         <MessagesItem key={message.id} id={message.id} message={message.message}/>);
 
 
     let onSubmit = formData => {
-        props.addMessage(formData.newMessageText);
-    }
+        addMessage(formData.newMessageText);
+    };
 
     return (
         <div>
-            {props.isFetching
+            {isFetching
                 ? <Preloader/>
                 : <div className={style.dialogs}>
                     <img
