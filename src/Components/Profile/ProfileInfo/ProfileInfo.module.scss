@@ -29,6 +29,25 @@
       margin-bottom: 10px;
     }
 
+    input[type="file"] {
+      display: none;
+    }
+    
+    .customFileUpload {
+      margin-bottom: 15px;
+      padding: 7px 4px;
+      border: 1px solid #ccc;
+      display: inline-block;
+      font-family: raleway-grid, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      background-color: #F0650D;
+      color: whitesmoke;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, .25);
+      cursor: pointer;
+    }
+
     .contentInfo {
       max-width: 450px;
       padding: 15px;

@@ -3,7 +3,8 @@ import {
     DELETE_POST,
     TOGGLE_IS_FETCHING,
     SET_USER_PROFILE,
-    SET_USER_STATUS
+    SET_USER_STATUS,
+    SET_PROFILE_PHOTO
 } from './constants';
 
 
@@ -47,6 +48,11 @@ const profileReducer = (state = initialState, action) => {
             return {
                 ...state,
                 posts: state.posts.filter(p => p.id !== action.id)
+            };
+        case SET_PROFILE_PHOTO:
+            return {
+                ...state,
+                profile: {...state.profile, photos: action.photos}
             };
         default:
             return state;
