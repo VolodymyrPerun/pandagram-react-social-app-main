@@ -60,13 +60,9 @@ let mapStateToProps = state => {
 
 let AppContainer = compose(
     withRouter,
-    connect(mapStateToProps,
-        {
-            initializeApp
-        })
-)(App);
+    connect(mapStateToProps, {initializeApp}))(App);
 
-let SocialApp = () => {
+let SocialApp = props => {
     return <BrowserRouter>
         <Provider store={store}>
             <AppContainer/>
