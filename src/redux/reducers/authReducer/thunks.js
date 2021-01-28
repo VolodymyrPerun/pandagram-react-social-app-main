@@ -1,32 +1,7 @@
-import {authAPI} from "../API/authAPI/authAPI";
+import {authAPI} from "../../../API/authAPI/authAPI";
 import {stopSubmit} from "redux-form";
+import {setAuthUserData} from "./actions";
 
-
-let SET_USER_DATA = 'pandagram-react-social-app-main/auth/SET_USER_DATA';
-
-let initialState = {
-    userId: null,
-    email: null,
-    password: null,
-    login: null,
-    isAuth: false,
-    rememberMe: false
-};
-
-const authReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case SET_USER_DATA:
-            return {
-                ...state,
-                ...action.payload
-            }
-        default:
-            return state;
-    }
-};
-
-export const setAuthUserData = (userId, email, login, isAuth) =>
-    ({type: SET_USER_DATA, payload: {userId, email, login, isAuth}});
 
 export const authMe = () => async dispatch => {
     let response = await authAPI.authMe();
@@ -55,5 +30,3 @@ export const logout = () => async dispatch => {
         dispatch(setAuthUserData(null, null, null, false));
     }
 };
-
-export default authReducer;

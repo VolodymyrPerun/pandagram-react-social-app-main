@@ -1,4 +1,4 @@
-import {addMessage, setIsFetching} from '../../redux/dialogs-reducer';
+import {addMessage, setIsFetching} from '../../redux/reducers/dialogsReducer/actions';
 import Dialogs from "./Dialogs";
 import {connect} from 'react-redux';
 import {withAuthRedirect} from "../../HOC/withAuthRedirect";

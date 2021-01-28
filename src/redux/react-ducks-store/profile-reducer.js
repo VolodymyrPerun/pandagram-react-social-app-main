@@ -1,4 +1,4 @@
-import {profileAPI} from "../API/profileAPI/profileAPI";
+import {profileAPI} from "../../API/profileAPI/profileAPI";
 
 const ADD_POST = 'pandagram-react-social-app-main/profile/ADD-POST';
 let TOGGLE_IS_FETCHING = 'pandagram-react-social-app-main/profile/TOGGLE_IS_FETCHING';
@@ -65,7 +65,6 @@ export const getUserProfile = userId => async dispatch => {
     dispatch(setUserProfile(response.data));
 
 };
-
 
 export const getUserStatus = userId => async dispatch => {
     let response = await profileAPI.getStatus(userId);

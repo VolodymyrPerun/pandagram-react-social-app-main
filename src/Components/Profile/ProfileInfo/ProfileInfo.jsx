@@ -11,7 +11,8 @@ import {
 } from '@ant-design/icons';
 import avatar from "../../../assets/images/panda_avatar.gif";
 import bg from "../../../assets/images/file_item_bg.png";
-import ProfileStatus from "../ProfileStatus/ProfileStatusWithHooks";
+import ProfileStatus from "../ProfileStatus/ProfileStatusWithHooks";// Component with hooks
+//import ProfileStatus from "../ProfileStatus/ProfileStatus";// Class component
 import Preloader from "../../commons/Preloader/Preloader";
 
 const ProfileInfo = ({profile, isFetching, status, updateUserStatus}) => {

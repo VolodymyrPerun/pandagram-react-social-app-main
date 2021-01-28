@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import FriendItem from "./FriendItem";
-import {getSidebarFriends} from "../../../../redux/sidebar-reducer";
+import {getSidebarFriends} from "../../../../redux/reducers/sidebarReducer/thunks";
 import React from "react";
 import Preloader from "../../../commons/Preloader/Preloader";
 

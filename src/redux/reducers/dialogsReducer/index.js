@@ -1,5 +1,5 @@
-const ADD_MESSAGE = 'pandagram-react-social-app-main/dialogs/ADD-MESSAGE';
-let TOGGLE_IS_FETCHING = 'pandagram-react-social-app-main/dialogs/TOGGLE_IS_FETCHING';
+import {TOGGLE_IS_FETCHING, ADD_MESSAGE} from './constants';
+
 
 let initialState = {
     messagesData: [
@@ -38,8 +38,5 @@ const dialogsReducer = (state = initialState, action) => {
             return state;
     }
 };
-
-export const setIsFetching = isFetching => ({type: TOGGLE_IS_FETCHING, isFetching});
-export const addMessage = newMessageText => ({type: ADD_MESSAGE, newMessageText});
 
 export default dialogsReducer;

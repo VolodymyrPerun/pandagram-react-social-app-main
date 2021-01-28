@@ -3,10 +3,12 @@ import {connect} from 'react-redux';
 import {
     setCurrentPage,
     setPageSize,
+} from "../../../redux/reducers/friendsReducer/actions";
+import {
     followToggle,
     unfollowToggle,
     getAllFriends
-} from "../../../redux/friends-reducer";
+} from "../../../redux/reducers/friendsReducer/thunks";
 import {
     getCurrentPage,
     getFollowingInProgress,
@@ -14,7 +16,7 @@ import {
     getPageSize,
     getTotalFriendsCount,
     getFriends
-} from "../../../redux/friends-selectors";
+} from "../../../redux/reducers/friendsReducer/friends-selectors";
 import FriendPageItem from "./FriendPageItem";
 import Preloader from "../../commons/Preloader/Preloader";
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {getUserProfile, getUserStatus, updateUserStatus} from "../../redux/profile-reducer";
+import {getUserProfile, getUserStatus, updateUserStatus} from "../../redux/reducers/profileReducer/thunks";
 import {withRouter} from "react-router-dom";
 import {compose} from "redux";
 import Preloader from "../commons/Preloader/Preloader";

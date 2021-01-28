@@ -16,7 +16,7 @@ const MyPosts = ({profilePage, addPost}) => {
 
     let onSubmit = formData => {
         addPost(formData.newPostText);
-    }
+    };
 
     return (
         <div className={style.postsBlock}>

@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import FriendsCount from "./FriendsCount";
-import {setFriends} from "../../../redux/friends-reducer";
+import {setFriends} from "../../../redux/reducers/friendsReducer/actions";
 
 
 let mapStateToProps = state => {
