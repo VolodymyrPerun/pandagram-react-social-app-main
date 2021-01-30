@@ -47,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
     "@node-sass/cdn-importer": "^1.0.0",
     "@node-sass/node-module-importer": "^1.2.3",
     "@types/node": "^14.14.20",

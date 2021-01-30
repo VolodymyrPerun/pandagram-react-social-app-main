@@ -15,7 +15,7 @@ const minLength2 = minLengthCreator(2);
 const minLength4 = minLengthCreator(4);
 
 
-let LoginForm = ({handleSubmit, warning, pristine, submitting, reset, error}) => {
+let LoginForm = ({handleSubmit, pristine, submitting, reset, error}) => {
 
     return (
         <form onSubmit={handleSubmit}>
@@ -27,7 +27,6 @@ let LoginForm = ({handleSubmit, warning, pristine, submitting, reset, error}) =>
                        type={"email"}
                        placeholder={'Email'}
                        validate={[required, maxLength45, minLength2]}
-                       warning={warning}
                        warn={email}
                        label={<FontAwesomeIcon
                            style={{marginRight: '13px', bottom: '-5px', position: 'relative'}}
@@ -61,7 +60,8 @@ let LoginForm = ({handleSubmit, warning, pristine, submitting, reset, error}) =>
                     label="Login"
                     name={'Submit'}
                     type={"submit"}
-                    disabled={pristine || submitting} onClick={reset}
+                    disabled={pristine || submitting}
+                    onClick={reset}
                 />
             </div>
             {error &&

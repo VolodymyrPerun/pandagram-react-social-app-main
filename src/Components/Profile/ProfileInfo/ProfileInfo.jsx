@@ -1,33 +1,40 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from './ProfileInfo.module.scss';
 import profilePagePhoto from '../../../assets/images/profilePhoto.png';
-import {Upload, Button} from 'antd';
-import {
-    FacebookOutlined,
-    TwitterOutlined,
-    InstagramOutlined,
-    YoutubeOutlined,
-    GithubOutlined,
-    MailOutlined,
-    UploadOutlined
-} from '@ant-design/icons';
+import {UploadOutlined} from '@ant-design/icons';
 import avatar from "../../../assets/images/panda_avatar.gif";
 import bg from "../../../assets/images/file_item_bg.png";
 import ProfileStatus from "../ProfileStatus/ProfileStatusWithHooks";// Component with hooks
 //import ProfileStatus from "../ProfileStatus/ProfileStatus";// Class component
 import Preloader from "../../commons/Preloader/Preloader";
+import ProfileInfoData from "../ProfileInfoData/ProfileInfoData";
+import ProfileInfoDataForm from "../ProfileInfoDataForm/ProfileInfoDataForm";
 
-const ProfileInfo = ({profile, isFetching, status, updateUserStatus, isOwner, savePhoto}) => {
+const ProfileInfo = ({profile, isFetching, status, updateUserStatus, isOwner, savePhoto, saveProfile}) => {
 
-    if (!profile) {
-        return <Preloader/>
-    }
+    const [editMode, setEditMode] = useState(false);
+
+    let goToEditMode = () => {
+        setEditMode(true);
+    };
+
+    let onSubmit = formData => {
+        saveProfile(formData).then(
+            () => {
+                setEditMode(false);
+            }
+        );
+    };
 
     const onMainPhotoSelected = e => {
         if (e.target.files.length) {
             savePhoto(e.target.files[0]);
         }
     };
+
+    if (!profile) {
+        return <Preloader/>
+    }
 
     return (
         <div>
@@ -42,11 +49,11 @@ const ProfileInfo = ({profile, isFetching, status, updateUserStatus, isOwner, sa
                      backgroundRepeat: 'no-repeat'
                  }}>
                 <div>
-                    {isFetching ?
-                        <div>
+                    {isFetching
+                        ? <div>
                             <Preloader/>
-                        </div> :
-                        <div className={style.content}>
+                        </div>
+                        : <div className={style.content}>
                             <img
                                 src={profile.photos.large != null ? profile.photos.large : avatar}
                                 alt='avatar'/>
@@ -54,60 +61,18 @@ const ProfileInfo = ({profile, isFetching, status, updateUserStatus, isOwner, sa
                                 <input type={'file'}
                                        onChange={onMainPhotoSelected}
                                 />
-                                <UploadOutlined/> Custom Upload
+                                <UploadOutlined/> Upload Photo
                             </label>}
                             <div className={style.contentInfo}>
                                 <ProfileStatus
                                     status={status}
                                     updateUserStatus={updateUserStatus}
                                 />
-                                <ul>
-                                    <li>
-                                        <span>Full name:</span> {profile.fullName != null ? profile.fullName : 'sorry, it`s my business...'}
-                                    </li>
-                                    <li>
-                                        <span>About me:</span> {profile.aboutMe != null ? profile.aboutMe : 'sorry, it`s a secret...'}
-                                    </li>
-                                    <li>
-                                        <span>Looking for a job:</span> {profile.lookingForAJobDescription != null ? profile.lookingForAJobDescription : 'sorry, but it`m not looking for a job...'}
-                                    </li>
-                                </ul>
-                                <ul className={style.socialMedias}>
-                                    <li>
-                                        <a className={style.facebook}
-                                           href={"http://" + profile.contacts.facebook}
-                                           rel="noopener noreferrer"
-                                           target="_blank"><FacebookOutlined/></a>
-                                    </li>
-                                    <li>
-                                        <a className={style.twitter}
-                                           href={"http://" + profile.contacts.twitter}
-                                           rel="noopener noreferrer"
-                                           target="_blank"><TwitterOutlined/></a>
-                                    </li>
-                                    <li>
-                                        <a className={style.instagram}
-                                           href={"http://" + profile.contacts.instagram}
-                                           rel="noopener noreferrer"
-                                           target="_blank"><InstagramOutlined/></a>
-                                    </li>
-                                    <li>
-                                        <a className={style.youtube}
-                                           href={"http://" + profile.contacts.youtube}
-                                           rel="noopener noreferrer"
-                                           target="_blank"><YoutubeOutlined/></a>
-                                    </li>
-                                    <li>
-                                        <a className={style.github} href={"http://" + profile.contacts.github}
-                                           rel="noopener noreferrer"
-                                           target="_blank"><GithubOutlined/></a>
-                                    </li>
-                                    <li>
-                                        <a href={"mailto:" + profile.contacts.website}
-                                           rel="noopener noreferrer"
-                                           target="_blank"><MailOutlined/></a>
-                                    </li>
-                                </ul>
+                                {editMode
+                                    ?
+                                    <ProfileInfoDataForm initialValues={profile} profile={profile} onSubmit={onSubmit}/>
+                                    :
+                                    <ProfileInfoData profile={profile} isOwner={isOwner} goToEditMode={goToEditMode}/>}
                             </div>
                         </div>
                     }

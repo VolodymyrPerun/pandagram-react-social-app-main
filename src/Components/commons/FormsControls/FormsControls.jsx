@@ -7,7 +7,7 @@ import {INPUT, TEXTAREA} from '../../../constants/formsControls.enum'
 
 const FormsControlItem = item => ({input, meta: {touched, error, warning}, child, ...restProps}) => {
 
-     let isError = touched && ((error || warning));
+    let isError = touched && ((error || warning));
 
     const Error = () => {
 
@@ -18,7 +18,7 @@ const FormsControlItem = item => ({input, meta: {touched, error, warning}, child
                             <FontAwesomeIcon
                                 style={{marginRight: '3px'}}
                                 icon={faExclamationCircle}/>
-                        {error}</span> ) ||
+                        {error}</span>) ||
                     (warning && <span className={style.warning}>
                             <FontAwesomeIcon
                                 style={{marginRight: '3px'}}
@@ -32,6 +32,7 @@ const FormsControlItem = item => ({input, meta: {touched, error, warning}, child
         case TEXTAREA:
             return (
                 <>
+                    <label>{restProps.label}</label>
                     <div className={`${style.formsControls} ${isError ? style.error : ""}`}>
                 <textarea className={style.textareaField}
                           {...input}

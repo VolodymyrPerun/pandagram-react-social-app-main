@@ -14,7 +14,7 @@ const Login = ({isAuth, login}) => {
 
     let onSubmit = formData => {
         login(formData.email, formData.password, formData.rememberMe);
-    }
+    };
 
     if (isAuth) {
         return <Redirect to={'/profile'}/>
