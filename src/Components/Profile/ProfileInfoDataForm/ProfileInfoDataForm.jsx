@@ -3,7 +3,7 @@ import style from './ProfileInfoDataForm.module.scss';
 import SubmitFollowBtn from "../../commons/Buttons/SubmitFollow/SubmitFollowBtn";
 import FormsControlItem from "../../commons/FormsControls/FormsControls";
 import {INPUT, TEXTAREA} from "../../../constants/formsControls.enum";
-import {email, maxLengthCreator, minLengthCreator} from "../../../validators/validators";
+import {maxLengthCreator, minLengthCreator} from "../../../validators/validators";
 import {Field, reduxForm} from "redux-form";
 
 const ProfileInfoDataForm = ({handleSubmit, pristine, submitting, goToEditMode, error}) => {
@@ -60,7 +60,7 @@ const ProfileInfoDataForm = ({handleSubmit, pristine, submitting, goToEditMode, 
                        component={FormsControlItem(INPUT)}
                        type={"text"}
                        placeholder={'Facebook'}
-                    //validate={[maxLength145, minLength2]}
+                       warn={[maxLength145, minLength2]}
                        label={<span>Facebook:</span>}
                 />
             </div>
@@ -108,9 +108,9 @@ const ProfileInfoDataForm = ({handleSubmit, pristine, submitting, goToEditMode, 
                 <Field className={style.input}
                        name={"contacts.mainLink"}
                        component={FormsControlItem(INPUT)}
-                       type={"email"}
+                       type={"text"}
                        placeholder={'Email'}
-                       warn={[maxLength145, minLength2, email]}
+                       warn={[maxLength145, minLength2]}
                        label={<span>Email:</span>}
                 />
             </div>

@@ -1,6 +1,7 @@
 import {authAPI} from "../../../API/authAPI/authAPI";
+import {secureAPI} from "../../../API/secureAPI/secureAPI"
 import {stopSubmit} from "redux-form";
-import {setAuthUserData} from "./actions";
+import {getCaptchaUrlSuccess, setAuthUserData} from "./actions";
 
 
 export const authMe = () => async dispatch => {
@@ -11,17 +12,26 @@ export const authMe = () => async dispatch => {
     }
 };
 
-export const login = (email, password, rememberMe) => async dispatch => {
-    let response = await authAPI.login(email, password, rememberMe);
+export const login = (email, password, rememberMe, captcha) => async dispatch => {
+    let response = await authAPI.login(email, password, rememberMe, captcha);
 
     if (response.data.resultCode === 0) {
         dispatch(authMe());
     } else {
+        if (response.data.resultCode === 10) {
+            dispatch(getCaptchaUrl());
+        }
         let message = response.data.messages && response.data.messages.length > 0
             ? response.data.messages[0] :
             "Wrong email or password!"
         dispatch(stopSubmit("loginForm", {_error: message}));
     }
+};
+
+export const getCaptchaUrl = () => async dispatch => {
+    const response = await secureAPI.getSecureCaptchaUrl();
+    const captchaUrl = response.data.url;
+    dispatch(getCaptchaUrlSuccess(captchaUrl));
 };
 
 export const logout = () => async dispatch => {

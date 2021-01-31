@@ -10,10 +10,10 @@ import {login} from "../../redux/reducers/authReducer/thunks";
 import {Redirect} from "react-router-dom";
 
 
-const Login = ({isAuth, login}) => {
+const Login = ({isAuth, login, captchaUrl}) => {
 
     let onSubmit = formData => {
-        login(formData.email, formData.password, formData.rememberMe);
+        login(formData.email, formData.password, formData.rememberMe, formData.captcha);
     };
 
     if (isAuth) {
@@ -39,7 +39,7 @@ const Login = ({isAuth, login}) => {
                         icon={faSignInAlt}/>
                     Login
                 </h1>
-                <LoginForm onSubmit={onSubmit}/>
+                <LoginForm onSubmit={onSubmit} captchaUrl={captchaUrl}/>
             </div>
         </div>
     )
@@ -47,7 +47,8 @@ const Login = ({isAuth, login}) => {
 
 const mapStateToProps = state => {
     return {
-        isAuth: state.auth.isAuth
+        isAuth: state.auth.isAuth,
+        captchaUrl: state.auth.captchaUrl
     }
 };
 

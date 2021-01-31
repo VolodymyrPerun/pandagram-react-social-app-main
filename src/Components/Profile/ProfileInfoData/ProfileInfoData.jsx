@@ -95,9 +95,9 @@ const ProfileInfoData = ({profile, isOwner, goToEditMode}) => {
                        target="_blank"><FontAwesomeIcon icon={faVk}/></a>
                 </li>
                 <li>
-                    <a className={style.email} href={profile.contacts.mainLink}
-                       rel="noopener noreferrer"
-                       target="_blank"><MailOutlined/></a>
+                    <a className={style.email} href={'mailto:' + profile.contacts.mainLink}
+                       rel="mailto:profile.contacts.mainLink"
+                       target="mailto:profile.contacts.mainLink"><MailOutlined/></a>
                 </li>
             </ul>
         </>

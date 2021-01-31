@@ -15,7 +15,7 @@ const minLength2 = minLengthCreator(2);
 const minLength4 = minLengthCreator(4);
 
 
-let LoginForm = ({handleSubmit, pristine, submitting, reset, error}) => {
+let LoginForm = ({handleSubmit, pristine, submitting, reset, error, captchaUrl}) => {
 
     return (
         <form onSubmit={handleSubmit}>
@@ -55,6 +55,18 @@ let LoginForm = ({handleSubmit, pristine, submitting, reset, error}) => {
                 />
                 <label className={style.input} htmlFor={"rememberMe"}> remember me</label>
             </div>
+
+            {captchaUrl && <img style={{width: '70%', height: '70%', marginTop: '15px'}} src={captchaUrl} alt={'captcha'}/>}
+            {captchaUrl && <div className={style.inputContainer}>
+                <Field className={style.input}
+                       name={"captcha"}
+                       component={FormsControlItem(INPUT)}
+                       type={'text'}
+                       placeholder={'symbols from image'}
+                       validate={[required]}
+                />
+            </div>}
+
             <div className={style.inputContainer}>
                 <SubmitFollowBtn
                     label="Login"
@@ -64,6 +76,7 @@ let LoginForm = ({handleSubmit, pristine, submitting, reset, error}) => {
                     onClick={reset}
                 />
             </div>
+
             {error &&
             <div className={style.formsSummaryError}>
                 <span>ERROR: {error}</span>
