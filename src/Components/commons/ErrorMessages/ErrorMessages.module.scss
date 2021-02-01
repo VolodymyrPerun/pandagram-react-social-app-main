@@ -1,0 +1,84 @@
+.formsControls {
+
+  .textareaField {
+    height: 75px;
+    resize: none;
+    padding: 9px;
+    box-sizing: border-box;
+    outline: hidden;
+    overflow: hidden;
+    font-size: 15px;
+    background-color: #FFEFBA;
+    box-shadow: 1px 1px 1px #aaaaaa;
+    word-break: break-word;
+    max-lines: 50;
+    width: 35vw;
+  }
+
+  .inputField {
+    outline: hidden;
+    overflow: hidden;
+    box-shadow: 1px 1px 1px #aaaaaa;
+    word-break: break-word;
+    max-lines: 50;
+    width: 35vw;
+    font: 14px "Matura MT Script Capitals", -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    max-width: 150px;
+    color: tomato;
+  }
+
+  .errorsContainer {
+    font: 12px raleway-grid, sans-serif;
+    font-weight: 400;
+    margin-bottom: 5px;
+    max-width: 150px;
+
+    span {
+      border: none;
+      font-weight: bold;
+      color: #fff;
+      background: #c51244 !important;
+      padding: 5px !important;
+      border-radius: 0 !important;
+      position: relative;
+      display: inline-block !important;
+      box-shadow: 1px 1px 1px #aaaaaa;
+      margin-top: 10px;
+
+      &:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #c51244;
+        position: absolute;
+        top: -10px;
+      }
+    }
+
+    .warning {
+      background-color: #ffc500 !important;
+
+      &:before {
+        border-bottom: 10px solid #ffc500 !important;
+      }
+    }
+  }
+}
+
+.error {
+  input, textarea,
+  input:active, input:focus,
+  textarea:active, textarea:focus {
+    background: #fff0f4 !important;
+    color: #c51244 !important;
+    border: 1px solid #c51244 !important;
+
+    &::placeholder {
+      color: #c51244 !important;
+    }
+  }
+}
+
+

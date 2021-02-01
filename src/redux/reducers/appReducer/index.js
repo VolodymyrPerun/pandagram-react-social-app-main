@@ -1,8 +1,9 @@
-import {INITIALIZED_SUCCESS} from './constants';
+import {GLOBAL_ERROR, INITIALIZED_SUCCESS} from './constants';
 
 
 let initialState = {
-    initialized: false
+    initialized: false,
+    globalError: null
 };
 
 const appReducer = (state = initialState, action) => {
@@ -12,6 +13,11 @@ const appReducer = (state = initialState, action) => {
                 ...state,
                 initialized: true
             }
+        case GLOBAL_ERROR:
+            return {
+                ...state,
+                globalError: action.globalError
+            };
         default:
             return state;
     }
