@@ -1,21 +1,21 @@
 import React, {Component} from 'react';
 import './App.scss';
-import Settings from "./Components/Settings/Settings";
-import News from "./Components/News/News";
-import Music from "./Components/Music/Music";
+import Settings from "./Components/pages/Settings/Settings";
+import News from "./Components/pages/News/News";
+import Music from "./Components/pages/Music/Music";
 import {BrowserRouter, Redirect, Route, Switch, withRouter} from "react-router-dom";
-import Sidebar from "./Components/Sidebar/Sidebar";
-import HeaderContainer from "./Components/Header/HeaderContainer";
-import Login from "./Components/Login/Login";
+import Sidebar from "./Components/pages/Sidebar/Sidebar";
+import HeaderContainer from "./Components/basics/Header/HeaderContainer";
+import Login from "./Components/basics/Login/Login";
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 import {catchGlobalError, initializeApp} from "./redux/reducers/appReducer/thunks";
 import Preloader from "./Components/commons/Preloader/Preloader";
 import store from "./redux/index";
-import DialogsContainer from "./Components/Dialogs/DialogsContainer";
-import ProfileContainer from "./Components/Profile/ProfileContainer";
-import FriendsPage from "./Components/FriendsPage/FriendsPage";
-import {Page404} from "./Components/Page404/Page404";
+import DialogsContainer from "./Components/pages/Dialogs/DialogsContainer";
+import ProfileContainer from "./Components/pages/Profile/ProfileContainer";
+import FriendsPage from "./Components/pages/FriendsPage/FriendsPage";
+import {Page404} from "./Components/pages/Page404/Page404";
 import ErrorMessages from "./Components/commons/ErrorMessages/ErrorMessages";
 
 

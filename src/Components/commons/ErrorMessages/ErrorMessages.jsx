@@ -52,12 +52,12 @@ function ErrorMessages({globalError}) {
         window.location.reload();
     }
 
-    //setTimeout(() => window.location.reload(), 10000);
+    setTimeout(() => window.location.reload(), 10000);
 
     return (
         <Container>
             <Error>Something went wrong! {globalError}</Error>
-            <Button type="button" onClick={handleClick}><CaretLeftFilled /> Go to profile page</Button>
+            <Button type="button" onClick={handleClick}><CaretLeftFilled/> Go to profile page</Button>
         </Container>
 
     );
