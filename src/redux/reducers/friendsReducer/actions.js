@@ -12,7 +12,7 @@ import {
 
 export const follow = id => ({type: FOLLOW, id});
 export const unfollow = id => ({type: UNFOLLOW, id});
-export const setFriends = friends => ({type: SET_FRIENDS, friends});
+export const setFriends = payload => ({type: SET_FRIENDS, payload});
 export const setPageSize = pageSize => ({type: SET_PAGE_SIZE, pageSize});
 export const setCurrentPage = currentPage => ({type: SET_CURRENT_PAGE, currentPage});
 export const setTotalFriendsCount = totalFriendsCount => ({

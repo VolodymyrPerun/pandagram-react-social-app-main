@@ -34,7 +34,7 @@ const friendsReducer = (state = initialState, action) => {
         case SET_FRIENDS:
             return {
                 ...state,
-                friends: action.friends
+                friends: action.payload
             }
         case SET_CURRENT_PAGE:
             return {
