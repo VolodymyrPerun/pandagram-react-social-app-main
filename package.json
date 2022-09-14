@@ -9,7 +9,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "antd": "^4.10.0",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "browserslist": "^4.16.1",
     "classnames": "^2.2.6",
     "node-sass": "^7.0.0",
