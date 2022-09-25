@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.scss';
+import {compose} from "redux";
 import Settings from "./Components/pages/Settings/Settings";
 import News from "./Components/pages/News/News";
 import Music from "./Components/pages/Music/Music";
@@ -8,7 +9,6 @@ import Sidebar from "./Components/pages/Sidebar/Sidebar";
 import HeaderContainer from "./Components/basics/Header/HeaderContainer";
 import Login from "./Components/basics/Login/Login";
 import {connect, Provider} from "react-redux";
-import {compose} from "redux";
 import {catchGlobalError, initializeApp} from "./redux/reducers/appReducer/thunks";
 import Preloader from "./Components/commons/Preloader/Preloader";
 import store from "./redux/index";
