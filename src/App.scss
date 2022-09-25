@@ -11,8 +11,8 @@ body {
 }
 
 .app-wrapper {
-    display: grid;
     width: 80vw;
+    display: grid;
     margin: 0 auto;
     background: #FFEFBA; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA); /* Chrome 10-25, Safari 5.1-6 */
